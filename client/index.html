@@ -1,43 +1,59 @@
 <head>
   <meta charset="UTF-8">
-  <title>TOPPER PRO LED LIGHTING</title>
+  <title>PRO LED LIGHTING</title>
 
 </head>
 <body >
-<header class="navbar-static-top">
+<header style="background-color: #232f3e" class="navbar-static-top">
+    <div class="container">
+
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>
+                    <ul  class="dropdown-menu">
+                        <li><a href="#" >Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Separated link</a></li>
+                    </ul>
+                </div><!-- /btn-group -->
+                <input type="text" class="form-control" aria-label="...">
+                <span class="input-group-btn">
+                        <button style="background-color: lightgoldenrodyellow" class="btn btn-default" type="button">Go!</button>
+                  </span>
+            </div>
+
+
+    </div>
     <div class="container">
         <nav>
             <ul class="nav navbar-nav">
                 <li>
-                    <a>HOME</a>
+                    <a style="color: white;">HOME</a>
                 </li>
                 <li>
-                    <a>PRODUCTS</a>
-                    <ul class="nav navbar-collapse collapse">
-                        <li>
-                            <a> Test</a>
-                        </li>
+                    <a style="color: white">PRODUCTS</a>
 
-                    </ul>
                 </li>
                 <li>
-                    <a>LED GUIDE</a>
+                    <a style="color: white">LED GUIDE</a>
                 </li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a class="nav"><span  class="glyphicon glyphicon-shopping-cart"></span> </a>
+                    <a style="color: white;" class="nav"><span  class="glyphicon glyphicon-shopping-cart"></span> </a>
                 </li>
 
                 <li>
-                    <a class="nav"><span  class="glyphicon glyphicon-user"></span>   Sign In </a>
+                    <a style="color: white;" class="nav"><span  class="glyphicon glyphicon-user"></span>   Sign In </a>
                 </li>
             </ul>
         </nav>
     </div>
 </header>
-<div class="container-fluid" style="background-color: lightgray">
+<div class="container">
     <div id="led-carousel" class="carousel slide" >
         <ol class="carousel-indicators">
             <li data-target="#led-carousel" data-slide-to="0" class="active"></li>
@@ -47,6 +63,10 @@
         <div class="carousel-inner" >
             <div class="item active">
                 <img src="led_bedroom.jpg" width="100%">
+                <div class="carousel-caption">
+                    <h3>Weekly Deals</h3>
+                    <p>Awesome deals!</p>
+                </div>
             </div>
             <div class="item">
                 <img src="led_kitchen.jpg" width="100%">
@@ -65,12 +85,20 @@
         </a>
     </div>
 <div class="container" style="background-color: white">
-    <div class="page-header">
-        <div><span class="h2 text-danger" >Weekly Deals</span><a style="padding-right: 1.5em" class="navbar-right"> View More</a> </div>
+    <!--<div class="page-header">-->
+        <!--<div><span class="h2 text-danger" >Weekly Deals</span><a style="padding-right: 1.5em" class="navbar-right"> View More</a> </div>-->
 
-    </div>
+    <!--</div>-->
     <div class="row">
+        <div>
 
+            <ul class="nav nav-tabs">
+                <li role="presentation" class="active"><a href="#">Lights</a></li>
+                <li role="presentation"><a href="#">Trims</a></li>
+                <li role="presentation"><a href="#">Fixtures</a></li>
+            </ul>
+        </div>
+        <br />
         <div class="col-sm-6 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
@@ -168,22 +196,23 @@
 
 </div>
 </div>
+<footer style="background-color: #232f3e">
+    <div class="container">
+        <div class="row">
+            <div style="align-content: center" class="col-lg-4 col-md-4 col-sm-6">
 
-<div class="container">
-    <div class="row">
-        <div style="align-content: center" class="col-lg-4 col-md-4 col-sm-6">
+                <h4><font color="white">Company Info</font></h4>
+                <ul class="nav">
+                    <li>
+                        <a>About Us</a>
+                    </li>
+                    <li>
+                        <a>Contact Us</a>
+                    </li>
+                </ul>
 
-            <h4>Company Info</h4>
-            <ul class="nav">
-                <li>
-                    <a>About Us</a>
-                </li>
-                <li>
-                    <a>Contact Us</a>
-                </li>
-            </ul>
-
+            </div>
         </div>
     </div>
-</div>
+</footer>
 </body>

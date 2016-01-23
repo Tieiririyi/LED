@@ -42,6 +42,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-session.js" />
         <item url="file://$USER_HOME$/.meteor/packages/reload/1.1.4/web.browser/reload.js" />
         <item url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-stopper.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/angularui_angular-ui-router/0.2.15/web.browser/packages/angularui_angular-ui-router.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.4/web.browser/tokens.js" />
         <item url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-reactive-scope.js" />
         <item url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.4/web.browser/tojs.js" />
@@ -171,6 +172,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-session.js" />
       <root url="file://$USER_HOME$/.meteor/packages/reload/1.1.4/web.browser/reload.js" />
       <root url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-stopper.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/angularui_angular-ui-router/0.2.15/web.browser/packages/angularui_angular-ui-router.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.4/web.browser/tokens.js" />
       <root url="file://$USER_HOME$/.meteor/packages/angular-meteor-data/0.0.9/web.browser/modules/angular-meteor-reactive-scope.js" />
       <root url="file://$USER_HOME$/.meteor/packages/blaze-tools/1.0.4/web.browser/tojs.js" />
