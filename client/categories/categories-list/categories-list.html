@@ -1,0 +1,32 @@
+<div class="container">
+    <!--<form>-->
+        <!--<label>Category Name: </label>-->
+        <!--<input type="text" ng-model="categoriesList.newCategory.name" />-->
+        <!--<label>Description: </label>-->
+        <!--<input type="text" ng-model="categoriesList.newCategory.description" />-->
+        <!--<button>Add Party!</button>-->
+    <!--</form>-->
+    <!--<ul>-->
+        <!--<li ng-repeat='category in categoriesList.categories'>-->
+            <!--{{ category.name }}-->
+        <!--</li>-->
+    <!--</ul>-->
+    <h3>Product Categories:</h3>
+    <div class="row">
+        <div ng-repeat='category in categoriesList.categories' class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <a  style="display: block; padding: 4px;" href="#">
+                        <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
+
+                    </a>
+                    <div class="caption">
+                        <a class="h2">{{category.name}}</a>
+
+                        <p><a class="text-success">$20.00 </a><del class="text-danger">$30.00</del></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
