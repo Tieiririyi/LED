@@ -1,0 +1,25 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Test</title>
+</head>
+<body>
+hi world!
+
+    <div ng-repeat='product in productsList.products' class="col-sm-6 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <a  style="display: block; padding: 4px;" href="/categories/{{product.categoryId}}/{{product._id}}">
+                    <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
+
+                </a>
+                <div class="caption">
+                    <a class="h2">{{product.productName}}</a>
+
+                    <p><a class="text-success">$20.00 </a><del class="text-danger">$30.00</del></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

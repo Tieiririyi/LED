@@ -13,5 +13,17 @@ angular.module('led')
 
                 })
 
+        $stateProvider
+            .state('products',
+                {
+                    url: '/categories/:id',
+                    template: '<products-list></products-list>'
+                })
+
+        $stateProvider
+            .state('product',{
+                    url: '/categories/:catId/:prodId',
+                    template: '<product></product>'
+            })
         //$urlRouterProvider.otherwise("/categories");
     });

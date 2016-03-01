@@ -16,12 +16,12 @@
         <div ng-repeat='category in categoriesList.categories' class="col-sm-6 col-md-4">
             <div class="panel panel-default">
                 <div class="panel-body">
-                    <a  style="display: block; padding: 4px;" href="#">
+                    <a  style="display: block; padding: 4px;" href="/categories/{{category._id}}">
                         <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
 
                     </a>
                     <div class="caption">
-                        <a class="h2">{{category.name}}</a>
+                        <a class="h2">{{category.categoryName}}</a>
 
                         <p><a class="text-success">$20.00 </a><del class="text-danger">$30.00</del></p>
                     </div>
