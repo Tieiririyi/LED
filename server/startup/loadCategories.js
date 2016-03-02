@@ -37,7 +37,8 @@
                         'productName': 'product' + i,
                         'productDescription': 'description' + i,
                         'categoryName': "Dubstep-Free Zone",
-                        'categoryId': id
+                        'categoryId': id,
+                        'stock': 1
                     }
                 );
                 //console.log(Products.findOne({"productName": "product" + i}));
