@@ -14,9 +14,7 @@ angular.module('led').directive('productsList', function ()
                     products: ()=> {
                     return Products.find({"categoryId": $stateParams.id});
                 }
-        });
-
-
+            });
         }
     }
 });
