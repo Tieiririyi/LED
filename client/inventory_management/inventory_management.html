@@ -1,0 +1,112 @@
+
+<div class="container">
+
+    <h1>Inventory Management</h1>
+    <div>
+        <!-- Categories container -->
+        <div>
+            <h2>Categories</h2>
+            <table>
+                <tr>
+                    <th>Category Name</th>
+                    <th>Category Description</th>
+                    <th>Edit</th>
+                </tr>
+                <tr ng-repeat = "category in inventoryCtrl.categories">
+
+                    <td>
+                        <span ng-hide = "showCat">{{category.categoryName}}</span>
+                        <input type = "text" ng-show = "showCat" ng-model = "category.categoryName" size = "30" />
+                    </td>
+                    <td>
+                        <span ng-hide = "showCat">{{category.categoryDescription}}</span>
+                        <input type = "text" ng-show = "showCat" ng-model = "category.categoryDescription" size = "50" />
+                    </td>
+                    <td>
+                        <button ng-hide = "showCat" ng-click = "inventoryCtrl.editCat(this)"><i class="fa fa-pencil-square-o"></i></button>
+                        <button ng-show = "showCat" ng-click = "inventoryCtrl.updateCat(this)"><i class="fa fa-check"></i></button>
+                        <button ng-show = "showCat" ng-click = "inventoryCtrl.undoCat(this)"><i class="fa fa-times"></i></button>
+                    </td>
+                </tr>
+                <!-- new category -->
+                <tr>
+                    <td><input type = "text" ng-model = "inventoryCtrl.newCategory.categoryName" size = "30" /></td>
+                    <td><input type = "text" ng-model = "inventoryCtrl.newCategory.categoryDescription" size = "50" /></td>
+                    <td><button ng-click = "inventoryCtrl.addCat()">add</button></td>
+                </tr>
+            </table>
+        </div>
+        <br />
+
+        <!-- Products container -->
+        <div>
+            <h2>Products</h2>
+            <!-- search bar -->
+            <div>
+                <label>Search: </label>
+                <input type = "text" ng-model = "filterProduct"/>
+                <label>Order by: </label>
+                <select ng-model = "orderVar">
+                    <option value = "productName">Product Name</option>
+                    <option value = "categoryName">Category Name</option>
+                </select>
+            </div>
+            <br />
+
+            <table>
+                <tr>
+                    <th>Remove</th>
+                    <th>Product Name</th>
+                    <th>Category Name</th>
+                    <th>Quantity in Stock</th>
+                    <th>Quantity on Hold</th>
+                    <th>Change Quantity</th>
+                    <th>Edit</th>
+                </tr>
+
+                <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar">
+                    <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
+                    <td>
+                        <span ng-hide = "showProd">{{product.productName}}</span>
+                        <input ng-show = "showProd" type = "text" ng-model = "product.productName" />
+                    </td>
+                    <td>
+                        <span ng-hide = "showProd">{{product.categoryName}}</span>
+                        <select ng-show = "showProd" ng-model="product.categoryId">
+                            <option ng-repeat="category in inventoryCtrl.categories" value="{{category._id}}" ng-checked = "category._id == product.categoryId">{{category.categoryName}}</option>
+                        </select>
+                    </td>
+                    <td>
+                        <span>{{product.quantityInStock}}</span>
+                    </td>
+                    <td>
+                        <span>{{product.quantityOnHold}}</span>
+                    </td>
+                    <td>
+                        <input ng-show = "showProd" type = "text" ng-model = "product.quantityChange" />
+                    </td>
+                    <td>
+                        <button ng-hide = "showProd" ng-click = "inventoryCtrl.editProduct(this)"><i class="fa fa-pencil-square-o"></i></button>
+                        <button ng-show = "showProd" ng-click = "inventoryCtrl.updateProduct(this)"><i class="fa fa-check"></i></button>
+                        <button ng-show = "showProd" ng-click = "inventoryCtrl.undoProduct(this)"><i class="fa fa-times"></i></button>
+                    </td>
+                </tr>
+
+                <!-- add product -->
+                <!-- <tr>
+                    <td></td>
+                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.productName" /></td>
+                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.productDescription" /></td>
+                    <td>
+                        <select ng-model="inventoryCtrl.newProduct.categoryId">
+                            <option ng-repeat="category in inventoryCtrl.categories" value="{{category._id}}">{{category.categoryName}}</option>
+                        </select>
+
+                    </td>
+                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.stock" /></td>
+                    <td><button ng-click = "inventoryCtrl.addProduct()">add</button></td>
+                </tr> -->
+            </table>
+        </div>
+    </div>
+</div>

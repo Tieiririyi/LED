@@ -5,7 +5,7 @@
 
 
     Meteor.startup(function () {
-        //Categories.remove({});
+        Categories.remove({});
         if (Categories.find().count() === 0) {
 
             var categories = [
@@ -28,7 +28,7 @@
             }
         }
 
-        //Products.remove({});
+        Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
             for (var i = 0; i < 5; i++) {
@@ -36,9 +36,17 @@
                     {
                         'productName': 'product' + i,
                         'productDescription': 'description' + i,
-                        'categoryName': "Dubstep-Free Zone",
                         'categoryId': id,
-                        'stock': 1
+                        'power': "90 - 1000",
+                        'brightness': 490,
+                        'colours': ['blue', 'white'],
+                        'dimmable': true,
+                        'certification': ["CE"],
+                        'quantityInStock': 10,
+                        'quantityOnHold': 1,
+                        'price': 10.99,
+                        'primaryPic': '/',
+                        'otherPics': []
                     }
                 );
                 //console.log(Products.findOne({"productName": "product" + i}));
