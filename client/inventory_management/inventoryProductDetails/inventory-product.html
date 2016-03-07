@@ -1,0 +1,61 @@
+<div class="container">
+
+    <div>
+        <h2>Product Details</h2>
+        <label>Name: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.productName" /><br />
+
+        <label>Description: </label>
+        <textarea ng-model = "inventoryProductDetails.product.productDescription"></textarea><br />
+
+        <label>Category: </label>
+        <select ng-model = "inventoryProductDetails.product.categoryId">
+            <option ng-repeat = "category in inventoryProductDetails.categories" value = "{{category._id}}" ng-checked = "category._id == inventoryProductDetails.product.categoryId">{{category.categoryName}}</option>
+        </select> <br />
+
+        <label>Power: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.power" /><span>Watts</span><br />
+
+        <label>Brightness: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.brightness" /><br />
+
+        <label>Colours: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.colours" /><br />
+
+        <label>Dimmable: </label>
+        <label>
+            <input type = "radio" ng-model = "inventoryProductDetails.product.dimmable" value = "true" ng-checked = "inventoryProductDetails.product.dimmable == true">
+            Yes
+        </label>
+        <label>
+            <input type = "radio" ng-model = "inventoryProductDetails.product.dimmable" value = "false" ng-checked = "inventoryProductDetails.product.dimmable == false">
+            No
+        </label><br />
+
+        <label>Certifications: </label>
+        <label>
+            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification.cert1" ng-checked = "inventoryProductDetails.product.certification.cert1"/>
+            Cert1
+        </label>
+        <label>
+            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification.cert2" ng-checked = "inventoryProductDetails.product.certification.cert2"/>
+            Cert2
+        </label><br />
+
+        <label>Quantity in stock: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.quantityInStock" /><br />
+
+        <label>Quantity on hold: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.quantityOnHold" /><br />
+
+        <label>Price: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
+
+        <label>Upload picture</label>
+        <button>Upload Picture</button>
+        <br />
+        <button ng-click = "inventoryProductDetails.submit()">Submit Changes</button>
+
+    </div>
+
+</div>

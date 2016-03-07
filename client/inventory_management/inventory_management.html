@@ -41,6 +41,9 @@
         <!-- Products container -->
         <div>
             <h2>Products</h2>
+
+            <button ng-click = "inventoryCtrl.addProduct()">Add Product</button>
+
             <!-- search bar -->
             <div>
                 <label>Search: </label>
@@ -49,6 +52,7 @@
                 <select ng-model = "orderVar">
                     <option value = "productName">Product Name</option>
                     <option value = "categoryName">Category Name</option>
+                    <option value = "quantityInStock">Quantity in Stock</option>
                 </select>
             </div>
             <br />
@@ -67,7 +71,7 @@
                 <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar">
                     <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
                     <td>
-                        <span ng-hide = "showProd">{{product.productName}}</span>
+                        <a href = "/inventory/edit/{{product._id}}"><span ng-hide = "showProd">{{product.productName}}</span></a>
                         <input ng-show = "showProd" type = "text" ng-model = "product.productName" />
                     </td>
                     <td>
@@ -91,21 +95,6 @@
                         <button ng-show = "showProd" ng-click = "inventoryCtrl.undoProduct(this)"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
-
-                <!-- add product -->
-                <!-- <tr>
-                    <td></td>
-                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.productName" /></td>
-                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.productDescription" /></td>
-                    <td>
-                        <select ng-model="inventoryCtrl.newProduct.categoryId">
-                            <option ng-repeat="category in inventoryCtrl.categories" value="{{category._id}}">{{category.categoryName}}</option>
-                        </select>
-
-                    </td>
-                    <td><input type = "text" ng-model = "inventoryCtrl.newProduct.stock" /></td>
-                    <td><button ng-click = "inventoryCtrl.addProduct()">add</button></td>
-                </tr> -->
             </table>
         </div>
     </div>

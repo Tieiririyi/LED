@@ -33,5 +33,21 @@ angular.module('led')
                     url: '/inventory',
                     template: '<inventory-management></inventory-management>'
                 })
+
+        $stateProvider
+            .state('addProduct',
+                {
+                    url: '/inventory/addProduct',
+                    template: '<add-product></add-product>'
+                })
+
+        $stateProvider
+            .state('inventoryProductDetails',
+                {
+                    url: '/inventory/edit/:prodId',
+                    template: '<inventory-product-details></inventory-product-details>'
+                })
+
+
         //$urlRouterProvider.otherwise("/categories");
     });

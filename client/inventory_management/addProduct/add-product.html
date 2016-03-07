@@ -1,0 +1,62 @@
+<div class="container">
+
+    <div>
+        <h2>New Product</h2>
+        <form ng-submit = "addProduct.submit(product)">
+            <label>Name: </label>
+            <input type = "text" ng-model = "product.productName" required/><br />
+
+            <label>Description: </label>
+            <textarea ng-model = "product.productDescription"></textarea><br />
+
+            <label>Category: </label>
+            <select ng-model = "product.categoryId">
+               <option ng-repeat = "category in addProduct.categories" value = "{{category._id}}" ng-checked = "category._id == product.categoryId">{{category.categoryName}}</option>
+            </select> <br />
+
+            <label>Power: </label>
+            <input type = "text" ng-model = "product.power" required /><span>Watts</span><br />
+
+            <label>Brightness: </label>
+            <input type = "text" ng-model = "product.brightness" required /><br />
+
+            <label>Colours: </label>
+            <input type = "text" ng-model = "product.colours" required /><br />
+
+            <label>Dimmable: </label>
+            <label>
+                <input type = "radio" ng-model = "product.dimmable" value = "true" ng-checked = "product.dimmable == true" required>
+                Yes
+            </label>
+            <label>
+                <input type = "radio" ng-model = "product.dimmable" value = "false" ng-checked = "product.dimmable == false">
+                No
+            </label><br />
+
+            <label>Certifications: </label>
+            <label>
+                <input type = "checkbox" ng-model = "product.certification.cert1" ng-checked = "product.certification.cert1"/>
+                Cert1
+            </label>
+            <label>
+                <input type = "checkbox" ng-model = "product.certification.cert2" ng-checked = "product.certification.cert2"/>
+                Cert2
+            </label><br />
+
+            <label>Quantity in stock: </label>
+            <input type = "text" ng-model = "product.quantityInStock" required /><br />
+
+            <label>Quantity on hold: </label>
+            <input type = "text" ng-model = "product.quantityOnHold" required /><br />
+
+            <label>Price: </label>
+            <input type = "text" ng-model = "product.price" required /><br />
+
+            <label>Upload picture</label>
+            <button>Upload Picture</button>
+            <br />
+            <input type = "submit" value = "Add Product" />
+        </form>
+    </div>
+
+</div>

@@ -41,7 +41,7 @@
                         'brightness': 490,
                         'colours': ['blue', 'white'],
                         'dimmable': true,
-                        'certification': ["CE"],
+                        'certification': {"cert1": true, "cert2": false},
                         'quantityInStock': 10,
                         'quantityOnHold': 1,
                         'price': 10.99,
