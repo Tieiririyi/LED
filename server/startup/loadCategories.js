@@ -28,6 +28,10 @@
             }
         }
 
+        /*Images.find().forEach(function(images){
+            Images.remove({_id: images._id});
+        });*/
+
         Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;

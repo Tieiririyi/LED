@@ -11,19 +11,22 @@ angular.module('led').directive('product', function ()
             $reactive(this).attach($scope);
 
             this.newCategory = {};
-
+            
             this.helpers({
                     product: ()=> {
                         return Products.findOne({_id: $stateParams.prodId});
-                    }
-            });
-
-            this.helpers({
+                    },
+                    image : () => {
+                        if (Products.findOne({_id: $stateParams.prodId}).primaryPic != undefined){
+                            return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).primaryPic});
+                        }
+                        
+                        //console.log(Products.findOne({_id: $stateParams.prodId}).primaryPic);
+                    },
                     categories: ()=> {
                         return Categories.find({});
                     }
             });
-
         }
     }
 });

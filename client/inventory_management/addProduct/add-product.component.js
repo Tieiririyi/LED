@@ -11,15 +11,24 @@ angular.module('led').directive('addProduct', function ()
             $reactive(this).attach($scope);
             //this.categories = $meteor.collection(Categories);
 
+
             this.helpers({
-                    categories: ()=> {
+                categories: ()=> {
                     return Categories.find({});
-            }
-        });
+                    
+                },
+                images: () => {
+                    return Images.find();
+                }
+            });
 
 
             this.submit = (product) => {
-                console.log(product);
+                if (product.picture.length > 0){
+                    var imageID = Images.insert(product.picture[0])._id;
+                }
+                
+
                 Products.insert(
                     {
                         "productName": product.productName,
@@ -34,34 +43,29 @@ angular.module('led').directive('addProduct', function ()
                         "quantityInStock": parseInt(product.quantityInStock),
                         "quantityOnHold": parseInt(product.quantityOnHold),
                         "price": product.price,
-                        "primaryPic": "/",
+                        "primaryPic": imageID,
                         "otherPics": []
                     });
+                    
+                    
                 $location.path("/inventory");
-                /*
-                 products: ()=> {
-                 return Products.find({}).map(function(product){
-                 return {
-                 _id: product._id,
-                 "productName": product.productName,
-                 "productDescription": product.productDescription,
-                 "categoryId": product.categoryId,
-                 "categoryName": Categories.findOne({_id: product.categoryId}).categoryName,
-                 "power": product.power,
-                 "brightness": product.brightness,
-                 "colours": product.colours,
-                 "dimmable": product.dimmable,
-                 "certification": product.certification,
-                 "quantityInStock": parseInt(product.quantityInStock),
-                 "quantityOnHold": parseInt(product.quantityOnHold),
-                 "price": product.price,
-                 "primaryPic": product.primaryPic,
-                 "otherPics": product.otherPics
-                 }
-                 });
-                 }
-                 */
-            }
+            };
+            
+            this.addImages = (files) => {
+                
+                Images.find({});
+                
+                console.log(files);
+                Images.remove();
+
+                /*console.log(Images.findOne({_id: "D2rRZMFm4e95gDTF8"})._id);*/
+                
+                /*if (files.length > 0) {
+                    Images.insert(files[0]);
+                    
+                }*/
+            };
+            
         }
-    }
+    };
 });

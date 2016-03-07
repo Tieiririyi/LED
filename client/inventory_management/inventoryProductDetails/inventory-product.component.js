@@ -9,21 +9,32 @@ angular.module('led').directive('inventoryProductDetails', function ()
         controllerAs:'inventoryProductDetails',
         controller: function ($scope,$meteor, $stateParams, $reactive, $location){
             $reactive(this).attach($scope);
-            //this.categories = $meteor.collection(Categories);
 
             this.helpers({
-                    categories: ()=> {
-                        return Categories.find({});
-                    }
-            });
-
-            this.helpers({
+                categories: ()=> {
+                    return Categories.find({});
+                },
                 product: () => {
                     return Products.findOne({_id: $stateParams.prodId});
+                },
+                image: () => {
+                    if (Products.findOne({_id: $stateParams.prodId}).primaryPic != undefined){
+                        return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).primaryPic});
+                    }
                 }
             });
 
             this.submit = () => {
+                
+                var imageID = this.product.primaryPic;
+                console.log(this.product.picture);
+                if (this.product.picture != undefined){
+                    if (Images.findOne({_id: this.product.primaryPic}) != undefined) {
+                        Images.remove({_id: this.product.primaryPic});
+                    }
+                    var imageID = Images.insert(this.product.picture[0])._id;
+                }
+                
                 Products.update({_id: this.product._id},
                     {
                         "productName": this.product.productName,
@@ -38,7 +49,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
                         "quantityInStock": parseInt(this.product.quantityInStock),
                         "quantityOnHold": parseInt(this.product.quantityOnHold),
                         "price": this.product.price,
-                        "primaryPic": this.product.primaryPic,
+                        "primaryPic": imageID,
                         "otherPics": this.product.otherPics
                     });
                 $location.path("/inventory");

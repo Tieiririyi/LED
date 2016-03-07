@@ -20,3 +20,7 @@ twbs:bootstrap
 angularui:angular-ui-router
 reactive-var
 angular
+cfs:standard-packages
+cfs:gridfs
+danialfarid:ng-file-upload
+angular:angular-material

@@ -1,7 +1,11 @@
 /**
  * Created by Tieiririyi on 2016-01-12.
  */
-angular.module('led',['angular-meteor','ui.router']);
+angular.module('led',[
+    'angular-meteor',
+    'ui.router', 
+    'ngMaterial',
+    'ngFileUpload']);
 
 function onReady(){
 

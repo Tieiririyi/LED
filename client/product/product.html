@@ -1,22 +1,22 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Title</title>
-</head>
-<body>
-
-    <div  class="col-sm-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <div class="caption">
-                    <a class="h2">{{productCtrl.product.productName}}</a>
-
-                    <p><a class="text-success">$20.00 </a><del class="text-danger">$30.00</del></p>
-
-
+<div  class="col-sm-6 col-md-4">
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="caption">
+                <h2>{{productCtrl.product.productName}}</h2>
+                <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
+                <p><a class="text-success">{{productCtrl.product.price | currency}}</a><del class="text-danger">$30.00</del></p>
+                <input type = "text" ng-model = "productCtrl.quantity"/>
+                <button>Add to Cart</button>
+                <div>
+                    <h3>Product Details</h3>
+                    <p>Description: {{productCtrl.productDescription}}</p>
+                    <p>Power: {{productCtrl.product.power}} Watts</p>
+                    <p>Brightness: {{productCtrl.product.brightness}}</p>
+                    <p>Colours: {{productCtrl.product.colours}}</p>
+                    <p>Dimmable: {{productCtrl.product.dimmable}}</p>
                 </div>
             </div>
         </div>
     </div>
-</body>
-</html>
+</div>
+

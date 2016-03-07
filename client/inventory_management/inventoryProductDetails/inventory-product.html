@@ -51,9 +51,18 @@
         <label>Price: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
 
+        <label>Picture: </label>
+
+        <img ng-src="{{ inventoryProductDetails.image.url() }}" width = "100" /><br/>
+
+
         <label>Upload picture</label>
-        <button>Upload Picture</button>
+        <input name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select
+                 ng-model = "inventoryProductDetails.product.picture"
+                 
+                 ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'" />
         <br />
+        
         <button ng-click = "inventoryProductDetails.submit()">Submit Changes</button>
 
     </div>
