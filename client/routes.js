@@ -31,7 +31,17 @@ angular.module('led')
             .state('inventory_management',
                 {
                     url: '/inventory',
-                    template: '<inventory-management></inventory-management>'
+                    template: '<inventory-management></inventory-management>',
+                    resolve: {
+                        currentUser: ($q) => {
+                            if (Meteor.userId() == null) {
+                                return $q.reject('AUTH_REQUIRED');
+                            }
+                            else {
+                                return $q.resolve();
+                            }
+                        }
+                    }
                 })
 
         $stateProvider
@@ -48,6 +58,11 @@ angular.module('led')
                     template: '<inventory-product-details></inventory-product-details>'
                 })
 
-
+        $stateProvider
+            .state('users',
+                {
+                    url: '/users',
+                    template: '<users></users>'
+                })
         //$urlRouterProvider.otherwise("/categories");
     });

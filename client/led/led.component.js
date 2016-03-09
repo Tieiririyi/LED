@@ -10,6 +10,9 @@ angular.module('led').directive('led', function () {
         controller: function ($scope, $reactive) {
         $reactive(this).attach($scope);
 
+            this.login = () =>{
+                Meteor.loginWithPassword;
+            };
 
     }
 }

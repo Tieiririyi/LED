@@ -24,3 +24,5 @@ cfs:standard-packages
 cfs:gridfs
 danialfarid:ng-file-upload
 angular:angular-material
+accounts-password
+dotansimha:accounts-ui-angular

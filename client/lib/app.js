@@ -5,7 +5,8 @@ angular.module('led',[
     'angular-meteor',
     'ui.router', 
     'ngMaterial',
-    'ngFileUpload']);
+    'ngFileUpload',
+    'accounts.ui']);
 
 function onReady(){
 
