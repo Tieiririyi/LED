@@ -1,10 +1,3 @@
-<h2>Register</h2>
-<form class="register" ng-submit = "usersCtrl.register(user)">
-    <p>Email: <input type="email" name="email" ng-model = "user.email"></p>
-    <p>Password: <input type="password" name="password" ng-model = "user.password"></p>
-    <p>Name: <input type = "text" ng-model = "user.name"/></p>
-    <p><input type="submit" value="Register"></p>
-</form>
 
 <h2>Login</h2>
 <form class="login" ng-submit = "usersCtrl.login(user)">
@@ -13,6 +6,4 @@
     <p><input type="submit" value="Login"></p>
 </form>
 
-<button ng-click = "usersCtrl.logout()">logout</button>
-
-{{usersCtrl.current_user}}}
+<a href = "users/createAccount"><button>Create Account</button></a>

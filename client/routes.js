@@ -59,10 +59,22 @@ angular.module('led')
                 })
 
         $stateProvider
+            .state('createAccount',
+                {
+                    url: '/users/createAccount',
+                    template: '<create-account></create-account>'
+                })
+        $stateProvider
             .state('users',
                 {
                     url: '/users',
                     template: '<users></users>'
                 })
+        $stateProvider
+            .state('userProfiles', {
+                url: '/users/profiles',
+                template: '<user-profiles></user-profiles>'
+            })
+
         //$urlRouterProvider.otherwise("/categories");
     });

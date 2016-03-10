@@ -44,8 +44,20 @@
                     <a style="color: white;" class="nav"><span  class="glyphicon glyphicon-shopping-cart"></span> </a>
                 </li>
 
-                <li>
+                <li ng-show = "led.current_user == null">
                     <a style="color: white;" class="nav" href = "/users"><span><span  class="glyphicon glyphicon-user"></span>   Sign In </span></a>
+                </li>
+                <li ng-show = "led.current_user != null">
+                    <a style="color: white;" class="nav" href = "#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><span  class="glyphicon glyphicon-user"></span><i class="fa fa-caret-down"></i></span></a>
+
+
+                    <!--<button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>-->
+                    <ul  class="dropdown-menu" >
+                        <li><a href="/users/profiles" >My Profile</a></li>
+                        <li><a href="#">Order History</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#" ng-click = "led.logout()">Logout</a></li>
+                    </ul>
                 </li>
 
             </ul>
