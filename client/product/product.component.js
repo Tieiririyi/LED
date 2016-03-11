@@ -35,7 +35,11 @@ angular.module('led').directive('product', function ()
                 //console.log(Session);
                     this.added = false;
                     this.cart = store.get('cart');
-
+                    
+                    console.log(this.cart);
+                    if (this.cart == null){
+                        this.cart = [];
+                    }
                     for (var i = 0; i < this.cart.length; i++){
                         if (this.cart[i].productId == $stateParams.prodId){
                             this.cart[i].quantity = parseInt(this.cart[i].quantity) + parseInt(this.quantity);
