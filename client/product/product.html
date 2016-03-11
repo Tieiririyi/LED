@@ -6,7 +6,7 @@
                 <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
                 <p><a class="text-success">{{productCtrl.product.price | currency}}</a><del class="text-danger">$30.00</del></p>
                 <input type = "text" ng-model = "productCtrl.quantity"/>
-                <button>Add to Cart</button>
+                <button ng-click = "productCtrl.addToCart()">Add to Cart</button>
                 <div>
                     <h3>Product Details</h3>
                     <p>Description: {{productCtrl.productDescription}}</p>

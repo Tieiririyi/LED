@@ -76,5 +76,11 @@ angular.module('led')
                 template: '<user-profiles></user-profiles>'
             })
 
+        $stateProvider
+            .state('shoppingCart', {
+                url: '/shoppingCart',
+                template: '<shopping-cart></shopping-cart>'
+            })
         //$urlRouterProvider.otherwise("/categories");
     });
+

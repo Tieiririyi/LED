@@ -7,7 +7,7 @@ angular.module('led').directive('product', function ()
         restrict:'E',
         templateUrl:'client/product/product.html',
         controllerAs:'productCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive){
+        controller: function ($scope, $stateParams, $meteor, $reactive, store){
             $reactive(this).attach($scope);
 
             this.newCategory = {};
@@ -27,6 +27,29 @@ angular.module('led').directive('product', function ()
                         return Categories.find({});
                     }
             });
+
+            this.addToCart = () => {
+
+                //store.set('cart', []);
+               // if (store.get('cart').length == 0){
+               //     store.set('cart', [{"productId": $stateParams.prodId, "quantity": this.quantity}])
+                //}
+                //else{
+                    this.added = false;
+                    this.cart = store.get('cart');
+
+                    for (var i = 0; i < this.cart.length; i++){
+                        if (this.cart[i].productId == $stateParams.prodId){
+                            this.cart[i].quantity = parseInt(this.cart[i].quantity) + parseInt(this.quantity);
+                            this.added = true;
+                        }
+                    }
+                    if (this.added == false){
+                        this.cart.push({"productId": $stateParams.prodId, "quantity": this.quantity});
+                    }
+                    store.set('cart', this.cart);
+                //}
+            }
         }
     }
 });

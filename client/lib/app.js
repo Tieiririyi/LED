@@ -6,7 +6,8 @@ angular.module('led',[
     'ui.router', 
     'ngMaterial',
     'ngFileUpload',
-    'accounts.ui']);
+    'accounts.ui',
+    'angular-storage']);
 
 function onReady(){
 
