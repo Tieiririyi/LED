@@ -1,4 +1,26 @@
-<h2>hi</h2>
-<div ng-repeat = "item in shoppingCart.cart">
-    {{item.productId}} - {{item.quantity}}
-</div>
+<h2>Shopping Cart</h2>
+
+<table>
+    <tr>
+        <th>Products</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </tr>
+    <tr ng-repeat = "item in shoppingCart.cart">
+        <td>
+            <img ng-src="{{ item.primaryPic.image.url() }}" width = "100" /><br/>
+            <span>{{item.productName}}</span>
+        </td>
+        <td>
+            {{item.quantity}}
+        </td>
+        <td>
+            {{item.quantity * item.price | currency}}
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>{{shoppingCart.total | currency}}</td>
+    </tr>
+</table>

@@ -31,10 +31,8 @@ angular.module('led').directive('product', function ()
             this.addToCart = () => {
 
                 //store.set('cart', []);
-               // if (store.get('cart').length == 0){
-               //     store.set('cart', [{"productId": $stateParams.prodId, "quantity": this.quantity}])
-                //}
-                //else{
+                //Session.set('test1');
+                //console.log(Session);
                     this.added = false;
                     this.cart = store.get('cart');
 
