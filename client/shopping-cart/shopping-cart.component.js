@@ -45,7 +45,7 @@ angular.module('led').directive('shoppingCart', function ()
                     return {
 
                         info: product,
-                        categoryName: Categories.findOne({_id: product.info.categoryId}).categoryName,
+                        categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
                         orderQuantity: parseInt(item.quantity)
                     };
                 });
@@ -53,31 +53,21 @@ angular.module('led').directive('shoppingCart', function ()
 
             this.buy = () => {
 
-                console.log(Meteor.userId() == null);
                 if (Meteor.userId() == null){
-                    console.log($location.search('redirect', $location.path()));
                     $location.path("/users");
                 }
                 else{
 
                     var confirmation = "";
                     //if user has an order that has unfinished status, then replace order
-                    if (Orders.find().length > 0){
-                        var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
-                        if (user == null){
-                            confirmation = Orders.insert({
-                                userId: Meteor.userId(),
-                                order: store.get('cart'),
-                                status: "ordered"
-                            });
-                        }
-                        else{
-                            confirmation = Orders.update({_id: user._id},{
-                                userId: Meteor.userId(),
-                                order: store.get('cart'),
-                                status: "ordered"
-                            });
-                        }
+                    var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
+                    if (user != null){
+                       confirmation = user._id;
+                       Orders.update({_id: Orders.findOne({userId: Meteor.userId(), status: "not ordered"})._id},{
+                            userId: Meteor.userId(),
+                            order: store.get('cart'),
+                            status: "ordered"
+                        });
                     }
                     else{
                         confirmation = Orders.insert({
@@ -102,10 +92,6 @@ angular.module('led').directive('shoppingCart', function ()
                         $location.path('/shoppingCart/' + confirmation);
                     }
                 }
-
-                console.log(Orders.find());
-
-
             };
         }
     }

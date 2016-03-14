@@ -10,8 +10,6 @@ angular.module('led').directive('product', function ()
         controller: function ($scope, $stateParams, $meteor, $reactive, store){
             $reactive(this).attach($scope);
 
-            this.newCategory = {};
-            
             this.helpers({
                     product: ()=> {
                         return Products.findOne({_id: $stateParams.prodId});
@@ -30,13 +28,9 @@ angular.module('led').directive('product', function ()
 
             this.addToCart = () => {
 
-                //store.set('cart', []);
-                //Session.set('test1');
-                //console.log(Session);
                     this.added = false;
                     this.cart = store.get('cart');
                     
-                    console.log(this.cart);
                     if (this.cart == null){
                         this.cart = [];
                     }
@@ -50,6 +44,41 @@ angular.module('led').directive('product', function ()
                         this.cart.push({"productId": $stateParams.prodId, "quantity": this.quantity});
                     }
                     store.set('cart', this.cart);
+                    this.quantity = "";
+                
+                    if (Meteor.user() != null){
+                        var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
+                        if (user != null){
+                            Orders.update({_id: user._id}, {
+                                $set: {
+                                    order: this.cart
+                                }
+                            });
+                        }
+                        else{
+                            Orders.insert({
+                                userId: Meteor.userId(),
+                                order: this.cart,
+                                status: "not ordered"
+                            });
+                        }
+                    }
+                    
+                    /*
+                    var cart = store.get('cart');
+                    if (cart.length > 0){
+                        led.cart_items = cart.map(function(item){
+                           return parseInt(item.quantity); 
+                        }).reduce(function(a, b){
+                            return a + b;
+                        });
+                    }
+                    else{
+                        led.cart_items = 0;
+                    }*/
+                    
+                    
+                    //how to update the number beside the cart?
                 //}
             }
         }

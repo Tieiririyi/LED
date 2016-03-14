@@ -25,8 +25,21 @@ angular.module('led').directive('led', function () {
             this.helpers({
                 current_user: ()=> {
                     return Meteor.userId();
+                },
+                cart_items: () =>{
+                    var cart = store.get('cart');
+                    if (cart.length > 0){
+                        return cart.map(function(item){
+                           return parseInt(item.quantity); 
+                        }).reduce(function(a, b){
+                            return a + b;
+                        });
+                    }
+                    else{
+                        return 0;
+                    }
                 }
             });
         }
-    }
+    };
 });
