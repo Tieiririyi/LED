@@ -5,7 +5,7 @@
 
 
     Meteor.startup(function () {
-        Categories.remove({});
+        //Categories.remove({});
         if (Categories.find().count() === 0) {
 
             var categories = [
@@ -32,7 +32,7 @@
             Images.remove({_id: images._id});
         });*/
 
-        Products.remove({});
+        //Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
             for (var i = 0; i < 5; i++) {
@@ -56,5 +56,7 @@
                 //console.log(Products.findOne({"productName": "product" + i}));
             }
         }
+
+        //Orders.remove({});
 
     });

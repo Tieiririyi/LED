@@ -7,11 +7,10 @@ angular.module('led').directive('createAccount', function ()
         restrict:'E',
         templateUrl:'client/users/createAccount/create-account.html',
         controllerAs:'newUsersCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location){
+        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store){
             $reactive(this).attach($scope);
 
             this.register = (user) =>{
-                console.log(user);
                 Accounts.createUser({
                     email: user.email,
                     password: user.password,
@@ -23,8 +22,20 @@ angular.module('led').directive('createAccount', function ()
                         console.log(error.reason);
                     }
                     else{
+                        Orders.insert({
+                            userId: Meteor.userId(),
+                            order: store.get('cart'),
+                            status: "not ordered"
+                        });
 
-                        console.log(Meteor.users.find().fetch());
+                        var redirect = $location.search().redirect;
+                        if (redirect != undefined){
+                            $location.search('redirect');
+                            $location.path(redirect);
+                        }
+                        else{
+                            $location.path('/categories');
+                        }
                     }
                 });
                 //console.log(Meteor.users.find().fetch());

@@ -32,10 +32,15 @@
 
                 </li>
                 <li>
-                    <a style="color: white" href="/inventory">INVENTORY</a>
-
-                </li>                <li>
                     <a style="color: white">LED GUIDE</a>
+                </li>
+                <li>
+                    <a style="color: white;" class="nav" href = "#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
+                    <ul  class="dropdown-menu" >
+                        <li><a href="/admin/inventory" >Inventory</a></li>
+                        <li><a href="#">Users</a></li>
+                        <li><a href="/admin/orders">Orders</a></li>
+                    </ul>
                 </li>
 
             </ul>
@@ -54,7 +59,7 @@
                     <!--<button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>-->
                     <ul  class="dropdown-menu" >
                         <li><a href="/users/profiles" >My Profile</a></li>
-                        <li><a href="#">Order History</a></li>
+                        <li><a href="/users/order_history">Order History</a></li>
                         <li role="separator" class="divider"></li>
                         <li><a href="#" ng-click = "led.logout()">Logout</a></li>
                     </ul>

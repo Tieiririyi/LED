@@ -7,15 +7,15 @@
     <div ng-repeat='product in productsList.products' class="col-sm-6 col-md-4">
         <div class="panel panel-default">
             <div class="panel-body">
-                <a  style="display: block; padding: 4px;" href="/categories/{{product.categoryId}}/{{product._id}}">
+                <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
                  <!--    <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="..."> -->
-                 <img ng-src="{{ product.primaryPic.url() }}" width = "100" /><br/>
+                 <img ng-src="{{ product.info.primaryPic.url() }}" width = "100" /><br/>
 
                 </a>
                 <div class="caption">
-                    <a class="h2">{{product.productName}}</a>
+                    <a class="h2">{{product.info.productName}}</a>
 
-                    <p><a class="text-success">{{product.price | currency}}</a><del class="text-danger">$30.00</del></p>
+                    <p><a class="text-success">{{product.info.price | currency}}</a><del class="text-danger">$30.00</del></p>
                 </div>
             </div>
         </div>

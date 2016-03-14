@@ -3,18 +3,21 @@
  */
 angular.module('led').directive('led', function () {
     return {
-            restrict: 'E',
-            templateUrl:'client/led/led.html',
+        restrict: 'E',
+        templateUrl:'client/led/led.html',
 
         controllerAs: 'led',
-        controller: function ($scope, $reactive, $location) {
-        $reactive(this).attach($scope);
-
+        controller: function ($scope, $reactive, $location, store) {
+            $reactive(this).attach($scope);
+            if (store.get('cart') == null){
+                store.set('cart', []);
+            }
             this.login = () =>{
                 Meteor.loginWithPassword;
             };
 
             this.logout = () => {
+                store.set('cart', []);
                 Meteor.logout();
                 $location.path('/categories');
             };
@@ -24,7 +27,6 @@ angular.module('led').directive('led', function () {
                     return Meteor.userId();
                 }
             });
-
+        }
     }
-}
 });

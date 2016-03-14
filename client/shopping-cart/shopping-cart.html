@@ -1,26 +1,32 @@
-<h2>Shopping Cart</h2>
+<div class = container>
+    <h2>Shopping Cart</h2>
 
-<table>
-    <tr>
-        <th>Products</th>
-        <th>Quantity</th>
-        <th>Price</th>
-    </tr>
-    <tr ng-repeat = "item in shoppingCart.cart">
-        <td>
-            <img ng-src="{{ item.primaryPic.image.url() }}" width = "100" /><br/>
-            <span>{{item.productName}}</span>
-        </td>
-        <td>
-            {{item.quantity}}
-        </td>
-        <td>
-            {{item.quantity * item.price | currency}}
-        </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td>{{shoppingCart.total | currency}}</td>
-    </tr>
-</table>
+    <table>
+        <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>orderQuantity</th>
+        </tr>
+        <tr ng-repeat = "item in shoppingCart.cart">
+            <td>
+                <img ng-src="{{ item.info.primaryPic.image.url() }}" width = "100" /><br/>
+                <span>{{item.info.productName}}</span>
+            </td>
+
+            <td>
+                {{item.info.price | currency}}
+            </td>
+            <td>
+                <input type = "text" ng-model = "item.orderQuantity" ng-model-options="{ updateOn: 'blur', debounce: { 'default': 500, 'blur': 0 } }" size = "5"/>
+                <button ng-click = "shoppingCart.updateQuantity(this)">update</button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style = "text-align: right;" ng-bind = "shoppingCart.total | currency"></td>
+        </tr>
+    </table>
+    <button ng-click = "shoppingCart.buy()">Place Order</button>
+</div>
+

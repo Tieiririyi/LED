@@ -71,20 +71,20 @@
                 <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar">
                     <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
                     <td>
-                        <a href = "/inventory/edit/{{product._id}}"><span ng-hide = "showProd">{{product.productName}}</span></a>
-                        <input ng-show = "showProd" type = "text" ng-model = "product.productName" />
+                        <a href = "/admin/inventory/edit/{{product.info._id}}"><span ng-hide = "showProd">{{product.info.productName}}</span></a>
+                        <input ng-show = "showProd" type = "text" ng-model = "product.info.productName" />
                     </td>
                     <td>
                         <span ng-hide = "showProd">{{product.categoryName}}</span>
-                        <select ng-show = "showProd" ng-model="product.categoryId">
-                            <option ng-repeat="category in inventoryCtrl.categories" value="{{category._id}}" ng-checked = "category._id == product.categoryId">{{category.categoryName}}</option>
+                        <select ng-show = "showProd" ng-model="product.info.categoryId">
+                            <option ng-repeat="category in inventoryCtrl.categories" value="{{category._id}}" ng-checked = "category._id == product.info.categoryId">{{category.categoryName}}</option>
                         </select>
                     </td>
                     <td>
-                        <span>{{product.quantityInStock}}</span>
+                        <span>{{product.info.quantityInStock}}</span>
                     </td>
                     <td>
-                        <span>{{product.quantityOnHold}}</span>
+                        <span>{{product.info.quantityOnHold}}</span>
                     </td>
                     <td>
                         <input ng-show = "showProd" type = "text" ng-model = "product.quantityChange" />
