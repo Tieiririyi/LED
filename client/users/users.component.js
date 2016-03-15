@@ -57,7 +57,10 @@ angular.module('led').directive('users', function ()
 
                     }
                 });
-            }
+            };
+            this.forgotPassword = () => {
+                
+            };
 
         }
     };

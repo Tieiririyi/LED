@@ -57,14 +57,14 @@
             }
         }
         //if (Meteor.users().findOne({email: "superuser@led.com"}) == null){
-            Accounts.createUser({
+            /*Accounts.createUser({
                 email: "superuser@led.com",
                 password: "superuser",
                 profile: {
                     name: "superuser",
                     role: "superuser"
                 }
-            });
+            });*/
         //}
 
         //Orders.remove({});
