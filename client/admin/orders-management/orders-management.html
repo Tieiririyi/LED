@@ -4,18 +4,23 @@
         <tr>
             <th>id</th>
             <th>user</th>
-            <th>date</th>
+            <th>Order Date</th>
+            <th>Process Date</th>
+            <th>Processed By</th>
+
         </tr>
         <tr ng-repeat = "order in ordersMngtCtrl.orders">
             <td>
-                {{order._id}}
+                <a href = "/admin/orders/{{order._id}}">{{order._id}}</a>
             </td>
             <td>
                 {{order.user}}
             </td>
             <td>
-
+                {{order.orderDate | date:'medium'}}
             </td>
+            <td> {{order.processDate | date:'medium'}}</td>
+            <td> {{order.processAdmin}}</td>
         </tr>
 
     </table>

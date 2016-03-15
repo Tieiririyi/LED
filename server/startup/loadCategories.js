@@ -56,6 +56,16 @@
                 //console.log(Products.findOne({"productName": "product" + i}));
             }
         }
+        /*if (Meteor.users().findOne({email: "superuser@led.com"}) == null){
+            Accounts.createUser({
+                email: "superuser@led.com",
+                password: "superuser",
+                profile: {
+                    name: "superuser",
+                    role: "superuser"
+                }
+            });
+        }*/
 
         //Orders.remove({});
 

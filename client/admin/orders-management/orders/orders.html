@@ -1,0 +1,24 @@
+<h2>Order {{ordersCtrl.orderId}}</h2>
+<table>
+    <tr>
+        <th>Products</th>
+        <th>Price</th>
+        <th>Quantity</th>
+
+    </tr>
+    <tr ng-repeat = "item in ordersCtrl.order">
+        <td>
+            <img ng-src="{{ item.info.primaryPic.image.url() }}" width = "100" /><br/>
+            <span>{{item.info.productName}}</span>
+        </td>
+
+        <td ng-bind = "item.info.price | currency"></td>
+        <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td style = "text-align: right;" ng-bind = "ordersCtrl.total | currency"></td>
+    </tr>
+</table>
+<button ng-click = "ordersCtrl.processOrder()">Order filled</button>

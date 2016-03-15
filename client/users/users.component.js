@@ -24,7 +24,10 @@ angular.module('led').directive('users', function ()
                                 Orders.insert({
                                     userId: Meteor.userId(),
                                     order: store.get('cart'),
-                                    status: "not ordered"
+                                    status: "not ordered",
+                                    orderDate: "",
+                                    processDate: "",
+                                    processBy: ""
                                 });
                             }
                             else if (store.get('cart').length == 0 && user != null){
@@ -35,7 +38,10 @@ angular.module('led').directive('users', function ()
                             Orders.insert({
                                 userId: Meteor.userId(),
                                 order: store.get('cart'),
-                                status: "not ordered"
+                                status: "not ordered",
+                                orderDate: "",
+                                processDate: "",
+                                processBy: ""
                             });
                         }
 

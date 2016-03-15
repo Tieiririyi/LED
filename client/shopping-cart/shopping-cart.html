@@ -19,6 +19,7 @@
             <td>
                 <input type = "text" ng-model = "item.orderQuantity" ng-model-options="{ updateOn: 'blur', debounce: { 'default': 500, 'blur': 0 } }" size = "5"/>
                 <button ng-click = "shoppingCart.updateQuantity(this)">update</button>
+                <button ng-click = "shoppingCart.removeProduct(this)">remove</button>
             </td>
         </tr>
         <tr>

@@ -15,7 +15,8 @@ angular.module('led').directive('createAccount', function ()
                     email: user.email,
                     password: user.password,
                     profile: {
-                        name: user.name
+                        name: user.name,
+                        role: "customer"
                     }
                 }, function(error){
                     if (error){
@@ -25,7 +26,10 @@ angular.module('led').directive('createAccount', function ()
                         Orders.insert({
                             userId: Meteor.userId(),
                             order: store.get('cart'),
-                            status: "not ordered"
+                            status: "not ordered",
+                            orderDate: "",
+                            processDate: "",
+                            processBy: ""
                         });
 
                         var redirect = $location.search().redirect;

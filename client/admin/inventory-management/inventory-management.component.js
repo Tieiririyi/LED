@@ -5,7 +5,7 @@ angular.module('led').directive('inventoryManagement', function ()
 {
     return {
         restrict:'E',
-        templateUrl:'client/admin/inventory_management/inventory_management.html',
+        templateUrl:'client/admin/inventory-management/inventory-management.html',
         controllerAs:'inventoryCtrl',
         controller: function ($scope, $meteor, $reactive, $location){
             $reactive(this).attach($scope);

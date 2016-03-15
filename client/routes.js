@@ -77,16 +77,43 @@ angular.module('led')
         $stateProvider
             .state('ordersMngt', {
                 url: '/admin/orders',
-                template: '<orders-management></orders-management>'
+                template: '<orders-management></orders-management>',
+                resolve: {
+                    currentUser: ($q) => {
+                    if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
+                            return $q.reject('AUTH_REQUIRED');
+                        }
+                        else{
+                            return $q.resolve();
+                        }
+                    }
+                }
             });
+
         $stateProvider
-            .state('inventory_management',
+            .state('adminOrders', {
+                url: '/admin/orders/:orderId',
+                template: '<orders></orders>',
+                resolve: {
+                    currentUser: ($q) => {
+                    if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
+                        return $q.reject('AUTH_REQUIRED');
+                    }
+                    else{
+                        return $q.resolve();
+                    }
+                }
+            }
+        });
+
+        $stateProvider
+            .state('inventory-management',
                 {
                     url: '/admin/inventory',
                     template: '<inventory-management></inventory-management>',
                     resolve: {
                         currentUser: ($q) => {
-                            if (Meteor.userId() == null){
+                        if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
                                 return $q.reject('AUTH_REQUIRED');
                             }
                             else{
@@ -95,6 +122,41 @@ angular.module('led')
                         }
                     }
                 });
+
+        $stateProvider
+            .state('users-management',
+                {
+                    url: '/admin/users',
+                    template: '<users-management></users-management>',
+                    resolve: {
+                        currentUser: ($q) => {
+                            if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
+                                return $q.reject('AUTH_REQUIRED');
+                            }
+                            else{
+                                return $q.resolve();
+                            }
+                        }
+                    }
+                });
+        $stateProvider
+            .state('admin-add-users',
+                {
+                    url: '/admin/users/add',
+                    template: '<admin-add-user></admin-add-user>',
+                    resolve: {
+                        currentUser: ($q) => {
+                            if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
+                                return $q.reject('AUTH_REQUIRED');
+                            }
+                            else{
+                                return $q.resolve();
+                            }
+                        }
+                    }
+                });
+
+
 
 
         //$urlRouterProvider.otherwise("/categories");

@@ -9,10 +9,12 @@ angular.module('led').directive('categoriesList', function ()
         controllerAs:'categoriesList',
         controller: function ($scope,$meteor, $reactive){
             $reactive(this).attach($scope);
+
             //this.categories = $meteor.collection(Categories);
 
             this.helpers({
                 categories: ()=> {
+                    console.log(Meteor.user());
                     return Categories.find({});
                     }
                 })

@@ -14,9 +14,13 @@ angular.module('led').directive('ordersManagement', function ()
                     orders: () => {
 
                         return Orders.find({}).map(function(order){
+                            console.log(order);
                             return {
                                 _id: order._id,
-                                user: Meteor.users.findOne({_id: order.userId}).profile.name
+                                user: Meteor.users.findOne({_id: order.userId}).profile.name,
+                                orderDate: order.orderDate,
+                                processDate: order.processDate,
+                                processAdmin: order.processBy == ""? "" : Meteor.users.findOne({_id: order.processBy}).profile.name
                             }
                         });
                     }

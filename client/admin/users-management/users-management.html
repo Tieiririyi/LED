@@ -1,0 +1,14 @@
+<div>Users Management</div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Role</th>
+        <th>Deactivate User</th>
+    </tr>
+    <tr ng-repeat = "user in usersMgntCtrl.users">
+        <td ng-bind = "user.profile.name"></td>
+        <td ng-bind = "user.profile.role"></td>
+        <td>button</td>
+    </tr>
+</table>
+<button ng-click = "usersMgntCtrl.addUser()">Add User</button>

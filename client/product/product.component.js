@@ -7,7 +7,7 @@ angular.module('led').directive('product', function ()
         restrict:'E',
         templateUrl:'client/product/product.html',
         controllerAs:'productCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, store){
+        controller: function ($scope, $stateParams, $meteor, $reactive, store, $rootScope, updateCart){
             $reactive(this).attach($scope);
 
             this.helpers({
@@ -45,13 +45,17 @@ angular.module('led').directive('product', function ()
                     }
                     store.set('cart', this.cart);
                     this.quantity = "";
-                
+
+                    $rootScope.led.cart_items = updateCart.cart_items();
+
+
                     if (Meteor.user() != null){
                         var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
                         if (user != null){
                             Orders.update({_id: user._id}, {
                                 $set: {
-                                    order: this.cart
+                                    order: this.cart,
+                                    orderDate: ""
                                 }
                             });
                         }
@@ -59,27 +63,13 @@ angular.module('led').directive('product', function ()
                             Orders.insert({
                                 userId: Meteor.userId(),
                                 order: this.cart,
-                                status: "not ordered"
+                                status: "not ordered",
+                                orderDate: "",
+                                processDate: "",
+                                processBy: ""
                             });
                         }
                     }
-                    
-                    /*
-                    var cart = store.get('cart');
-                    if (cart.length > 0){
-                        led.cart_items = cart.map(function(item){
-                           return parseInt(item.quantity); 
-                        }).reduce(function(a, b){
-                            return a + b;
-                        });
-                    }
-                    else{
-                        led.cart_items = 0;
-                    }*/
-                    
-                    
-                    //how to update the number beside the cart?
-                //}
             }
         }
     }
