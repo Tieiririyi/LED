@@ -7,7 +7,7 @@ angular.module('led').directive('led', function () {
         templateUrl:'client/led/led.html',
 
         controllerAs: 'led',
-        controller: function ($scope, $reactive, $location, store) {
+        controller: function ($scope, $reactive, $location, store, updateCart) {
             $reactive(this).attach($scope);
             if (store.get('cart') == null){
                 store.set('cart', []);
@@ -19,6 +19,7 @@ angular.module('led').directive('led', function () {
             this.logout = () => {
                 store.set('cart', []);
                 Meteor.logout();
+                this.cart_items = updateCart.cart_items();
                 $location.path('/categories');
             };
 
@@ -40,6 +41,7 @@ angular.module('led').directive('led', function () {
                     }
                 }
             });
+            
         }
     };
 });

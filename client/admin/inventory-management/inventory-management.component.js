@@ -76,7 +76,8 @@ angular.module('led').directive('inventoryManagement', function ()
             }
 
             this.removeProduct = (num) => {
-                Products.remove({_id: num.product.info._id});
+                //Products.remove({_id: num.product.info._id});
+                Products.update({_id: num.product.info._id}, {$set: {"status": "inactive"}});
             }
 
             this.undoProduct = (num) => {

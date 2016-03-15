@@ -34,7 +34,22 @@ angular.module('led').directive('orders', function ()
             });
             this.processOrder = () => {
                 Orders.update({_id: this.orderId}, {
-                    $set: {processDate: new Date(), processBy: Meteor.userId()}
+                    $set: {
+                        status: "processed", 
+                        processDate: new Date(), 
+                        processBy: Meteor.userId()}
+                });
+                
+                console.log(this.order);
+                this.order.forEach(function(items){
+                    var temp_product = Products.findOne({_id: items.info._id});
+                    Products.update({_id: items.info._id}, {$set:{
+                            quantityOnHold: parseInt(temp_product.quantityOnHold) - parseInt(items.orderQuantity),
+                            quantityInStock: parseInt(temp_product.quantityInStock) - parseInt(items.orderQuantity)                        
+                        }
+                    });
+                    console.log(temp_product);
+                    console.log(Products.findOne({_id: items.info._id}));
                 });
             }
 
