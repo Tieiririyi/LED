@@ -23,3 +23,4 @@ angular.module('led').directive('productsList', function ()
         }
     }
 });
+

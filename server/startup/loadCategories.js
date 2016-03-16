@@ -29,44 +29,64 @@
         }
 
         /*Images.find().forEach(function(images){
-            Images.remove({_id: images._id});
-        });*/
+         Images.remove({_id: images._id});
+         });*/
 
-        //Products.remove({});
+
+        Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
-            for (var i = 0; i < 5; i++) {
-                Products.insert(
-                    {
-                        'productName': 'product' + i,
-                        'productDescription': 'description' + i,
-                        'categoryId': id,
-                        'power': "90 - 1000",
-                        'brightness': 490,
-                        'colours': ['blue', 'white'],
-                        'dimmable': true,
-                        'certification': {"cert1": true, "cert2": false},
-                        'quantityInStock': 10,
-                        'quantityOnHold': 1,
-                        'price': 10.99,
-                        'primaryPic': '/',
-                        'otherPics': []
-                    }
-                );
-                //console.log(Products.findOne({"productName": "product" + i}));
-            }
-        }
-        //if (Meteor.users().findOne({email: "superuser@led.com"}) == null){
-            /*Accounts.createUser({
-                email: "superuser@led.com",
-                password: "superuser",
-                profile: {
-                    name: "superuser",
-                    role: "superuser"
+            Products.insert(
+                {
+                    "itemNum": "DPAR38-16WT(S2)",
+                    "size": "122*135mm",
+                    "socket": "E26",
+                    "power": 16,
+                    "brightness": 1250,
+                    "temperature": 3000,
+                    "Ra": ">=80",
+                    "voltage": "100-130",
+                    "beam_angle": 120,
+                    "life_time": 50000,
+                    "power_factor": ">=0.9",
+                    "dimmable": "yes",
+                    "housing": "aluminum",
+                    "colour": "silver",
+                    "cover": "glass lens",
+                    "certification": ["CE", "ETL"],
+                    "categoryId": id,
+                    "picture": "",
+                    "price": 10.99,
+                    "quantityInStock": 100,
+                    "quantityOnHold": 10,
+                    "discount_pct": 0.1
+                },
+            );
+            Products.insert(
+                {
+                    "itemNum": "DPAR38-16WT(S2)",
+                    "size": "122*135mm",
+                    "socket": "E27",
+                    "power": 16,
+                    "brightness": 1250,
+                    "temperature": 3000,
+                    "Ra": ">=80",
+                    "voltage": "100-130",
+                    "beam_angle": 120,
+                    "life_time": 50000,
+                    "power_factor": ">=0.9",
+                    "dimmable": "yes",
+                    "housing": "aluminum",
+                    "colour": "silver",
+                    "cover": "glass lens",
+                    "certification": ["CE", "ETL"],
+                    "categoryId": id,
+                    "picture": "",
+                    "price": 10.99,
+                    "quantityInStock": 100,
+                    "quantityOnHold": 10,
+                    "discount_pct": 0
                 }
-            });*/
-        //}
-
-        //Orders.remove({});
-
+            );
+        }
     });

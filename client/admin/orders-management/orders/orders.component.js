@@ -4,11 +4,11 @@ angular.module('led').directive('orders', function ()
         restrict:'E',
         templateUrl:'client/admin/orders-management/orders/orders.html',
         controllerAs:'ordersCtrl',
-        controller: function ($scope,$stateParams, $meteor, $reactive){
+        controller: function ($scope,$stateParams, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
             //this.categories = $meteor.collection(Categories);
             this.helpers({
-                    order: ()=> {
+                order: ()=> {
 
                     var current_order = Orders.findOne({_id: $stateParams.orderId});
                     return current_order.order.map(function(item){
@@ -20,7 +20,18 @@ angular.module('led').directive('orders', function ()
                         };
                     });
                 },
-
+                order_info: () => {
+                    var current_order = Orders.findOne({_id: $stateParams.orderId});
+                    console.log(current_order);
+                    return {
+                        orderDate: current_order.orderDate,
+                        processDate: current_order.processDate,
+                        processBy: current_order.processBy == ""? "": Meteor.users.findOne({_id: current_order.processBy}).profile.name
+                    }
+                },
+                processBy: () => {
+                    return Orders.findOne({_id: $stateParams.orderId}).processBy;
+                },
                 total : () => {
                     var total = 0;
                     this.order.forEach(function(item){
@@ -40,7 +51,6 @@ angular.module('led').directive('orders', function ()
                         processBy: Meteor.userId()}
                 });
                 
-                console.log(this.order);
                 this.order.forEach(function(items){
                     var temp_product = Products.findOne({_id: items.info._id});
                     Products.update({_id: items.info._id}, {$set:{
@@ -48,9 +58,9 @@ angular.module('led').directive('orders', function ()
                             quantityInStock: parseInt(temp_product.quantityInStock) - parseInt(items.orderQuantity)                        
                         }
                     });
-                    console.log(temp_product);
-                    console.log(Products.findOne({_id: items.info._id}));
+
                 });
+                $location.path('/admin/orders');
             }
 
         }

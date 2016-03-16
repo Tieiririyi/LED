@@ -1,22 +1,55 @@
-<div  class="col-sm-6 col-md-4">
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="caption">
-                <h2>{{productCtrl.product.productName}}</h2>
-                <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
-                <p><a class="text-success">{{productCtrl.product.price | currency}}</a><del class="text-danger">$30.00</del></p>
-                <input type = "text" ng-model = "productCtrl.quantity"/>
-                <button ng-click = "productCtrl.addToCart()">Add to Cart</button>
-                <div>
-                    <h3>Product Details</h3>
-                    <p>Description: {{productCtrl.productDescription}}</p>
-                    <p>Power: {{productCtrl.product.power}} Watts</p>
-                    <p>Brightness: {{productCtrl.product.brightness}}</p>
-                    <p>Colours: {{productCtrl.product.colours}}</p>
-                    <p>Dimmable: {{productCtrl.product.dimmable}}</p>
-                </div>
-            </div>
-        </div>
-    </div>
+<div class = "container">
+    <h2 ng-bind = "productCtrl.product.itemNum"></h2>
+    <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
+    <span ng-bind = "productCtrl.product.price * (1 - productCtrl.product.discount_pct)| currency"></span>
+    <span style = "text-decoration: line-through;" ng-bind = "productCtrl.product.price" ng-show = "productCtrl.product.discount_pct > 0"></span>
+    <br />
+    <form ng-submit = "productCtrl.addToCart()">
+        <input type = "text" ng-model = "productCtrl.quantity" required />
+        <input type = "submit" value = "Add to Cart" />
+    </form>
+    <label>Socket: </label><span ng-bind = "productCtrl.product.socket"></span><br />
+    <label>Power: </label><span ng-bind = "productCtrl.product.power"></span><br />
+    <label>Size: </label><span ng-bind = "productCtrl.product.size"></span><br />
+    <label>Brightness: </label><span ng-bind = "productCtrl.product.brightness"></span><br />
+    <label>Temperature: </label><span ng-bind = "productCtrl.product.temperature"></span><br />
+    <label>Ra: </label><span ng-bind = "productCtrl.product.Ra"></span><br />
+    <label>Voltage: </label><span ng-bind = "productCtrl.product.voltage"></span><br />
+    <label>Beam angle: </label><span ng-bind = "productCtrl.product.beam_angle"></span><br />
+    <label>Life time: </label><span ng-bind = "productCtrl.product.life_time"></span><br />
+    <label>Housing material: </label><span ng-bind = "productCtrl.product.housing"></span><br />
+    <label>Colour: </label><span ng-bind = "productCtrl.product.colour"></span><br />
+    <label>Housing cover: </label><span ng-bind = "productCtrl.product.cover"></span><br />
+    <label>Certification: </label>
+    <span ng-repeat = "certs in productCtrl.product.certification">
+        <img ng-show = "certs == 'ETL'" src = "ETL.JPG" width = "30"/>
+        <img ng-show = "certs == 'CE'" src = "CE.png" width = "30" />
+        <img ng-show = "certs == 'energy_star'" src = "Energy_Star_logo.png" width = "30"/>
+    </span><br />
+
 </div>
 
+<!--
+                                {
+                    "itemNum": "DPAR38-16WT(S2)",
+                    "size": "122*135mm",
+                    "socket": "E26",
+                    "power": 16,
+                    "brightness": 1250,
+                    "temperature": 3000,
+                    "Ra": ">=80",
+                    "voltage": "100-130",
+                    "beam angle": 120,
+                    "life_time": 50000,
+                    "power_factor": ">=0.9",
+                    "dimmable": "yes",
+                    "housing": "aluminum",
+                    "colour": "silver",
+                    "cover": "glass lens",
+                    "certification": ["CE", "ETL"],
+                    "categoryId": id,
+                    "picture": "",
+                    "price": 10.99,
+                    "quantityInStock": 100,
+                    "quantityOnHold": 10
+                }-->

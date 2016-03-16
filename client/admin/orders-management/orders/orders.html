@@ -1,4 +1,9 @@
 <h2>Order {{ordersCtrl.orderId}}</h2>
+<label>Order date: </label><span>{{ordersCtrl.order_info.orderDate | date:'medium'}}</span><br />
+<label>Process date: </label><span>{{ordersCtrl.order_info.processDate | date:'medium'}}</span><br/>
+<label>Processed by: </label><span>{{ordersCtrl.order_info.processBy}}</span>
+
+
 <table>
     <tr>
         <th>Products</th>
@@ -8,8 +13,8 @@
     </tr>
     <tr ng-repeat = "item in ordersCtrl.order">
         <td>
-            <img ng-src="{{ item.info.primaryPic.image.url() }}" width = "100" /><br/>
-            <span>{{item.info.productName}}</span>
+            <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
+            <span>{{item.info.itemNum}}</span>
         </td>
 
         <td ng-bind = "item.info.price | currency"></td>
@@ -21,4 +26,4 @@
         <td style = "text-align: right;" ng-bind = "ordersCtrl.total | currency"></td>
     </tr>
 </table>
-<button ng-click = "ordersCtrl.processOrder()">Order filled</button>
+<button ng-show = "ordersCtrl.order_info.processBy == ''" ng-click = "ordersCtrl.processOrder()">Order filled</button>

@@ -1,24 +1,14 @@
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Test</title>
-</head>
-<body>
-    <div ng-repeat='product in productsList.products' class="col-sm-6 col-md-4">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
-                 <!--    <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="..."> -->
-                 <img ng-src="{{ product.info.primaryPic.url() }}" width = "100" /><br/>
-
-                </a>
-                <div class="caption">
-                    <a class="h2">{{product.info.productName}}</a>
-
-                    <p><a class="text-success">{{product.info.price | currency}}</a><del class="text-danger">$30.00</del></p>
+<div class = "container">
+    <div ng-repeat = "product in productsList.products" class = "col-sm-6 col-md-4">
+        <div class = "panel panel-default">
+            <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
+                <div class = "panel-body">
+                    <img ng-src="{{ product.info.picture.url() }}" width = "100" /><br/>
+                    <span class = "h2">{{product.info.itemNum}}</span><br />
+                    <span>{{product.info.price * (1-product.info.discount_pct) | currency}}</span>
+                    <span ng-show = "product.info.discount_pct != 0" style = "text-decoration: line-through;">{{product.info.price | currency}}</span>
                 </div>
-            </div>
+            </a>
         </div>
     </div>
-</body>
-</html>
+</div>

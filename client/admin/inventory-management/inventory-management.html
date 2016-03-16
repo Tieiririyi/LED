@@ -60,7 +60,7 @@
             <table>
                 <tr>
                     <th>Remove</th>
-                    <th>Product Name</th>
+                    <th>Item Number</th>
                     <th>Category Name</th>
                     <th>Quantity in Stock</th>
                     <th>Quantity on Hold</th>
@@ -71,7 +71,7 @@
                 <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar">
                     <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
                     <td>
-                        <a href = "/admin/inventory/edit/{{product.info._id}}"><span ng-hide = "showProd">{{product.info.productName}}</span></a>
+                        <a href = "/admin/inventory/edit/{{product.info._id}}"><span ng-hide = "showProd">{{product.info.itemNum}}</span></a>
                         <input ng-show = "showProd" type = "text" ng-model = "product.info.productName" />
                     </td>
                     <td>

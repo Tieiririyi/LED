@@ -3,10 +3,8 @@
     <div>
         <h2>Product Details</h2>
         <label>Name: </label>
-        <input type = "text" ng-model = "inventoryProductDetails.product.productName" /><br />
+        <input type = "text" ng-model = "inventoryProductDetails.product.itemNum" /><br />
 
-        <label>Description: </label>
-        <textarea ng-model = "inventoryProductDetails.product.productDescription"></textarea><br />
 
         <label>Category: </label>
         <select ng-model = "inventoryProductDetails.product.categoryId">
@@ -19,9 +17,10 @@
         <label>Brightness: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.brightness" /><br />
 
-        <label>Colours: </label>
-        <input type = "text" ng-model = "inventoryProductDetails.product.colours" /><br />
+        <label>Colour: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.colour" /><br />
 
+        <!-- need to update-->
         <label>Dimmable: </label>
         <label>
             <input type = "radio" ng-model = "inventoryProductDetails.product.dimmable" value = "true" ng-checked = "inventoryProductDetails.product.dimmable == true">
@@ -32,15 +31,13 @@
             No
         </label><br />
 
+        <!-- need to update-->
         <label>Certifications: </label>
         <label>
-            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification.cert1" ng-checked = "inventoryProductDetails.product.certification.cert1"/>
-            Cert1
+            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification" ng-checked = "inventoryProductDetails.product.certification.cert1"/>
+            CE
         </label>
-        <label>
-            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification.cert2" ng-checked = "inventoryProductDetails.product.certification.cert2"/>
-            Cert2
-        </label><br />
+
 
         <label>Quantity in stock: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.quantityInStock" /><br />

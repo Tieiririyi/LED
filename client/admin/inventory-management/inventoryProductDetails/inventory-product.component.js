@@ -18,16 +18,15 @@ angular.module('led').directive('inventoryProductDetails', function ()
                     return Products.findOne({_id: $stateParams.prodId});
                 },
                 image: () => {
-                    if (Products.findOne({_id: $stateParams.prodId}).primaryPic != undefined){
-                        return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).primaryPic});
+                    if (Products.findOne({_id: $stateParams.prodId}).picture != undefined){
+                        return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).picture});
                     }
                 }
             });
 
             this.submit = () => {
                 
-                var imageID = this.product.primaryPic;
-                console.log(this.product.picture);
+                var imageID = this.product.picture;
                 if (this.product.picture != undefined){
                     if (Images.findOne({_id: this.product.primaryPic}) != undefined) {
                         Images.remove({_id: this.product.primaryPic});
@@ -37,23 +36,57 @@ angular.module('led').directive('inventoryProductDetails', function ()
                 
                 Products.update({_id: this.product._id},
                     {
-                        "productName": this.product.productName,
-                        "productDescription": this.product.productDescription,
-                        "categoryId": this.product.categoryId,
-                        "categoryName": Categories.findOne({_id: this.product.categoryId}).categoryName,
+                        "itemNum": this.product.itemNum,
+                        "size": this.product.size,
+                        "socket": this.product.socket,
                         "power": this.product.power,
                         "brightness": this.product.brightness,
-                        "colours": this.product.colours,
-                        "dimmable": this.product.dimmable == "true"? true: false,
-                        "certification": this.product.certification,
-                        "quantityInStock": parseInt(this.product.quantityInStock),
-                        "quantityOnHold": parseInt(this.product.quantityOnHold),
+                        "temperature": this.product.temperature,
+                        "Ra": this.product.Ra,
+                        "voltage": this.product.voltage,
+                        "beam_angle": this.product.beam_angle,
+                        "life_time": this.product.life_time,
+                        "power_factor": this.product.power_factor,
+                        "dimmable": this.product.dimmable,
+                        "housing": this.product.housing,
+                        "colour": this.product.colour,
+                        "cover": this.product.cover,
+                        "certification": ["CE", "ETL"], /* need to update*/
+                        "categoryId": this.product.categoryId,
+                        "picture": "",
                         "price": this.product.price,
-                        "primaryPic": imageID,
-                        "otherPics": this.product.otherPics
+                        "quantityInStock": this.product.quantityInStock,
+                        "quantityOnHold": this.product.quantityOnHold,
+                        "discount_pct": this.product.discount_pct
                     });
                 $location.path("/inventory");
             }
         }
     }
 });
+/*
+ {
+ "itemNum": "DPAR38-16WT(S2)",
+ "size": "122*135mm",
+ "socket": "E27",
+ "power": 16,
+ "brightness": 1250,
+ "temperature": 3000,
+ "Ra": ">=80",
+ "voltage": "100-130",
+ "beam_angle": 120,
+ "life_time": 50000,
+ "power_factor": ">=0.9",
+ "dimmable": "yes",
+ "housing": "aluminum",
+ "colour": "silver",
+ "cover": "glass lens",
+ "certification": ["CE", "ETL"],
+ "categoryId": id,
+ "picture": "",
+ "price": 10.99,
+ "quantityInStock": 100,
+ "quantityOnHold": 10,
+ "discount_pct": 0
+ }
+ */
