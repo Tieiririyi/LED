@@ -30,9 +30,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
                 console.log(this.new_picture, imageID);
                 //add image
                 if (this.new_picture.length > 0){
-                    console.log("here");
                     if (imageID != ""){
-                        console.log(imageID);
                         Images.remove({_id: imageID});
                     }
                     imageID = Images.insert(this.new_picture[0])._id;

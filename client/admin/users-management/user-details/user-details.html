@@ -1,0 +1,15 @@
+<h2>Register</h2>
+<form class="register" ng-submit = "adminUserDetails.editUser(user)">
+    <label>Name: <input type = "text" ng-model = "adminUserDetails.user.profile.name" ng-required/></label><br />
+    <label>Role:
+        <label>
+            <input type = "radio" ng-model = "adminUserDetails.user.profile.role" ng-checked = "adminUserDetails.user.profile.role == 'customer'" value = "customer" ng-required/>Customer
+        </label>
+        <label>
+            <input type = "radio" ng-model = "adminUserDetails.user.profile.role" ng-checked = "adminUserDetails.user.profile.role == 'admin'" value = "admin" />Admin
+
+        </label>
+    </label>
+    <br />
+    <input type="submit" value="Update">
+</form>

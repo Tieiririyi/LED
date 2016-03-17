@@ -12,6 +12,12 @@ angular.module('led')
                     template: '<categories-list></categories-list>'
 
                 });
+        $stateProvider
+            .state('ledGuide',
+            {
+                url: '/led_guide',
+                template: '<led-guide></led-guide>'
+            });
 
         $stateProvider
             .state('products',
@@ -106,6 +112,7 @@ angular.module('led')
             }
         });
 
+        
         $stateProvider
             .state('inventory-management',
                 {
@@ -123,6 +130,7 @@ angular.module('led')
                     }
                 });
 
+        /*user management*/
         $stateProvider
             .state('users-management',
                 {
@@ -139,6 +147,7 @@ angular.module('led')
                         }
                     }
                 });
+                
         $stateProvider
             .state('admin-add-users',
                 {
@@ -157,7 +166,21 @@ angular.module('led')
                 });
 
 
-
+        $stateProvider
+            .state('admin-user-details', {
+                url: '/admin/users/:userID',
+                template: '<admin-user-details></admin-user-details>',
+                resolve: {
+                    currentUser: ($q) => {
+                    if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
+                        return $q.reject('AUTH_REQUIRED');
+                    }
+                    else{
+                        return $q.resolve();
+                    }
+                }
+            }
+        });
 
         //$urlRouterProvider.otherwise("/categories");
     });

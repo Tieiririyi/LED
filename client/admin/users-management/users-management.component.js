@@ -13,7 +13,6 @@ angular.module('led').directive('usersManagement', function ()
             this.helpers({
                     users: ()=> {
                         return Meteor.users.find({});
-
                     }
             });
             this.addUser = () => {
