@@ -5,7 +5,6 @@
         <label>Name: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.itemNum" /><br />
 
-
         <label>Category: </label>
         <select ng-model = "inventoryProductDetails.product.categoryId">
             <option ng-repeat = "category in inventoryProductDetails.categories" value = "{{category._id}}" ng-checked = "category._id == inventoryProductDetails.product.categoryId">{{category.categoryName}}</option>
@@ -32,6 +31,7 @@
         </label><br />
 
         <!-- need to update-->
+
         <label>Certifications: </label>
         <label>
             <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification" ng-checked = "inventoryProductDetails.product.certification.cert1"/>
@@ -48,6 +48,7 @@
         <label>Price: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
 
+
         <label>Picture: </label>
 
         <img ng-src="{{ inventoryProductDetails.image.url() }}" width = "100" /><br/>
@@ -55,7 +56,7 @@
 
         <label>Upload picture</label>
         <input name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select
-                 ng-model = "inventoryProductDetails.product.picture"
+                 ng-model = "inventoryProductDetails.new_picture"
                  
                  ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'" />
         <br />

@@ -15,6 +15,7 @@ angular.module('led').directive('product', function ()
                     return Products.findOne({_id: $stateParams.prodId});
                 },
                 image : () => {
+                    console.log(Products.findOne({_id: $stateParams.prodId}));
                     if (Products.findOne({_id: $stateParams.prodId}).picture != undefined){
                         return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).picture});
                     }

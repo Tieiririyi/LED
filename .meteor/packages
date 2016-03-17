@@ -27,3 +27,4 @@ angular:angular-material
 accounts-password
 dotansimha:accounts-ui-angular
 mys:angular-storage
+cfs:filesystem

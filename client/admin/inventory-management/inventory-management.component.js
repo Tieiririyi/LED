@@ -58,20 +58,12 @@ angular.module('led').directive('inventoryManagement', function ()
                 //num.product.categoryId = Categories.findOne({"categoryName": num.product.categoryName})._id;
                 var inStock = num.product.quantityChange == undefined? 0: parseInt(num.product.quantityChange);
                 Products.update({_id: num.product.info._id}, {
-                    _id: num.product.info._id,
-                    "productName": num.product.info.productName,
-                    "productDescription": num.product.info.productDescription,
-                    "categoryId": num.product.info.categoryId,
-                    "power": num.product.info.power,
-                    "brightness": num.product.info.brightness,
-                    "colours": num.product.info.colours,
-                    "dimmable": num.product.info.dimmable,
-                    "certification": num.product.info.certification,
-                    "quantityInStock": (parseInt(num.product.info.quantityInStock)  + inStock),
-                    "quantityOnHold": parseInt(num.product.info.quantityOnHold),
-                    "price": num.product.info.price,
-                    "primaryPic": num.product.info.primaryPic,
-                    "otherPics": num.product.info.otherPics
+                    $set: {
+                        "itemNum": num.product.info.itemNum,
+                        "categoryId": num.product.info.categoryId,
+                        "quantityInStock": (parseInt(num.product.info.quantityInStock)  + inStock),
+                        "quantityOnHold": parseInt(num.product.info.quantityOnHold),
+                    }
                 });
             }
 

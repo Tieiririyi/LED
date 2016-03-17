@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88a069c-c1be-4114-adf9-e1ff170ea9c9" name="Default" comment="Update structure">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/orders-management/orders/orders.component.js" afterPath="$PROJECT_DIR$/client/admin/orders-management/orders/orders.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/orders-management/orders/orders.html" afterPath="$PROJECT_DIR$/client/admin/orders-management/orders/orders.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js" afterPath="$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/product/product.component.js" afterPath="$PROJECT_DIR$/client/product/product.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/product/product.html" afterPath="$PROJECT_DIR$/client/product/product.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/products/products-list/products-list.component.js" afterPath="$PROJECT_DIR$/client/products/products-list/products-list.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/products/products-list/products-list.html" afterPath="$PROJECT_DIR$/client/products/products-list/products-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" afterPath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/shopping-cart/shopping-cart.html" afterPath="$PROJECT_DIR$/client/shopping-cart/shopping-cart.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/images.js" afterPath="$PROJECT_DIR$/model/images.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/startup/loadCategories.js" afterPath="$PROJECT_DIR$/server/startup/loadCategories.js" />
     </list>
@@ -36,21 +36,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="inventory-management.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="4" column="1" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="52" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="loadCategories.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server/startup/loadCategories.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="88" selection-end-column="17" />
+              <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
               <folding>
                 <element signature="e#192#890#0" expanded="false" />
               </folding>
@@ -58,21 +48,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="users.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/users/users.component.js">
+      <file leaf-file-name="images.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/images.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="18" column="26" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="26" />
+              <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="shopping-cart.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/shopping-cart/shopping-cart.component.js">
+      <file leaf-file-name="products-list.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="102" column="52" selection-start-line="102" selection-start-column="52" selection-end-line="102" selection-end-column="52" />
+              <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -82,27 +72,27 @@
         <entry file="file://$PROJECT_DIR$/client/product/product.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
+              <caret line="19" column="108" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="108" />
               <folding>
-                <element signature="e#1079#1134#0" expanded="false" />
-                <element signature="e#1193#1456#0" expanded="false" />
-                <element signature="e#1265#1438#0" expanded="false" />
-                <element signature="e#1497#1615#0" expanded="false" />
-                <element signature="e#1895#2137#0" expanded="false" />
-                <element signature="e#1948#2117#0" expanded="false" />
-                <element signature="e#1980#2095#0" expanded="false" />
-                <element signature="e#2158#2493#0" expanded="false" />
-                <element signature="e#2194#2473#0" expanded="false" />
+                <element signature="e#1158#1213#0" expanded="false" />
+                <element signature="e#1272#1535#0" expanded="false" />
+                <element signature="e#1344#1517#0" expanded="false" />
+                <element signature="e#1576#1694#0" expanded="false" />
+                <element signature="e#1974#2216#0" expanded="false" />
+                <element signature="e#2027#2196#0" expanded="false" />
+                <element signature="e#2059#2174#0" expanded="false" />
+                <element signature="e#2237#2572#0" expanded="false" />
+                <element signature="e#2273#2552#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory-management.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
+      <file leaf-file-name="product.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/product/product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-11.25">
-              <caret line="73" column="128" selection-start-line="73" selection-start-column="128" selection-end-line="73" selection-end-column="128" />
+            <state vertical-scroll-proportion="-1.25">
+              <caret line="2" column="35" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -112,36 +102,49 @@
         <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+              <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="inventory-product.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="inventory-product.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="4.1960783">
-              <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.3382353">
+              <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="images.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/images.js">
+      <file leaf-file-name="inventory-management.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-13.333333">
-              <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
+            <state vertical-scroll-proportion="-7.27451">
+              <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DPAR38-16WT-S2.png" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/product-images/DPAR38-16WT-S2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
+      <file leaf-file-name="inventory-management.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.9629629">
+              <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-product.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
@@ -189,18 +192,12 @@
         <option value="$PROJECT_DIR$/client/admin/inventory_management/inventoryProductDetails/inventory-product.component.js" />
         <option value="$PROJECT_DIR$/client/admin/inventory_management/addProduct/add-product.component.js" />
         <option value="$PROJECT_DIR$/client/users/createAccount/create-account.component.js" />
-        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" />
-        <option value="$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js" />
         <option value="$PROJECT_DIR$/client/led/led.html" />
         <option value="$PROJECT_DIR$/client/admin/users-management/users-management.html" />
         <option value="$PROJECT_DIR$/client/admin/users-management/users-management.component.js" />
         <option value="$PROJECT_DIR$/client/admin/users-management/admin-add-user/admin-add-user.component.js" />
         <option value="$PROJECT_DIR$/client/routes.js" />
         <option value="$PROJECT_DIR$/client/admin/users-management/admin-add-user/admin-add-user.html" />
-        <option value="$PROJECT_DIR$/client/products/products-list/products-list.component.js" />
-        <option value="$PROJECT_DIR$/client/products/products-list/products-list.html" />
-        <option value="$PROJECT_DIR$/server/startup/loadCategories.js" />
-        <option value="$PROJECT_DIR$/client/product/product.html" />
         <option value="$PROJECT_DIR$/client/shopping-cart/shopping-cart.html" />
         <option value="$PROJECT_DIR$/client/shopping-cart/shopping-cart.component.js" />
         <option value="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" />
@@ -209,9 +206,15 @@
         <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" />
         <option value="$PROJECT_DIR$/client/users/users.component.js" />
         <option value="$PROJECT_DIR$/client/product/product.component.js" />
+        <option value="$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js" />
         <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" />
-        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
+        <option value="$PROJECT_DIR$/client/product/product.html" />
+        <option value="$PROJECT_DIR$/client/products/products-list/products-list.html" />
+        <option value="$PROJECT_DIR$/client/products/products-list/products-list.component.js" />
+        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" />
+        <option value="$PROJECT_DIR$/server/startup/loadCategories.js" />
         <option value="$PROJECT_DIR$/model/images.js" />
+        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
       </list>
     </option>
   </component>
@@ -328,57 +331,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="model" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="shopping-cart" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="product" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -445,32 +398,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="inventoryProductDetails" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="inventory-management" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="addProduct" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -627,9 +554,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28038126" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32786885" sideWeight="0.4978903" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30237153" sideWeight="0.5021097" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3251366" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -836,14 +763,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/led/led.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -908,48 +827,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="60" selection-start-line="17" selection-start-column="60" selection-end-line="17" selection-end-column="60" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.75">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#span#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1458087212000" expanded="true" signature="24:808" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="47" selection-start-line="16" selection-start-column="47" selection-end-line="16" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/categories/categories-list/categories-list.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.375">
           <caret line="15" column="75" selection-start-line="15" selection-start-column="75" selection-end-line="15" selection-end-column="75" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/product/product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.0">
-          <caret line="24" column="53" selection-start-line="24" selection-start-column="53" selection-end-line="24" selection-end-column="53" />
-          <folding>
-            <element signature="n#style#0;n#span#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1019,22 +901,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="4" column="1" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.25">
-          <caret line="73" column="128" selection-start-line="73" selection-start-column="128" selection-end-line="73" selection-end-column="128" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/users/users.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1047,6 +913,90 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="102" column="52" selection-start-line="102" selection-start-column="52" selection-end-line="102" selection-end-column="52" />
+          <folding>
+            <marker date="1458094270000" expanded="true" signature="60:5711" placeholder="{...}" />
+            <marker date="1458094270000" expanded="true" signature="73:5709" placeholder="{&quot;restrict&quot;: 'E'...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/product-images/DPAR38-16WT-S2.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.75">
+          <caret line="6" column="56" selection-start-line="6" selection-start-column="56" selection-end-line="6" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#span#2;n#div#0;n#a#0;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="3" selection-start-line="25" selection-start-column="3" selection-end-line="25" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/product/product.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="108" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="108" />
+          <folding>
+            <element signature="e#1158#1213#0" expanded="false" />
+            <element signature="e#1272#1535#0" expanded="false" />
+            <element signature="e#1344#1517#0" expanded="false" />
+            <element signature="e#1576#1694#0" expanded="false" />
+            <element signature="e#1974#2216#0" expanded="false" />
+            <element signature="e#2027#2196#0" expanded="false" />
+            <element signature="e#2059#2174#0" expanded="false" />
+            <element signature="e#2237#2572#0" expanded="false" />
+            <element signature="e#2273#2552#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/product/product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.25">
+          <caret line="2" column="35" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.27451">
+          <caret line="99" column="10" selection-start-line="99" selection-start-column="10" selection-end-line="99" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="14" column="26" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.9629629">
+          <caret line="66" column="19" selection-start-line="66" selection-start-column="19" selection-end-line="66" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1054,58 +1004,35 @@
     <entry file="file://$PROJECT_DIR$/server/startup/loadCategories.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="88" selection-end-column="17" />
+          <caret line="35" column="10" selection-start-line="35" selection-start-column="10" selection-end-line="35" selection-end-column="10" />
           <folding>
             <element signature="e#192#890#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/product/product.component.js">
+    <entry file="file://$PROJECT_DIR$/model/images.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="13" selection-start-line="67" selection-start-column="13" selection-end-line="67" selection-end-column="13" />
-          <folding>
-            <element signature="e#1079#1134#0" expanded="false" />
-            <element signature="e#1193#1456#0" expanded="false" />
-            <element signature="e#1265#1438#0" expanded="false" />
-            <element signature="e#1497#1615#0" expanded="false" />
-            <element signature="e#1895#2137#0" expanded="false" />
-            <element signature="e#1948#2117#0" expanded="false" />
-            <element signature="e#1980#2095#0" expanded="false" />
-            <element signature="e#2158#2493#0" expanded="false" />
-            <element signature="e#2194#2473#0" expanded="false" />
-          </folding>
+          <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="71" selection-start-line="53" selection-start-column="71" selection-end-line="53" selection-end-column="71" />
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="4.1960783">
-          <caret line="19" column="21" selection-start-line="19" selection-start-column="21" selection-end-line="19" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.3382353">
+          <caret line="53" column="8" selection-start-line="53" selection-start-column="8" selection-end-line="53" selection-end-column="8" />
           <folding />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/images.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.333333">
-          <caret line="24" column="4" selection-start-line="24" selection-start-column="4" selection-end-line="24" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/product-images/DPAR38-16WT-S2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
       </provider>
     </entry>
   </component>

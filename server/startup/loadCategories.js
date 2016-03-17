@@ -33,7 +33,7 @@
          });*/
 
 
-        Products.remove({});
+        //Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
             Products.insert(

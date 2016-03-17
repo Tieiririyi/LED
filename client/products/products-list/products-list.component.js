@@ -15,7 +15,8 @@ angular.module('led').directive('productsList', function ()
                     return Products.find({"categoryId": $stateParams.id}).map(function(product){
                         return {
                             info: product,
-                            categoryName: Categories.findOne({_id: product.categoryId}).categoryName
+                            categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
+                            image: (product.picture == "" ? "" : Images.findOne({_id: product.picture}))
                         };
                     });
                 }
@@ -23,4 +24,3 @@ angular.module('led').directive('productsList', function ()
         }
     }
 });
-

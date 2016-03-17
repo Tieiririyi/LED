@@ -3,7 +3,8 @@
         <div class = "panel panel-default">
             <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
                 <div class = "panel-body">
-                    <img ng-src="{{ product.info.picture.url() }}" width = "100" /><br/>
+
+                    <img ng-src="{{product.image.url()}}" width = "100" /><br/>
                     <span class = "h2">{{product.info.itemNum}}</span><br />
                     <span>{{product.info.price * (1-product.info.discount_pct) | currency}}</span>
                     <span ng-show = "product.info.discount_pct != 0" style = "text-decoration: line-through;">{{product.info.price | currency}}</span>

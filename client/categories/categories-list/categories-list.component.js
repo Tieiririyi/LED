@@ -14,7 +14,6 @@ angular.module('led').directive('categoriesList', function ()
 
             this.helpers({
                 categories: ()=> {
-                    console.log(Meteor.user());
                     return Categories.find({});
                     }
                 })

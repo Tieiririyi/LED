@@ -25,15 +25,19 @@ angular.module('led').directive('inventoryProductDetails', function ()
             });
 
             this.submit = () => {
-                
-                var imageID = this.product.picture;
-                if (this.product.picture != undefined){
-                    if (Images.findOne({_id: this.product.primaryPic}) != undefined) {
-                        Images.remove({_id: this.product.primaryPic});
+
+                var imageID = (this.product.picture == ""? "": this.product.picture);
+                console.log(this.new_picture, imageID);
+                //add image
+                if (this.new_picture.length > 0){
+                    console.log("here");
+                    if (imageID != ""){
+                        console.log(imageID);
+                        Images.remove({_id: imageID});
                     }
-                    var imageID = Images.insert(this.product.picture[0])._id;
+                    imageID = Images.insert(this.new_picture[0])._id;
                 }
-                
+
                 Products.update({_id: this.product._id},
                     {
                         "itemNum": this.product.itemNum,
@@ -53,7 +57,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
                         "cover": this.product.cover,
                         "certification": ["CE", "ETL"], /* need to update*/
                         "categoryId": this.product.categoryId,
-                        "picture": "",
+                        "picture": imageID,
                         "price": this.product.price,
                         "quantityInStock": this.product.quantityInStock,
                         "quantityOnHold": this.product.quantityOnHold,
