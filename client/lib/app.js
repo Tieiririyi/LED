@@ -31,7 +31,25 @@ angular.module('led').service('updateCart', function(store, $rootScope) {
             return 0;
         }
     };
-
+    this.setCart = function(){
+        var cart = store.get('cart');
+        return cart.map(function(item){
+            var product = Products.findOne({_id: item.productId});
+            return {
+                info: product,
+                categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
+                orderQuantity: parseInt(item.quantity)
+            };
+        });
+    }
+    this.setCartTotal = function(cart){
+        var total = 0;
+        
+        cart.forEach(function(item){
+            total = total + (parseFloat(item.info.price) * (1 - parseFloat(item.info.discount_pct))) * parseInt(item.orderQuantity);
+        });
+        return total;
+    }
 });
 
 

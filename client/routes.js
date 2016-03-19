@@ -76,6 +76,11 @@ angular.module('led')
                 template: '<shopping-cart></shopping-cart>'
             });
         $stateProvider
+            .state('orderReview', {
+                url: '/orders/review',
+                template: '<order-review></order-review>'
+            });
+        $stateProvider
             .state('confirmation', {
                 url: '/shoppingCart/:confirmation',
                 template: '<order-confirm></order-confirm>'

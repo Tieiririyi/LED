@@ -12,12 +12,13 @@ angular.module('led').directive('userProfiles', function ()
 
             this.helpers({
                     current_user: ()=> {
-                        return Meteor.user().profile;
+                        return Meteor.user();
                     }
              });
 
             this.update = () =>{
-                Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: this.current_user}});
+                console.log(this.current_user);
+                //Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: this.current_user}});
             }
         }
     };

@@ -14,7 +14,7 @@
             </td>
 
             <td>
-                {{item.info.price | currency}}
+                {{item.info.price * (1 - item.info.discount_pct) | currency}}
             </td>
             <td>
                 <input type = "text" ng-model = "item.orderQuantity" ng-model-options="{ updateOn: 'blur', debounce: { 'default': 500, 'blur': 0 } }" size = "5"/>
@@ -28,6 +28,6 @@
             <td style = "text-align: right;" ng-bind = "shoppingCart.total | currency"></td>
         </tr>
     </table>
-    <button ng-click = "shoppingCart.buy()">Place Order</button>
+    <button ng-click = "shoppingCart.review()">Review Order</button>
 </div>
 
