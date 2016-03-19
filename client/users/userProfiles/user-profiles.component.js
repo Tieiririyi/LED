@@ -23,3 +23,5 @@ angular.module('led').directive('userProfiles', function ()
         }
     };
 });
+
+//Meteor.subscribe("userData");

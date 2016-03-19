@@ -17,6 +17,13 @@ angular.module('led').directive('inventoryProductDetails', function ()
                 product: () => {
                     return Products.findOne({_id: $stateParams.prodId});
                 },
+                certification: () => {
+                    return {
+                        CE: this.product.certification.indexOf("CE") != -1? true : false,
+                        ETL: this.product.certification.indexOf("ETL") != -1? true : false,
+                        ES: this.product.certification.indexOf("energy_star") != -1? true : false
+                    };
+                },
                 image: () => {
                     if (Products.findOne({_id: $stateParams.prodId}).picture != undefined){
                         return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).picture});
@@ -27,14 +34,27 @@ angular.module('led').directive('inventoryProductDetails', function ()
             this.submit = () => {
 
                 var imageID = (this.product.picture == ""? "": this.product.picture);
-                console.log(this.new_picture, imageID);
+
                 //add image
-                if (this.new_picture.length > 0){
+                if (this.new_picture != undefined){
                     if (imageID != ""){
                         Images.remove({_id: imageID});
                     }
                     imageID = Images.insert(this.new_picture[0])._id;
                 }
+
+                //update certification
+                var certs = [];
+                if (this.certification.CE == true){
+                    certs.push("CE");
+                }
+                if (this.certification.ETL == true){
+                    certs.push("ETL");
+                }
+                if (this.certification.ES == true){
+                    certs.push("energy_star");
+                }
+
 
                 Products.update({_id: this.product._id},
                     {
@@ -53,7 +73,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
                         "housing": this.product.housing,
                         "colour": this.product.colour,
                         "cover": this.product.cover,
-                        "certification": ["CE", "ETL"], /* need to update*/
+                        "certification": certs, /* need to update*/
                         "categoryId": this.product.categoryId,
                         "picture": imageID,
                         "price": this.product.price,

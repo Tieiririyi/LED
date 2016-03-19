@@ -21,22 +21,27 @@
 
         <!-- need to update-->
         <label>Dimmable: </label>
-        <label>
-            <input type = "radio" ng-model = "inventoryProductDetails.product.dimmable" value = "true" ng-checked = "inventoryProductDetails.product.dimmable == true">
-            Yes
-        </label>
-        <label>
-            <input type = "radio" ng-model = "inventoryProductDetails.product.dimmable" value = "false" ng-checked = "inventoryProductDetails.product.dimmable == false">
-            No
-        </label><br />
+        <input type = "text" ng-model = "inventoryProductDetails.product.dimmable" />
+        <br />
 
         <!-- need to update-->
 
         <label>Certifications: </label>
         <label>
-            <input type = "checkbox" ng-model = "inventoryProductDetails.product.certification" ng-checked = "inventoryProductDetails.product.certification.cert1"/>
+            <input type = "checkbox" id = "CE" ng-model = "inventoryProductDetails.certification.CE"
+                   ng-checked = "inventoryProductDetails.product.certification.indexOf('CE') > -1"/>
             CE
         </label>
+        <label>
+            <input type = "checkbox" id = "ETL" ng-model = "inventoryProductDetails.certification.ETL"
+                   ng-checked = "inventoryProductDetails.product.certification.indexOf('ETL') > -1"/>
+            ETL
+        </label>
+        <label>
+            <input type = "checkbox" id = "ES" ng-model = "inventoryProductDetails.certification.ES"
+                   ng-checked = "inventoryProductDetails.product.certification.indexOf('energy_star') > -1"/>
+            energy star
+        </label><br />
 
 
         <label>Quantity in stock: </label>
@@ -47,6 +52,9 @@
 
         <label>Price: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
+
+        <label>Discount : (in decimal form)</label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.discount_pct" /><br />
 
 
         <label>Picture: </label>

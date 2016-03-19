@@ -11,12 +11,14 @@ angular.module('led').directive('createAccount', function ()
             $reactive(this).attach($scope);
 
             this.register = (user) =>{
+
                 Accounts.createUser({
                     email: user.email,
                     password: user.password,
                     profile: {
                         name: user.name,
-                        role: "customer"
+                        role: "customer",
+                        status: "active"
                     }
                 }, function(error){
                     if (error){

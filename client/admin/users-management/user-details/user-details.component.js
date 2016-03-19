@@ -17,14 +17,13 @@ angular.module('led').directive('adminUserDetails', function ()
                 }
             });
 
-            this.editUser = (user) =>
-            {
+            this.editUser = () =>{
+                console.log(this.user);
                 Meteor.users.update({_id: this.user._id}, {
                     $set: {
-                        profile: {
-                            "name": user.name,
-                            "role": user.role == "admin"? "admin": "customer"
-                        }
+                        "profile.name": this.user.profile.name,
+                        "profile.role": this.user.profile.role == "admin"? "admin": "customer"
+
                     }
                 });
             }

@@ -1,14 +1,15 @@
-<div>Users Management</div>
-<table>
-    <tr>
-        <th>Name</th>
-        <th>Role</th>
-        <th>Deactivate User</th>
-    </tr>
-    <tr ng-repeat = "user in usersMgntCtrl.users">
-        <td><a href = "/admin/users/{{user._id}}">{{user.profile.name}}</a></td>
-        <td ng-bind = "user.profile.role"></td>
-        <td>button</td>
-    </tr>
-</table>
-<button ng-click = "usersMgntCtrl.addUser()">Add User</button>
+<div>
+
+    <h2>Users Management</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Role</th>
+        </tr>
+        <tr ng-repeat = "user in usersMgntCtrl.users" ng-show = "user.profile.role != 'superuser'">
+            <td><a href = "/admin/users/{{user._id}}">{{user.profile.name}}</a></td>
+            <td ng-bind = "user.profile.role"></td>
+        </tr>
+    </table>
+    <button ng-click = "usersMgntCtrl.addUser()">Add User</button>
+</div>
