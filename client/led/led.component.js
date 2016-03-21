@@ -14,6 +14,17 @@ angular.module('led').directive('led', function () {
             }
             this.login = () =>{
                 Meteor.loginWithPassword;
+                /*if (Meteor.user().email == "super.admin@led.com"){
+                    Meteor.call('updateRoles', Meteor.userId(), ['super-admin'],location.hostname, (error) => {
+                        console.log(location.hostname);
+                        if (error){
+                            console.log(error);
+                        }
+                        else{
+                            console.log("success!");
+                        }
+                    });
+                }*/
             };
 
             this.logout = () => {

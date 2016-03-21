@@ -9,7 +9,7 @@ angular.module('led').directive('users', function ()
         controllerAs:'usersCtrl',
         controller: function ($scope, $stateParams, $meteor, $reactive, $location, store){
             $reactive(this).attach($scope);
-
+            //this.subscribe('users');
 
             this.login = (user) => {
                 Meteor.loginWithPassword(user.email, user.password, function(error){

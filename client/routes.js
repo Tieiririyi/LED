@@ -140,7 +140,7 @@ angular.module('led')
             .state('users-management',
                 {
                     url: '/admin/users',
-                    template: '<users-management></users-management>',
+                    template: '<users-management></users-management>'/*,
                     resolve: {
                         currentUser: ($q) => {
                             if (Meteor.user().profile.role != "superuser" && Meteor.user().profile.role != "admin"){
@@ -150,7 +150,7 @@ angular.module('led')
                                 return $q.resolve();
                             }
                         }
-                    }
+                    }*/
                 });
                 
         $stateProvider

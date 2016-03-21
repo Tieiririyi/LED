@@ -9,6 +9,8 @@ angular.module('led').directive('createAccount', function ()
         controllerAs:'newUsersCtrl',
         controller: function ($scope, $stateParams, $meteor, $reactive, $location, store){
             $reactive(this).attach($scope);
+            //this.subscribe('users');
+
 
             this.register = (user) =>{
 
@@ -17,7 +19,6 @@ angular.module('led').directive('createAccount', function ()
                     password: user.password,
                     profile: {
                         name: user.name,
-                        role: "customer",
                         status: "active"
                     }
                 }, function(error){
@@ -25,27 +26,31 @@ angular.module('led').directive('createAccount', function ()
                         console.log(error.reason);
                     }
                     else{
-                        Orders.insert({
-                            userId: Meteor.userId(),
-                            order: store.get('cart'),
-                            status: "not ordered",
-                            orderDate: "",
-                            processDate: "",
-                            processBy: ""
-                        });
+                        Meteor.call('updateRoles', Meteor.userId(), ['customer'], location.hostname, (error) => {
+                            if (!error){
+                                console.log(Meteor.user());
 
-                        var redirect = $location.search().redirect;
-                        if (redirect != undefined){
-                            $location.search('redirect');
-                            $location.path(redirect);
-                        }
-                        else{
-                            $location.path('/categories');
-                        }
+                                Orders.insert({
+                                    userId: Meteor.userId(),
+                                    order: store.get('cart'),
+                                    status: "not ordered",
+                                    orderDate: "",
+                                    processDate: "",
+                                    processBy: ""
+                                });
+
+                                var redirect = $location.search().redirect;
+                                if (redirect != undefined){
+                                    $location.search('redirect');
+                                    $location.path(redirect);
+                                }
+                                else{
+                                    $location.path('/categories');
+                                }
+                            }
+                        });
                     }
                 });
-                //console.log(Meteor.users.find().fetch());
-                //$location.path();
             }
         }
     };

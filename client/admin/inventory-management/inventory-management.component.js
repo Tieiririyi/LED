@@ -68,8 +68,8 @@ angular.module('led').directive('inventoryManagement', function ()
             }
 
             this.removeProduct = (num) => {
-                //Products.remove({_id: num.product.info._id});
-                Products.update({_id: num.product.info._id}, {$set: {"status": "inactive"}});
+                Products.remove({_id: num.product.info._id});
+                //Products.update({_id: num.product.info._id}, {$set: {"status": "inactive"}});
             }
 
             this.undoProduct = (num) => {
@@ -82,7 +82,7 @@ angular.module('led').directive('inventoryManagement', function ()
             }
 
             this.addProduct = () => {
-                $location.path('inventory/addProduct');
+                $location.path('/admin/inventory/addProduct');
             }
         }
     }

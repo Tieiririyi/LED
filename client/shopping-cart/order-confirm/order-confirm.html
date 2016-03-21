@@ -3,7 +3,7 @@
 <table>
     <tr>
         <th>Products</th>
-        <th>Price</th>
+        <th>Unit Price</th>
         <th>Quantity</th>
     </tr>
     <tr ng-repeat = "item in orderConfirm.cart">
@@ -12,7 +12,7 @@
             <span>{{item.info.itemNum}}</span>
         </td>
 
-        <td ng-bind = "item.info.price | currency"></td>
+        <td ng-bind = "item.unitPrice | currency"></td>
         <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
     </tr>
     <tr>

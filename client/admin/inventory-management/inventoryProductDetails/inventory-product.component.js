@@ -55,60 +55,13 @@ angular.module('led').directive('inventoryProductDetails', function ()
                     certs.push("energy_star");
                 }
 
+                this.product.certification = certs;
+                this.product.picture = imageID;
 
-                Products.update({_id: this.product._id},
-                    {
-                        "itemNum": this.product.itemNum,
-                        "size": this.product.size,
-                        "socket": this.product.socket,
-                        "power": this.product.power,
-                        "brightness": this.product.brightness,
-                        "temperature": this.product.temperature,
-                        "Ra": this.product.Ra,
-                        "voltage": this.product.voltage,
-                        "beam_angle": this.product.beam_angle,
-                        "life_time": this.product.life_time,
-                        "power_factor": this.product.power_factor,
-                        "dimmable": this.product.dimmable,
-                        "housing": this.product.housing,
-                        "colour": this.product.colour,
-                        "cover": this.product.cover,
-                        "certification": certs, /* need to update*/
-                        "categoryId": this.product.categoryId,
-                        "picture": imageID,
-                        "price": this.product.price,
-                        "quantityInStock": this.product.quantityInStock,
-                        "quantityOnHold": this.product.quantityOnHold,
-                        "discount_pct": this.product.discount_pct
-                    });
+                Products.update({_id: this.product._id}, this.product);
+
                 $location.path("/inventory");
             }
         }
     }
 });
-/*
- {
- "itemNum": "DPAR38-16WT(S2)",
- "size": "122*135mm",
- "socket": "E27",
- "power": 16,
- "brightness": 1250,
- "temperature": 3000,
- "Ra": ">=80",
- "voltage": "100-130",
- "beam_angle": 120,
- "life_time": 50000,
- "power_factor": ">=0.9",
- "dimmable": "yes",
- "housing": "aluminum",
- "colour": "silver",
- "cover": "glass lens",
- "certification": ["CE", "ETL"],
- "categoryId": id,
- "picture": "",
- "price": 10.99,
- "quantityInStock": 100,
- "quantityOnHold": 10,
- "discount_pct": 0
- }
- */

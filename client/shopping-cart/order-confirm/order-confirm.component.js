@@ -10,12 +10,14 @@ angular.module('led').directive('orderConfirm', function ()
             this.helpers({
                     cart: ()=> {
                         var current_order = Orders.findOne({_id: $stateParams.confirmation}).order;
+
                         return current_order.map(function(item){
                             var product = Products.findOne({_id: item.productId});
                             return {
                                 info: product,
                                 categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
-                                orderQuantity: parseInt(item.quantity)
+                                orderQuantity: parseInt(item.quantity),
+                                unitPrice: item.price
                             };
                         });
                     },
@@ -25,7 +27,7 @@ angular.module('led').directive('orderConfirm', function ()
                     total : () => {
                         var total = 0;
                         this.cart.forEach(function(item){
-                            total = total + parseFloat(item.price) * parseInt(item.orderQuantity);
+                            total = total + parseFloat(item.unitPrice) * parseInt(item.orderQuantity);
                         });
                         return total;
                     }

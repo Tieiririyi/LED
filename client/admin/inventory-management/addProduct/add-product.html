@@ -4,10 +4,7 @@
         <h2>New Product</h2>
         <form ng-submit = "addProduct.submit(product)">
             <label>Name: </label>
-            <input type = "text" ng-model = "product.productName" required/><br />
-
-            <label>Description: </label>
-            <textarea ng-model = "product.productDescription"></textarea><br />
+            <input type = "text" ng-model = "product.itemNum" required/><br />
 
             <label>Category: </label>
             <select ng-model = "product.categoryId">
@@ -24,24 +21,14 @@
             <input type = "text" ng-model = "product.colours" required /><br />
 
             <label>Dimmable: </label>
-            <label>
-                <input type = "radio" ng-model = "product.dimmable" value = "true" ng-checked = "product.dimmable == true" required>
-                Yes
-            </label>
-            <label>
-                <input type = "radio" ng-model = "product.dimmable" value = "false" ng-checked = "product.dimmable == false">
-                No
-            </label><br />
+            <input type = "text" ng-model = "product.dimmable" />
+            <br />
 
             <label>Certifications: </label>
-            <label>
-                <input type = "checkbox" ng-model = "product.certification.cert1" ng-checked = "product.certification.cert1"/>
-                Cert1
-            </label>
-            <label>
-                <input type = "checkbox" ng-model = "product.certification.cert2" ng-checked = "product.certification.cert2"/>
-                Cert2
-            </label><br />
+            <label><input type = "checkbox" id = "CE" ng-model = "addProduct.cert.CE" />CE</label>
+            <label><input type = "checkbox" id = "ETL" ng-model = "addProduct.cert.ETL" />ETL</label>
+            <label><input type = "checkbox" id = "ES" ng-model = "addProduct.cert.ES"/>energy star</label>
+            <br />
 
             <label>Quantity in stock: </label>
             <input type = "text" ng-model = "product.quantityInStock" required /><br />

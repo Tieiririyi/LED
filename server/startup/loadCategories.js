@@ -5,6 +5,8 @@
 
 
     Meteor.startup(function () {
+
+
         //Categories.remove({});
         if (Categories.find().count() === 0) {
 
@@ -89,5 +91,20 @@
                 }
             );
         }
+
+        if (Meteor.roles.findOne({name: "super-admin"}) == undefined){
+            Accounts.createUser({
+                email: "super.admin@led.com",
+                password: "12345678",
+                profile: {
+                    name: "super-admin",
+                    status: "active"
+                }
+            });
+            //        Roles.setUserRoles(targetUserId, roles, group);
+
+            Roles.setUserRoles(Meteor.users.findOne({"profile.name": "super-admin"})._id, ["super-admin"], "localhost");
+        }
+
     });
 

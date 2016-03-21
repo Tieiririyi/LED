@@ -18,6 +18,12 @@ angular.module('led').directive('userProfiles', function ()
 
             this.update = () =>{
                 console.log(this.current_user);
+
+                Meteor.call('updateUser',Meteor.userId(), this.current_user.profile, (error) =>{
+                    if (!error){
+                        console.log(Meteor.user());
+                    }
+                });
                 //Meteor.users.update({_id: Meteor.userId()}, {$set: {profile: this.current_user}});
             }
         }
