@@ -6,9 +6,9 @@
             <th>Name</th>
             <th>Role</th>
         </tr>
-        <tr ng-repeat = "user in usersMgntCtrl.users" ng-show = "user.profile.role != 'superuser'">
+        <tr ng-repeat = "user in usersMgntCtrl.users">
             <td><a href = "/admin/users/{{user._id}}">{{user.profile.name}}</a></td>
-            <td ng-bind = "user.roles.localhost"></td>
+            <td ng-bind = "user.roles.led"></td>
         </tr>
     </table>
     <button ng-click = "usersMgntCtrl.addUser()">Add User</button>

@@ -14,17 +14,6 @@ angular.module('led').directive('led', function () {
             }
             this.login = () =>{
                 Meteor.loginWithPassword;
-                /*if (Meteor.user().email == "super.admin@led.com"){
-                    Meteor.call('updateRoles', Meteor.userId(), ['super-admin'],location.hostname, (error) => {
-                        console.log(location.hostname);
-                        if (error){
-                            console.log(error);
-                        }
-                        else{
-                            console.log("success!");
-                        }
-                    });
-                }*/
             };
 
             this.logout = () => {
@@ -39,17 +28,7 @@ angular.module('led').directive('led', function () {
                     return Meteor.userId();
                 },
                 cart_items: () =>{
-                    var cart = store.get('cart');
-                    if (cart.length > 0){
-                        return cart.map(function(item){
-                           return parseInt(item.quantity); 
-                        }).reduce(function(a, b){
-                            return a + b;
-                        });
-                    }
-                    else{
-                        return 0;
-                    }
+                    return updateCart.cart_items();
                 }
             });
             

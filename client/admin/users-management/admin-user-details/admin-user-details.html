@@ -1,0 +1,18 @@
+<div class = "container">
+    <h2>Edit User Details</h2>
+    <form class="register" ng-submit = "adminUserDetails.editUser()">
+        <label>Name: </label><input type = "text" ng-model = "adminUserDetails.user.profile.name" ng-required/><br />
+        <label>Role: </label>
+        <label>
+            <input type = "checkbox" ng-model = "adminUserDetails.roles.customer" ng-checked = "adminUserDetails.user.roles.led.includes('customer')" value = "customer"/>Customer
+        </label>
+        <label>
+            <input type = "checkbox" ng-model = "adminUserDetails.roles.admin" ng-checked = "adminUserDetails.user.roles.led.includes('admin')" value = "admin" />Admin
+        </label>
+        
+        <br />
+        <input type="submit" value="Update">
+    </form>
+</div><h2>Register</h2>
+customer:{{adminUserDetails.roles.customer}}
+admin: {{adminUserDetails.roles.admin}}

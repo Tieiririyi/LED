@@ -20,6 +20,7 @@ angular.module('led').directive('orderReview', function ()
                 var confirmation = "";
                 //if user has an order that has unfinished status, then replace order
                 var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
+                console.log(user);
                 var cart = store.get('cart');
                 var order_details = cart.map(function(item){
                     var product = Products.findOne({_id: item.productId});
@@ -34,8 +35,9 @@ angular.module('led').directive('orderReview', function ()
 
 
                 if (user != null){
+                    console.log("updated");
                    confirmation = user._id;
-                   Orders.update({_id: Orders.findOne({userId: Meteor.userId(), status: "not ordered"})._id},
+                   Orders.update({_id: user._id},
                        {$set: {
                            order: order_details,
                            status: "ordered",
@@ -44,6 +46,7 @@ angular.module('led').directive('orderReview', function ()
                    });
                 }
                 else{
+                    console.log("inserted");
                     confirmation = Orders.insert({
                         userId: Meteor.userId(),
                         order: order_details,
@@ -53,7 +56,9 @@ angular.module('led').directive('orderReview', function ()
                         processBy: ""
                     });
                 }
+                console.log(Orders.findOne({_id: user._id}));
                 
+                /*if order has gone through, then update products database*/
                 if (confirmation != ""){
                     var cart_items = store.get('cart');
 

@@ -26,9 +26,8 @@ angular.module('led').directive('createAccount', function ()
                         console.log(error.reason);
                     }
                     else{
-                        Meteor.call('updateRoles', Meteor.userId(), ['customer'], location.hostname, (error) => {
+                        Meteor.call('updateRoles', Meteor.userId(), ['customer'], 'led', (error) => {
                             if (!error){
-                                console.log(Meteor.user());
 
                                 Orders.insert({
                                     userId: Meteor.userId(),
@@ -48,6 +47,8 @@ angular.module('led').directive('createAccount', function ()
                                     $location.path('/categories');
                                 }
                             }
+                            console.log(Meteor.user());
+
                         });
                     }
                 });

@@ -9,12 +9,11 @@ angular.module('led').directive('usersManagement', function ()
         controllerAs:'usersMgntCtrl',
         controller: function ($scope,$stateParams, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
-            //this.subscribe('users');
+            this.subscribe('users');
             this.helpers({
-                    users: ()=> {
-                        console.log(Meteor.users.find());
-                        return Meteor.users.find({});
-                    }
+                users: ()=> {
+                    return Meteor.users.find({});
+                }
             });
 
             this.addUser = () => {

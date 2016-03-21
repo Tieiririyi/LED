@@ -103,7 +103,7 @@
             });
             //        Roles.setUserRoles(targetUserId, roles, group);
 
-            Roles.setUserRoles(Meteor.users.findOne({"profile.name": "super-admin"})._id, ["super-admin"], "localhost");
+            Roles.setUserRoles(Meteor.users.findOne({"profile.name": "super-admin"})._id, ["super-admin"], 'led');
         }
 
     });

@@ -7,7 +7,7 @@ angular.module('led').directive('users', function ()
         restrict:'E',
         templateUrl:'client/users/users.html',
         controllerAs:'usersCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store){
+        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store, $rootScope, updateCart){
             $reactive(this).attach($scope);
             //this.subscribe('users');
 
@@ -17,10 +17,18 @@ angular.module('led').directive('users', function ()
                         console.log(error.reason);
                     }
                     else {
-                        if (Orders.find() != undefined){
-                            var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
-                            console.log(user);
-                            if (store.get('cart').length != 0){
+                        var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
+
+                        if (store.get('cart').length > 0){
+                            if (user != null){
+                                Orders.update({_id: user._id}, {
+                                    $set:
+                                    {
+                                        order: store.get('cart')
+                                    }
+                                });
+                            }
+                            else{
                                 Orders.insert({
                                     userId: Meteor.userId(),
                                     order: store.get('cart'),
@@ -30,22 +38,13 @@ angular.module('led').directive('users', function ()
                                     processBy: ""
                                 });
                             }
-                            else if (store.get('cart').length == 0 && user != null){
-                                store.set('cart', user.order);
-                            }
                         }
-                        else if (store.get('cart').length > 0){
-                            Orders.insert({
-                                userId: Meteor.userId(),
-                                order: store.get('cart'),
-                                status: "not ordered",
-                                orderDate: "",
-                                processDate: "",
-                                processBy: ""
-                            });
+                        else if(store.get('cart').length == 0 && user != null){
+                            store.set('cart', user.order);
                         }
-
-
+                        
+                        $rootScope.led.cart_items = updateCart.cart_items();
+                        
                         var redirect = $location.search().redirect;
                         if (redirect != undefined){
                             $location.search('redirect');
