@@ -12,7 +12,10 @@ angular.module('led').directive('createAccount', function ()
             //this.subscribe('users');
 
 
+
             this.register = (user) =>{
+                //method works, but need to use Account method to verify email still
+                //Meteor.call('sendEmail', user.email, "hi");
 
                 Accounts.createUser({
                     email: user.email,
@@ -26,6 +29,7 @@ angular.module('led').directive('createAccount', function ()
                         console.log(error.reason);
                     }
                     else{
+                        //Accounts.sendVerificationEmail(Meteor.userId());
                         Meteor.call('updateRoles', Meteor.userId(), ['customer'], 'led', (error) => {
                             if (!error){
 

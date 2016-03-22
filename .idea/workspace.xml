@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e88a069c-c1be-4114-adf9-e1ff170ea9c9" name="Default" comment="Update structure">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/server/users.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" afterPath="$PROJECT_DIR$/.idea/libraries/meteor_packages_auto_import_browser.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js" afterPath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/users-management/users-management.component.js" afterPath="$PROJECT_DIR$/client/admin/users-management/users-management.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/users-management/users-management.html" afterPath="$PROJECT_DIR$/client/admin/users-management/users-management.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/led/led.component.js" afterPath="$PROJECT_DIR$/client/led/led.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/routes.js" afterPath="$PROJECT_DIR$/client/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.component.js" afterPath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" afterPath="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/shopping-cart/order-review/order-review.component.js" afterPath="$PROJECT_DIR$/client/shopping-cart/order-review/order-review.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/users/createAccount/create-account.component.js" afterPath="$PROJECT_DIR$/client/users/createAccount/create-account.component.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js" afterPath="$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/users/users.component.js" afterPath="$PROJECT_DIR$/client/users/users.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/orders.js" afterPath="$PROJECT_DIR$/model/orders.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/server/startup/loadCategories.js" afterPath="$PROJECT_DIR$/server/startup/loadCategories.js" />
     </list>
     <ignored path="LED.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,11 +25,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/routes.js">
+      <file leaf-file-name="user-profiles.component.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.114285715">
-              <caret line="142" column="71" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="71" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="smtp.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/server/smtp.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.12064343">
+              <caret line="3" column="80" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
               <folding />
             </state>
           </provider>
@@ -58,27 +49,7 @@
         <entry file="file://$PROJECT_DIR$/client/users/createAccount/create-account.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="112" selection-start-line="28" selection-start-column="112" selection-end-line="28" selection-end-column="112" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create-account.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/users/createAccount/create-account.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-2.5">
-              <caret line="4" column="62" selection-start-line="4" selection-start-column="62" selection-end-line="4" selection-end-column="62" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="user-profiles.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="21" column="95" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
+              <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
               <folding />
             </state>
           </provider>
@@ -87,23 +58,9 @@
       <file leaf-file-name="user-profiles.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="-1.875">
+              <caret line="3" column="107" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="107" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="loadCategories.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/startup/loadCategories.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="103" column="50" selection-start-line="103" selection-start-column="50" selection-end-line="103" selection-end-column="50" />
-              <folding>
-                <element signature="e#1078#3120#0" expanded="false" />
-                <element signature="e#1209#2122#0" expanded="false" />
-                <element signature="e#2184#3095#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -112,18 +69,10 @@
         <entry file="file://$PROJECT_DIR$/server/users.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="29" column="50" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.component.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/users/users.component.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-              <folding />
+              <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+              <folding>
+                <marker date="1458602376000" expanded="true" signature="36:38" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -132,8 +81,11 @@
         <entry file="file://$PROJECT_DIR$/client/admin/users-management/users-management.component.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-              <folding />
+              <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+              <folding>
+                <marker date="1458602375000" expanded="true" signature="600:665" placeholder="{...}" />
+                <marker date="1458602375000" expanded="true" signature="706:722" placeholder="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -164,7 +116,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/users/createAccount/createAccount.component.js" />
         <option value="$PROJECT_DIR$/client/users/createAccount/create-account.html" />
         <option value="$PROJECT_DIR$/client/categories/categories-list/categories-list.html" />
         <option value="$PROJECT_DIR$/client/users/userProfiles/user-profiles.html" />
@@ -206,15 +157,16 @@
         <option value="$PROJECT_DIR$/client/shopping-cart/order-review/order-review.component.js" />
         <option value="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.html" />
         <option value="$PROJECT_DIR$/client/shopping-cart/order-confirm/order-confirm.component.js" />
-        <option value="$PROJECT_DIR$/client/routes.js" />
         <option value="$PROJECT_DIR$/client/led/led.component.js" />
         <option value="$PROJECT_DIR$/client/admin/users-management/users-management.component.js" />
         <option value="$PROJECT_DIR$/client/users/users.component.js" />
-        <option value="$PROJECT_DIR$/client/users/createAccount/create-account.component.js" />
-        <option value="$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js" />
         <option value="$PROJECT_DIR$/client/admin/users-management/users-management.html" />
         <option value="$PROJECT_DIR$/server/users.js" />
         <option value="$PROJECT_DIR$/server/startup/loadCategories.js" />
+        <option value="$PROJECT_DIR$/client/routes.js" />
+        <option value="$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js" />
+        <option value="$PROJECT_DIR$/client/users/createAccount/create-account.component.js" />
+        <option value="$PROJECT_DIR$/server/smtp.js" />
       </list>
     </option>
   </component>
@@ -295,38 +247,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="startup" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="public" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="LED" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -381,7 +301,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="createAccount" />
+              <option name="myItemId" value="userProfiles" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -399,7 +319,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="led" />
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="createAccount" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -585,7 +509,7 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28825137" sideWeight="0.4978903" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32669324" sideWeight="0.4978903" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954791" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24246575" sideWeight="0.4954792" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.45068493" sideWeight="0.4954792" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -749,22 +673,6 @@
             <element signature="e#2237#2572#0" expanded="false" />
             <element signature="e#2273#2552#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/users-management/user-details/user-details.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.25">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/users-management/user-details/user-details.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62857145">
-          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -969,8 +877,16 @@
     <entry file="file://$PROJECT_DIR$/client/users/users.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="71" selection-start-line="14" selection-start-column="71" selection-end-line="14" selection-end-column="71" />
-          <folding />
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+          <folding>
+            <marker date="1458602376000" expanded="true" signature="1995:2391" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="1995:2409" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="1995:2425" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="1995:2511" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="2114:2253" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="2282:2368" placeholder="{...}" />
+            <marker date="1458602376000" expanded="true" signature="2467:2499" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -990,19 +906,14 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/admin/users-management/users-management.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="11" column="14" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
+          <caret line="9" column="14" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="14" />
+          <folding>
+            <marker date="1458602375000" expanded="true" signature="600:665" placeholder="{...}" />
+            <marker date="1458602375000" expanded="true" signature="706:722" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1027,24 +938,10 @@
     <entry file="file://$PROJECT_DIR$/server/users.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="50" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/users/createAccount/create-account.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="112" selection-start-line="28" selection-start-column="112" selection-end-line="28" selection-end-column="112" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="95" selection-start-line="21" selection-start-column="95" selection-end-line="21" selection-end-column="95" />
-          <folding />
+          <caret line="17" column="50" selection-start-line="17" selection-start-column="50" selection-end-line="17" selection-end-column="50" />
+          <folding>
+            <marker date="1458602376000" expanded="true" signature="36:38" placeholder="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1062,8 +959,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.114285715">
-          <caret line="142" column="71" selection-start-line="142" selection-start-column="71" selection-end-line="142" selection-end-column="71" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="117" column="48" selection-start-line="117" selection-start-column="48" selection-end-line="117" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.875">
+          <caret line="3" column="107" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/users/userProfiles/user-profiles.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="22" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/users/createAccount/create-account.component.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="16" column="84" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/smtp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.12064343">
+          <caret line="3" column="80" selection-start-line="3" selection-start-column="80" selection-end-line="3" selection-end-column="80" />
           <folding />
         </state>
       </provider>
