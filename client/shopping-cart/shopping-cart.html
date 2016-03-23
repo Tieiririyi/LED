@@ -1,7 +1,7 @@
 <div class = container>
     <h2>Shopping Cart</h2>
 
-    <table>
+    <table class="shoppingCartTable">
         <tr>
             <th>Products</th>
             <th>Price</th>
@@ -9,11 +9,11 @@
         </tr>
         <tr ng-repeat = "item in shoppingCart.cart">
             <td>
-                <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
+                <img ng-src="{{ shoppingCart.retrievePicture(item.info.picture).url() }}" height="150" /><br/>
                 <span>{{item.info.itemNum}}</span>
             </td>
 
-            <td>
+            <td style="color: green;">
                 {{item.info.price * (1 - item.info.discount_pct) | currency}}
             </td>
             <td>
@@ -24,8 +24,9 @@
         </tr>
         <tr>
             <td></td>
-            <td></td>
-            <td style = "text-align: right;" ng-bind = "shoppingCart.total | currency"></td>
+
+            <td style="text-align: right"><span ><strong>Subtotal: </strong></span></td>
+            <td style = "text-align: left;" ng-bind = "shoppingCart.total | currency"></td>
         </tr>
     </table>
     <button ng-click = "shoppingCart.review()">Review Order</button>

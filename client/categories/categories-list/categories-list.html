@@ -11,19 +11,20 @@
             <!--{{ category.name }}-->
         <!--</li>-->
     <!--</ul>-->
-    <h3>Product Categories:</h3>
-    <div class="row">
-        <div ng-repeat='category in categoriesList.categories' class="row">
-            <div class="panel panel-default">
-                <div class="panel-body">
-                    <a  style="display: block; padding: 4px;" href="/categories/{{category._id}}">
-                        <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
 
-                    </a>
-                    <div class="caption">
-                        <a class="h2">{{category.categoryName}}</a>
-                    </div>
+    <div class="row">
+        <h2>Product Categories:</h2>
+        <div ng-repeat='category in categoriesList.categories' class="row">
+            <div>
+
+                <a  style="display: block; padding: 4px;" href="/categories/{{category._id}}">
+                    <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
+
+                </a>
+                <div class="caption">
+                    <a class="h3">{{category.categoryName}}</a>
                 </div>
+
             </div>
         </div>
     </div>

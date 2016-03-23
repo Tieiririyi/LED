@@ -18,6 +18,11 @@ angular.module('led').directive('shoppingCart', function ()
                 }
             });
             
+            this.retrievePicture = (picID)=>{
+                
+                return Images.findOne({"_id": picID});
+            };
+            
             this.updateQuantity = (num) =>{
                 var cart = store.get('cart');
 

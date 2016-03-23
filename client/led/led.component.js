@@ -29,6 +29,9 @@ angular.module('led').directive('led', function () {
                 },
                 cart_items: () =>{
                     return updateCart.cart_items();
+                },
+                categories: ()=> {
+                    return Categories.find({});
                 }
             });
             

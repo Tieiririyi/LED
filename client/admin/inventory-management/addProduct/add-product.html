@@ -39,6 +39,9 @@
             <label>Price: </label>
             <input type = "text" ng-model = "product.price" required /><br />
 
+            <label>Discount : (in decimal form)</label>
+            <input type = "text" ng-model = "product.discount_pct" /><br />
+
             <label>Upload picture</label>
             <input name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select
                      ng-model = "product.picture"
