@@ -57,11 +57,20 @@ angular.module('led').directive('users', function ()
                     }
                 });
             };
-            this.forgotPassword = (email) => {
-                console.log(email);
-                Accounts.forgotPassword({"email": email});
+            this.forgotPassword = () => {
+                
+                if (this.user.email != ""){
+                    console.log("here");
+                    Accounts.forgotPassword({"email": this.user.email}, function(error){
+                        if (error){
+                            this.message = "There was an error, please try again";
+                        }
+                    });
+                }
+                else{
+                    this.forgotPwd = true;
+                }
             };
-
         }
     };
 });

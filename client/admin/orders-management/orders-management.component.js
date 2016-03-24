@@ -24,7 +24,10 @@ angular.module('led').directive('ordersManagement', function ()
                             }
                         });
                     }
-            })
+            });
+            this.pageChanged = function(newPage) {
+                $scope.page = newPage;
+            };
         }
     }
 });

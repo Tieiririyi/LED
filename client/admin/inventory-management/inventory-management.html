@@ -50,9 +50,9 @@
                 <input type = "text" ng-model = "filterProduct"/>
                 <label>Order by: </label>
                 <select ng-model = "orderVar">
-                    <option value = "productName">Product Name</option>
+                    <option value = "info.itemNum">Product Name</option>
                     <option value = "categoryName">Category Name</option>
-                    <option value = "quantityInStock">Quantity in Stock</option>
+                    <option value = "info.quantityInStock">Quantity in Stock</option>
                 </select>
             </div>
             <br />
@@ -72,7 +72,7 @@
                     <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
                     <td>
                         <a href = "/admin/inventory/edit/{{product.info._id}}"><span ng-hide = "showProd">{{product.info.itemNum}}</span></a>
-                        <input ng-show = "showProd" type = "text" ng-model = "product.info.productName" />
+                        <input ng-show = "showProd" type = "text" ng-model = "product.info.itemNum" />
                     </td>
                     <td>
                         <span ng-hide = "showProd">{{product.categoryName}}</span>

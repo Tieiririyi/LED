@@ -192,12 +192,18 @@ angular.module('led')
                     }
                 }
             });
-        
+        $stateProvider
+            .state('forgot-password', {
+               url: '/users/forgot-password/',
+               template: '<forgot-password></forgot-password>'
+            });
+            
         $stateProvider
             .state('verify-user', {
                 url: '/users/verify-email/',
                 template: '<verify-email></verify-email>'
             });
+            
         $stateProvider
             .state('reset-password', {
                 url: '/users/reset-password/:token',

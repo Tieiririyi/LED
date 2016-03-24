@@ -1,11 +1,12 @@
 <div class="container">
-    <h2>Login</h2>
-    <form class="login" ng-submit = "usersCtrl.login(user)">
-        <label>Email: <input type="email" name="email" ng-model = "user.email"></label><br />
-        <label>Password: <input type="password" name="password" ng-model = "user.password"></label><br />
-        <label><input type="submit" value="Login"></label>
-        <button type = "button" ng-click = "usersCtrl.forgotPassword()">Forgot password</button>
+    <form class="form-signin" ng-submit = "usersCtrl.login(user)">
+        <h2 class = "form-signin-heading">Login</h2>
+            <label for="inputEmail" class="sr-only">Email address</label>
+            <input type="email" name="email" ng-model = "user.email" class="form-control" placeholder="Email address" required autofocus>
+            <label for="inputPassword" class="sr-only">Password</label>
+            <input type="password" name="password" ng-model = "user.password" class="form-control" placeholder="Password" required> <br />
+            <input type="submit" value="Login" class="btn btn-lg btn-primary btn-block">
     </form>
-
-    <a href = "users/createAccount"><button>Create Account</button></a>
+    <a href = "users/forgot-password/">Forgot password</a><br />
+    <a href = "users/createAccount" >Create Account</a>
 </div>

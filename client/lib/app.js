@@ -7,7 +7,8 @@ angular.module('led',[
     // 'ngMaterial',
     'ngFileUpload',
     'accounts.ui',
-    'angular-storage']);
+    'angular-storage',
+    'angularUtils.directives.dirPagination']);
 
 function onReady(){
 

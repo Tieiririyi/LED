@@ -16,7 +16,8 @@ angular.module('led').directive('orders', function ()
                         return {
                             info: product,
                             categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
-                            orderQuantity: parseInt(item.quantity)
+                            /*orderQuantity: parseInt(item.quantity)*/
+                            itemInfo: item
                         };
                     });
                 },
@@ -54,8 +55,8 @@ angular.module('led').directive('orders', function ()
                 this.order.forEach(function(items){
                     var temp_product = Products.findOne({_id: items.info._id});
                     Products.update({_id: items.info._id}, {$set:{
-                            quantityOnHold: parseInt(temp_product.quantityOnHold) - parseInt(items.orderQuantity),
-                            quantityInStock: parseInt(temp_product.quantityInStock) - parseInt(items.orderQuantity)                        
+                            quantityOnHold: parseInt(temp_product.quantityOnHold) - parseInt(items.itemInfo.quantity),
+                            quantityInStock: parseInt(temp_product.quantityInStock) - parseInt(items.itemInfo.quantity)                        
                         }
                     });
 
