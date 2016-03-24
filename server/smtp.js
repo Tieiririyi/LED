@@ -7,15 +7,15 @@ if (Meteor.isServer) {
 }
 
 Meteor.methods({
-    sendEmail: function (clientEmail, text) {
+    sendEmail: function (clientEmail, from, subject, text) {
         check([text], [String]);
 
         this.unblock();
 
         Email.send({
             to: clientEmail,
-            from: "grace.development.test@gmail.com",
-            subject: 'New message from contact form',
+            from: from,
+            subject: subject,
             text: text
         });
     }

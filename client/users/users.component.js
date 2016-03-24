@@ -57,8 +57,9 @@ angular.module('led').directive('users', function ()
                     }
                 });
             };
-            this.forgotPassword = () => {
-                
+            this.forgotPassword = (email) => {
+                console.log(email);
+                Accounts.forgotPassword({"email": email});
             };
 
         }

@@ -180,7 +180,7 @@ angular.module('led')
         $stateProvider
             .state('admin-user-details', {
                 url: '/admin/users/:userID',
-                template: '<admin-user-details></admin-user-details>'/*,
+                template: '<admin-user-details></admin-user-details>',
                 resolve: {
                     currentUser: ($q) => {
                         if (Meteor.userId() != null && Roles.userIsInRole(Meteor.userId(), ['admin', 'super-admin'], 'led')){
@@ -190,9 +190,19 @@ angular.module('led')
                             return $q.reject('AUTH_REQUIRED');
                         }
                     }
-                }*/
+                }
             });
-
+        
+        $stateProvider
+            .state('verify-user', {
+                url: '/users/verify-email/',
+                template: '<verify-email></verify-email>'
+            });
+        $stateProvider
+            .state('reset-password', {
+                url: '/users/reset-password/:token',
+                template: '<reset-password></reset-password>'
+            });
         //$urlRouterProvider.otherwise("/categories");
     });
 

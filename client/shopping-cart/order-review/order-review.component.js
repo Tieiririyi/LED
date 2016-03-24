@@ -60,6 +60,10 @@ angular.module('led').directive('orderReview', function ()
                 
                 /*if order has gone through, then update products database*/
                 if (confirmation != ""){
+
+                    /*not tested, need to know where they want to send email to*/
+                    Meteor.call('sendEmail', "gracedevelopmenttest@gmail.com", "gracedevelopmenttest@gmail.com", "New orders", "there is a new order");
+                    
                     var cart_items = store.get('cart');
 
                     cart_items.forEach(function(product){

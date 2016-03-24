@@ -14,22 +14,19 @@ angular.module('led').directive('createAccount', function ()
 
 
             this.register = (user) =>{
-                //method works, but need to use Account method to verify email still
-                //Meteor.call('sendEmail', user.email, "hi");
-
                 Accounts.createUser({
                     email: user.email,
                     password: user.password,
                     profile: {
                         name: user.name,
-                        status: "active"
+                        status: "active",
                     }
                 }, function(error){
                     if (error){
                         console.log(error.reason);
                     }
                     else{
-                        //Accounts.sendVerificationEmail(Meteor.userId());
+                        Meteor.call('verifyUserEmail');
                         Meteor.call('updateRoles', Meteor.userId(), ['customer'], 'led', (error) => {
                             if (!error){
 
@@ -51,8 +48,6 @@ angular.module('led').directive('createAccount', function ()
                                     $location.path('/categories');
                                 }
                             }
-                            console.log(Meteor.user());
-
                         });
                     }
                 });
