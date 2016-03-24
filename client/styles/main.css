@@ -1,0 +1,22 @@
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+.productlabel{
+    margin: 0px 15px 0px 0px;
+}
+.shoppingCartTable {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+.shoppingCartTable > thead > tr > th,
+.shoppingCartTable > tbody > tr > th,
+.shoppingCartTable > tfoot > tr > th,
+.shoppingCartTable > thead > tr > td,
+.shoppingCartTable > tbody > tr > td,
+.shoppingCartTable > tfoot > tr > td {
+    padding: 8px;
+    line-height: 1.42857143;
+    vertical-align: middle;
+    /*border-top: 1px solid #ddd;*/
+}

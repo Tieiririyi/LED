@@ -42,7 +42,7 @@ angular.module('led').directive('addProduct', function ()
 
                 product.certification = certs;
                 Products.insert(product);
-                $location.path("/inventory");
+                $location.path("/admin/inventory");
             };
             
         }

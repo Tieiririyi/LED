@@ -4,7 +4,7 @@
 angular.module('led',[
     'angular-meteor',
     'ui.router', 
-    'ngMaterial',
+    // 'ngMaterial',
     'ngFileUpload',
     'accounts.ui',
     'angular-storage']);

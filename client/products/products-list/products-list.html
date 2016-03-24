@@ -1,15 +1,15 @@
 <div class = "container">
     <div ng-repeat = "product in productsList.products" class = "col-sm-6 col-md-4">
-        <div class = "panel panel-default">
-            <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
-                <div class = "panel-body">
+        <div >
 
-                    <img ng-src="{{product.image.url()}}" width = "100" /><br/>
-                    <span class = "h2">{{product.info.itemNum}}</span><br />
-                    <span>{{product.info.price * (1-product.info.discount_pct) | currency}}</span>
-                    <span ng-show = "product.info.discount_pct != 0" style = "text-decoration: line-through;">{{product.info.price | currency}}</span>
-                </div>
-            </a>
+            <div>
+                <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
+                    <img ng-src="{{product.image.url()}}" height="150" /><br/>
+                    <span class = "h3">{{product.info.itemNum}}</span><br />
+                </a>
+                <span style="color:green;">{{product.info.price * (1-product.info.discount_pct) | currency}}</span>
+                <span ng-show = "product.info.discount_pct != 0" style = "text-decoration: line-through;color:red;">{{product.info.price | currency}}</span>
+            </div>
         </div>
     </div>
 </div>

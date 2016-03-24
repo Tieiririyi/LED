@@ -1,23 +1,25 @@
-<h2>Review Order</h2>
-<table>
-    <tr>
-        <th>Products</th>
-        <th>Price</th>
-        <th>Quantity</th>
-    </tr>
-    <tr ng-repeat = "item in orderReview.cart">
-        <td>
-            <img ng-src="{{item.info.picture.image.url() }}" width = "100" /><br/>
-            <span>{{item.info.itemNum}}</span>
-        </td>
+<div class="container">
+    <h2>Review Order</h2>
+    <table>
+        <tr>
+            <th>Products</th>
+            <th>Price</th>
+            <th>Quantity</th>
+        </tr>
+        <tr ng-repeat = "item in orderReview.cart">
+            <td>
+                <img ng-src="{{item.info.picture.image.url() }}" width = "100" /><br/>
+                <span>{{item.info.itemNum}}</span>
+            </td>
 
-        <td ng-bind = "item.info.price | currency"></td>
-        <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td style = "text-align: right;" ng-bind = "orderReview.total | currency"></td>
-    </tr>
-</table>
-<button ng-click = "orderReview.buy()">Place Order</button>
+            <td ng-bind = "item.info.price | currency"></td>
+            <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td style = "text-align: right;" ng-bind = "orderReview.total | currency"></td>
+        </tr>
+    </table>
+    <button ng-click = "orderReview.buy()">Place Order</button>
+</div>
