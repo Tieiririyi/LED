@@ -12,7 +12,7 @@
                 <span>{{item.info.itemNum}}</span>
             </td>
 
-            <td ng-bind = "item.info.price | currency"></td>
+            <td ng-bind = "item.info.price * ((100 - item.info.discount_pct)/100) | currency"></td>
             <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
         </tr>
         <tr>

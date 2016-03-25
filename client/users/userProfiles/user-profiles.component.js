@@ -26,8 +26,8 @@ angular.module('led').directive('userProfiles', function ()
                 console.log(this.current_user);
 
                 if (Meteor.user().emails[0].address != this.current_user.emails[0].address){
-                    Accounts.removeEmail(Meteor.userId(), Meteor.user().emails[0].address);
-                    Accounts.addEmail(Meteor.userId(), this.current_user.emails[0].address);
+
+                    Meteor.call('updateUserEmail', this.current_user.emails[0].address);
                     Meteor.call('verifyUserEmail');
                 }
               

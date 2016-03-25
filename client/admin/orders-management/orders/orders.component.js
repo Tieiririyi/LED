@@ -6,6 +6,8 @@ angular.module('led').directive('orders', function ()
         controllerAs:'ordersCtrl',
         controller: function ($scope,$stateParams, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
+            this.subscribe('orders');
+            this.subscribe('users');
             //this.categories = $meteor.collection(Categories);
             this.helpers({
                 order: ()=> {

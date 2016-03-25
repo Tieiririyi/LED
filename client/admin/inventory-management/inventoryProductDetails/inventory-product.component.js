@@ -9,6 +9,9 @@ angular.module('led').directive('inventoryProductDetails', function ()
         controllerAs:'inventoryProductDetails',
         controller: function ($scope,$meteor, $stateParams, $reactive, $location){
             $reactive(this).attach($scope);
+            this.subscribe('products');
+            this.subscribe('categories');
+            this.subscribe('images');
 
             this.helpers({
                 categories: ()=> {
@@ -60,7 +63,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
 
                 Products.update({_id: this.product._id}, this.product);
 
-                $location.path("/inventory");
+                $location.path("/admin/inventory");
             }
         }
     }

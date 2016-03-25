@@ -40,6 +40,8 @@ angular.module('led').directive('addProduct', function ()
                     certs.push("energy_star");
                 }
 
+                product.quantityOnHold = 0;
+                product.status = true;
                 product.certification = certs;
                 Products.insert(product);
                 $location.path("/admin/inventory");

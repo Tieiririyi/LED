@@ -55,7 +55,6 @@
                     <option value = "info.quantityInStock">Quantity in Stock</option>
                 </select>
             </div>
-            <br />
 
             <table class="table table-condensed">
                 <tr>
@@ -68,8 +67,12 @@
                     <th>Edit</th>
                 </tr>
 
-                <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar">
-                    <td><button ng-click = "inventoryCtrl.removeProduct(this)"><i class="fa fa-times"></i></button></td>
+                <tr dir-paginate="product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar | itemsPerPage: 10 ">
+               <!-- <tr ng-repeat = "product in inventoryCtrl.products | filter:filterProduct | orderBy: orderVar"> -->
+                    <td>
+                        <button ng-click = "inventoryCtrl.removeProduct(this)" ng-show = "product.info.status == true"><i class="fa fa-times"></i></button>
+                        <button ng-click = "inventoryCtrl.reactivateProduct(this)" ng-show = "product.info.status == false">reactivate</button>
+                    </td>
                     <td>
                         <a href = "/admin/inventory/edit/{{product.info._id}}"><span ng-hide = "showProd">{{product.info.itemNum}}</span></a>
                         <input ng-show = "showProd" type = "text" ng-model = "product.info.itemNum" />
@@ -95,6 +98,8 @@
                         <button ng-show = "showProd" ng-click = "inventoryCtrl.undoProduct(this)"><i class="fa fa-times"></i></button>
                     </td>
                 </tr>
+                <dir-pagination-controls boundary-links = true></dir-pagination-controls>
+
             </table>
         </div>
     </div>

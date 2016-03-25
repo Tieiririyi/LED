@@ -1,7 +1,7 @@
 <div class = "container">
     <h2 ng-bind = "productCtrl.product.itemNum"></h2>
     <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
-    <span style="color:green;" ng-bind = "productCtrl.product.price * (1 - productCtrl.product.discount_pct)| currency"></span>
+    <span style="color:green;" ng-bind = "productCtrl.product.price * ((100 - productCtrl.product.discount_pct)/100)| currency"></span>
     <span style = "color:red;text-decoration: line-through;" ng-bind = "productCtrl.product.price" ng-show = "productCtrl.product.discount_pct > 0"></span>
     <br />
     <form ng-submit = "productCtrl.addToCart()">

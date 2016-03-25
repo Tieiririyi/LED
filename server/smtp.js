@@ -1,7 +1,7 @@
 if (Meteor.isServer) {
 
     Meteor.startup(function () {
-        //process.env.MAIL_URL = 'smtp://gracedevelopmenttest%40gmail.com:PASSWORD@smtp.gmail.com:587';
+        //process.env.MAIL_URL = 'smtp://gracedevelopmenttest%40gmail.com:Test1234567@smtp.gmail.com:587';
     });
 // rest of our code here
 }

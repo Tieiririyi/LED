@@ -10,9 +10,12 @@ angular.module('led').directive('usersManagement', function ()
         controller: function ($scope,$stateParams, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
             this.subscribe('users');
+
             this.helpers({
                 users: ()=> {
-                    return Meteor.users.find({});
+                    console.log(Products.find({}, {fields: {_id: 1}}));
+                    console.log(Meteor.users.find({} , {fields: {_id: 1}}));
+                    return Meteor.users.find({},{_id: 1, "profile.name": 1, roles: 1});
                 }
             });
 

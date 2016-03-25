@@ -6,6 +6,10 @@ angular.module('led').directive('orderConfirm', function ()
         controllerAs:'orderConfirm',
         controller: function ($scope,$stateParams, $meteor, $reactive, store){
             $reactive(this).attach($scope);
+            this.subscribe('categories');
+            this.subscribe('products');
+            this.subscribe('orders');
+
             //this.categories = $meteor.collection(Categories);
             this.helpers({
                     cart: ()=> {

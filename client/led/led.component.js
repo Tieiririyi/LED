@@ -9,6 +9,9 @@ angular.module('led').directive('led', function () {
         controllerAs: 'led',
         controller: function ($scope, $reactive, $location, store, updateCart) {
             $reactive(this).attach($scope);
+            this.subscribe('categories');
+            this.subscribe('products');
+
             if (store.get('cart') == null){
                 store.set('cart', []);
             }
@@ -34,7 +37,18 @@ angular.module('led').directive('led', function () {
                     return Categories.find({});
                 }
             });
-            
+            this.setCart = function(){
+
+                var cart = store.get('cart');
+                return cart.map(function(item){
+                    var product = Products.findOne({_id: item.productId});
+                    return {
+                        info: product,
+                        categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
+                        orderQuantity: parseInt(item.quantity)
+                    };
+                });
+            };
         }
     };
 });

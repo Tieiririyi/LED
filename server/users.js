@@ -9,8 +9,8 @@ Meteor.startup(function(){
     };
     
     Accounts.urls.resetPassword = function(token) {
-        //return Meteor.absoluteUrl('users/reset-password/' + token);
-        return "https://led-amazinggracec.c9users.io/users/reset-password/" + token;
+        return Meteor.absoluteUrl('users/reset-password/' + token);
+        //return "https://led-amazinggracec.c9users.io/users/reset-password/" + token;
     };
     
     Accounts.urls.verifyEmail = function(token){
@@ -28,16 +28,26 @@ Meteor.startup(function(){
 
 
 Meteor.publish("users", function () {
-    return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
+    if (Roles.userIsInRole(this.userId, ['admin', 'super-admin'], 'led')){
+        return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
+    }
+    else if (Roles.userIsInRole(this.userId, ['customer'], 'led')){
+        return Meteor.users.findOne({_id: Meteor.userId()}, {fields: {emails: 1, profile: 1, roles: 1}});
+    }
+    else{
+        this.stop();
+        return;
+    }
 });
 
-/*Meteor.publish(null, function (){
-    return Meteor.roles.find({})
-});*/
 
 Meteor.methods({
     findUser: function(email){
         return Accounts.findUserByEmail(email).emails[0].verified;
+    },
+    updateUserEmail: function(newEmail){
+        Accounts.removeEmail(Meteor.userId(), Meteor.user().emails[0].address);
+        Accounts.addEmail(Meteor.userId(), newEmail);
     },
     verifyUserEmail: function(){
         Accounts.sendVerificationEmail(Meteor.userId());

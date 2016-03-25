@@ -6,12 +6,13 @@ angular.module('led').directive('shoppingCart', function ()
         controllerAs:'shoppingCart',
         controller: function ($scope,$stateParams, $meteor, $reactive, store, $location, $rootScope, updateCart){
             $reactive(this).attach($scope);
-            
+            this.subscribe('categories');
+            this.subscribe('products');
+
             this.helpers({
                 cart: ()=> {
                     var cart = store.get('cart');
-                    console.log(updateCart.setCart());
-                    return updateCart.setCart();
+                    return $rootScope.led.setCart();
                 },
                 total: () => {
                     return updateCart.setCartTotal(this.cart);
@@ -28,8 +29,8 @@ angular.module('led').directive('shoppingCart', function ()
 
                 cart[num.$index] = {'productId': num.item.info._id, 'quantity': parseInt(num.item.orderQuantity)};
                 store.set('cart', cart);
-                
-                this.cart = updateCart.setCart();
+
+                this.cart = $rootScope.led.setCart();
                 this.total = updateCart.setCartTotal(this.cart);
                 $rootScope.led.cart_items = updateCart.cart_items();
             };
@@ -45,7 +46,7 @@ angular.module('led').directive('shoppingCart', function ()
                 });
 
                 store.set('cart', temp_cart);
-                this.cart = updateCart.setCart();
+                this.cart = $rootScope.led.setCart();
                 this.total = updateCart.setCartTotal(this.cart);
                 $rootScope.led.cart_items = updateCart.cart_items();
             };
@@ -61,6 +62,8 @@ angular.module('led').directive('shoppingCart', function ()
 
                 }
             };
+
+
         }
     };
 });

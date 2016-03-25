@@ -7,7 +7,7 @@ angular.module('led').directive('adminUserDetails', function ()
         restrict: 'E',
         templateUrl: 'client/admin/users-management/admin-user-details/admin-user-details.html',
         controllerAs: 'adminUserDetails',
-        controller: function ($scope, $stateParams, $meteor, $reactive) {
+        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store) {
             
             $reactive(this).attach($scope);
             this.subscribe('users');
@@ -34,11 +34,11 @@ angular.module('led').directive('adminUserDetails', function ()
                 if (this.roles.admin == true){
                     roles.push('admin');
                 }
+
                 Meteor.call('updateRoles', this.user._id, roles, 'led');
-                
-                //update profile
-                Meteor.call('updateUser', this.user._id, this.user.profile, 'led');
-                
+                Meteor.call('updateUser', this.user._id, this.user.profile, 'led', function(error, result){
+                    window.location.href = Meteor.absoluteUrl('admin/users');
+                });
             }
         }
     }

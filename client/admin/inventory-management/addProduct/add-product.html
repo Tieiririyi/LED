@@ -33,14 +33,11 @@
             <label>Quantity in stock: </label>
             <input type = "text" ng-model = "product.quantityInStock" required /><br />
 
-            <label>Quantity on hold: </label>
-            <input type = "text" ng-model = "product.quantityOnHold" required /><br />
-
             <label>Price: </label>
             <input type = "text" ng-model = "product.price" required /><br />
 
-            <label>Discount : (in decimal form)</label>
-            <input type = "text" ng-model = "product.discount_pct" /><br />
+            <label>Discount:</label>
+            <input type = "text" ng-model = "product.discount_pct" />*<br />
 
             <label>Upload picture</label>
             <input name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select

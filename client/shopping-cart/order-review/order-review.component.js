@@ -6,10 +6,14 @@ angular.module('led').directive('orderReview', function ()
         controllerAs:'orderReview',
         controller: function ($scope,$stateParams, $meteor, $reactive, store, updateCart, $rootScope, $location){
             $reactive(this).attach($scope);
+            this.subscribe('categories');
+            this.subscribe('products');
+            this.subscribe('users');
+            this.subscribe('orders');
 
             this.helpers({
                     cart: () => {
-                        return updateCart.setCart();
+                        return $rootScope.led.setCart();
                     },
                     total : () => {
                         return updateCart.setCartTotal;
@@ -27,15 +31,11 @@ angular.module('led').directive('orderReview', function ()
                     return {
                         productId: item.productId,
                         quantity: item.quantity,
-                        price: product.price * (1-product.discount_pct)
+                        price: product.price * ((100-product.discount_pct)/100)
                     }
                 });
 
-                console.log(order_details);
-
-
                 if (user != null){
-                    console.log("updated");
                    confirmation = user._id;
                    Orders.update({_id: user._id},
                        {$set: {
@@ -46,7 +46,6 @@ angular.module('led').directive('orderReview', function ()
                    });
                 }
                 else{
-                    console.log("inserted");
                     confirmation = Orders.insert({
                         userId: Meteor.userId(),
                         order: order_details,
@@ -56,8 +55,7 @@ angular.module('led').directive('orderReview', function ()
                         processBy: ""
                     });
                 }
-                console.log(Orders.findOne({_id: user._id}));
-                
+
                 /*if order has gone through, then update products database*/
                 if (confirmation != ""){
 

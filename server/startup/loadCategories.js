@@ -30,11 +30,11 @@
             }
         }
 
-        /*Images.find().forEach(function(images){
+        Images.find().forEach(function(images){
          Images.remove({_id: images._id});
-         });*/
+         });
 
-
+        Orders.remove({});
         //Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
@@ -63,7 +63,8 @@
                         "price": 10.99,
                         "quantityInStock": 100,
                         "quantityOnHold": 10,
-                        "discount_pct": 0.1
+                        "discount_pct": 10,
+                        "status": true
                     },
                 );
             }

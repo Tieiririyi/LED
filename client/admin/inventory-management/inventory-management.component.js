@@ -13,6 +13,9 @@ angular.module('led').directive('inventoryManagement', function ()
             this.newProduct = {};
             this.newCategory = {};
 
+            this.subscribe("products");
+            this.subscribe("categories");
+
             this.helpers({
                     products: ()=> {
                         return Products.find({}).map(function(product){
@@ -68,8 +71,12 @@ angular.module('led').directive('inventoryManagement', function ()
             }
 
             this.removeProduct = (num) => {
-                Products.remove({_id: num.product.info._id});
-                //Products.update({_id: num.product.info._id}, {$set: {"status": "inactive"}});
+                //Products.remove({_id: num.product.info._id});
+                Products.update({_id: num.product.info._id}, {$set: {"status": false}});
+            };
+
+            this.reactivateProduct = (num) => {
+                Products.update({_id: num.product.info._id}, {$set: {"status": true}});
             }
 
             this.undoProduct = (num) => {

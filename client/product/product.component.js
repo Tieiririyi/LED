@@ -9,13 +9,17 @@ angular.module('led').directive('product', function ()
         controllerAs:'productCtrl',
         controller: function ($scope, $stateParams, $meteor, $reactive, store, $rootScope, updateCart){
             $reactive(this).attach($scope);
+            this.subscribe('categories');
+            this.subscribe('products');
+            this.subscribe('orders');
+            this.subscribe('images');
+
 
             this.helpers({
                 product: ()=> {
                     return Products.findOne({_id: $stateParams.prodId});
                 },
                 image : () => {
-                    console.log(Products.findOne({_id: $stateParams.prodId}));
                     if (Products.findOne({_id: $stateParams.prodId}).picture != undefined){
                         return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).picture});
                     }
@@ -46,26 +50,27 @@ angular.module('led').directive('product', function ()
 
                 $rootScope.led.cart_items = updateCart.cart_items();
 
-                var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
-                if (user != null){
-                    Orders.update({_id: user._id}, {
-                        $set: {
+                if (Meteor.user() != null){
+                    var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
+                    if (user != null){
+                        Orders.update({_id: user._id}, {
+                            $set: {
+                                order: this.cart,
+                                orderDate: ""
+                            }
+                        });
+                    }
+                    else{
+                        Orders.insert({
+                            userId: Meteor.userId(),
                             order: this.cart,
-                            orderDate: ""
-                        }
-                    });
+                            status: "not ordered",
+                            orderDate: "",
+                            processDate: "",
+                            processBy: ""
+                        });
+                    }
                 }
-                else{
-                    Orders.insert({
-                        userId: Meteor.userId(),
-                        order: this.cart,
-                        status: "not ordered",
-                        orderDate: "",
-                        processDate: "",
-                        processBy: ""
-                    });
-                }
-
             }
         }
     }

@@ -12,7 +12,6 @@ angular.module('led').directive('forgotPassword', function ()
             //this.subscribe('users');
 
             this.forgotPassword = (user) => {
-                console.log(user.email);
                 if (user.email != undefined){
                     console.log("here");
                     Accounts.forgotPassword({"email": user.email}, function(error){

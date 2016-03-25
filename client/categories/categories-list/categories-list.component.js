@@ -10,7 +10,7 @@ angular.module('led').directive('categoriesList', function ()
         controller: function ($scope,$meteor, $reactive){
             $reactive(this).attach($scope);
 
-            //this.categories = $meteor.collection(Categories);
+            this.subscribe('categories');
 
             this.helpers({
                 categories: ()=> {

@@ -6,6 +6,7 @@ angular.module('led').directive('orderHistory', function ()
         controllerAs:'orderHistoryCtrl',
         controller: function ($scope, $stateParams, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
+            this.subscribe('orders');
 
             this.helpers({
                     current_user: ()=> {

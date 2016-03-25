@@ -9,6 +9,8 @@ angular.module('led').directive('ordersManagement', function ()
         controllerAs:'ordersMngtCtrl',
         controller: function ($scope, $meteor, $reactive, $location){
             $reactive(this).attach($scope);
+            this.subscribe('orders');
+            this.subscribe('users');
 
             this.helpers({
                     orders: () => {
