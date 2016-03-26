@@ -16,9 +16,11 @@ angular.module('led').directive('verifyEmail', function ()
                 console.log($location.search());
                 //need to check if link has expired
                 Accounts.verifyEmail(token, function(error){
-                    Meteor.call('findUser', $location.search().email, function(error, result){
-                        this.verified = result;
-                    });
+                    if (!error){
+                        Meteor.call('findUser', $location.search().email, function(error, result){
+                            this.verified = result;
+                        });
+                    }
                 });
             },
 
