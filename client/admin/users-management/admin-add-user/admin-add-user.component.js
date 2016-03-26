@@ -23,9 +23,6 @@ angular.module('led').directive('adminAddUser', function ()
                     if (error) {
                         console.log(error.reason);
                     }
-                    else {
-                        console.log("success");
-                    }
                 });
             }
         }

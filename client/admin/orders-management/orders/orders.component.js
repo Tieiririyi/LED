@@ -25,7 +25,6 @@ angular.module('led').directive('orders', function ()
                 },
                 order_info: () => {
                     var current_order = Orders.findOne({_id: $stateParams.orderId});
-                    console.log(current_order);
                     return {
                         orderDate: current_order.orderDate,
                         processDate: current_order.processDate,

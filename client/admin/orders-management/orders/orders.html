@@ -1,8 +1,7 @@
 <h2>Order {{ordersCtrl.orderId}}</h2>
-<label>Order date: </label><span>{{ordersCtrl.order_info.orderDate | date:'medium'}}</span><br />
-<label>Process date: </label><span>{{ordersCtrl.order_info.processDate | date:'medium'}}</span><br/>
-<label>Processed by: </label><span>{{ordersCtrl.order_info.processBy}}</span>
-
+<label>Order date: </label><span ng-bind = "ordersCtrl.order_info.orderDate | date:'medium'"></span><br />
+<label>Process date: </label><span ng-bind = "ordersCtrl.order_info.processDate | date:'medium'"></span><br/>
+<label>Processed by: </label><span ng-bind = "ordersCtrl.order_info.processBy"></span>
 
 <table>
     <tr>
@@ -11,7 +10,8 @@
         <th>Quantity</th>
 
     </tr>
-    <tr ng-repeat = "item in ordersCtrl.order">
+
+    <tr ng-repeat = "item in ordersCtrl.order | orderBy: 'info.itemNum'">
         <td>
             <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
             <span>{{item.info.itemNum}}</span>
@@ -27,4 +27,4 @@
     </tr>
 </table>
 <button ng-show = "ordersCtrl.order_info.processBy == ''" ng-click = "ordersCtrl.processOrder()">Order filled</button>
-<button ng-click = "ordersCtrl.cancelOrder()">Cancel Order</button>
+<button ng-show = "ordersCtrl.order_info.processBy == ''" ng-click = "ordersCtrl.cancelOrder()">Cancel Order</button>

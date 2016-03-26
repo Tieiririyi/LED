@@ -64,16 +64,19 @@ angular.module('led').directive('orderReview', function ()
                     Meteor.call('sendEmail', "gracedevelopmenttest@gmail.com", "gracedevelopmenttest@gmail.com", "New orders", "there is a new order");
                     
                     var cart_items = store.get('cart');
-
-                    cart_items.forEach(function(product){
-                        var temp_product = Products.findOne({_id: product.productId}).quantityOnHold;
-
-                        Products.update({_id: product.productId}, {$set: {
-                            quantityOnHold: parseInt(temp_product) + parseInt(product.quantity)
-                        }});
-                    });
                     store.set('cart', []);
                     $rootScope.led.cart_items = 0;
+                    cart_items.forEach(function(product){
+                        var temp_product = Products.findOne({_id: product.productId}).quantityOnHold;
+                        Meteor.call('updateQuantityOnHold', Meteor.userId, product.productId, parseInt(temp_product) + parseInt(product.quantity));
+/*//    updateQuantityOnHold: function(userId, productId, number){
+
+ Products.update({_id: product.productId}, {$set: {
+                            quantityOnHold: parseInt(temp_product) + parseInt(product.quantity)
+                        }});
+                        */
+                    });
+
                     $location.path('/shoppingCart/' + confirmation);
                 }
             }

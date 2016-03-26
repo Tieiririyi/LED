@@ -14,7 +14,7 @@ angular.module('led').directive('usersManagement', function ()
             this.helpers({
                 users: ()=> {
                     return Meteor.users.find().map(function(users){
-                        return {_id: users._id, profile: {name: users.profile.name}, roles: users.roles};
+                        return {_id: users._id, email: users.emails[0].address, profile: {name: users.profile.name}, roles: users.roles};
                     });
                 }
             });
@@ -22,12 +22,6 @@ angular.module('led').directive('usersManagement', function ()
             this.addUser = () => {
               $location.path('/admin/users/add');
             };
-            this.deactivate = (num) => {
-
-            };
-            this.activate = (num) => {
-
-            }
         }
     }
 });

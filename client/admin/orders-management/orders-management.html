@@ -1,6 +1,8 @@
 <div class="container">
     <h2>Order History</h2>
     <div >
+        <dir-pagination-controls boundary-links = true></dir-pagination-controls>
+
         <table class = "table table-condensed">
             <tr>
                 <th>id</th>
@@ -13,7 +15,7 @@
     
             </tr>
     
-            <tr dir-paginate="order in ordersMngtCtrl.orders | orderBy: '-orderDate' | itemsPerPage: 2 ">
+            <tr dir-paginate="order in ordersMngtCtrl.orders | orderBy: '-orderDate' | itemsPerPage: 10 ">
                 <td>
                     <a href = "/admin/orders/{{order._id}}">{{order._id}}</a>
                 </td>
@@ -24,7 +26,6 @@
                 <td ng-bind = "order.processDate | date:'medium'"></td>
                 <td ng-bind = "order.processAdmin"></td>
             </tr>
-            <dir-pagination-controls boundary-links = true></dir-pagination-controls>
         </table>
     </div>
 </div>

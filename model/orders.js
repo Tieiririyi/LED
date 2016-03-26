@@ -5,7 +5,7 @@ Orders.allow({
         return userId && doc.userId == userId;
     },
     update: function(userId, doc, fields, modifier){
-        return userId && doc.userId == userId;
+        return userId && doc.userId == userId || Roles.userIsInRole(userId, ['admin', 'super-admin'], 'led');
     }
 });
 
