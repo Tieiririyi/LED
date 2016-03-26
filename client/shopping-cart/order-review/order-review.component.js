@@ -12,19 +12,18 @@ angular.module('led').directive('orderReview', function ()
             this.subscribe('orders');
 
             this.helpers({
-                    cart: () => {
-                        return $rootScope.led.setCart();
-                    },
-                    total : () => {
-                        return updateCart.setCartTotal;
-                    }
+                cart: () => {
+                    return $rootScope.led.setCart();
+                },
+                total : () => {
+                    return updateCart.setCartTotal(this.cart);
+                }
             });
             
             this.buy = () => {
                 var confirmation = "";
                 //if user has an order that has unfinished status, then replace order
                 var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
-                console.log(user);
                 var cart = store.get('cart');
                 var order_details = cart.map(function(item){
                     var product = Products.findOne({_id: item.productId});
@@ -40,6 +39,7 @@ angular.module('led').directive('orderReview', function ()
                    Orders.update({_id: user._id},
                        {$set: {
                            order: order_details,
+                           orderNum: 1000000+Orders.find({orderDate: {$ne: ""}}).fetch().length,
                            status: "ordered",
                            orderDate: new Date()
                         }
@@ -49,6 +49,7 @@ angular.module('led').directive('orderReview', function ()
                     confirmation = Orders.insert({
                         userId: Meteor.userId(),
                         order: order_details,
+                        orderNum: 1000000+Orders.find({orderDate: {$ne: ""}}).fetch().length,
                         status: "ordered",
                         orderDate: new Date(),
                         processDate: "",

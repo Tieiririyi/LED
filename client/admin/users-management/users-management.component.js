@@ -13,9 +13,9 @@ angular.module('led').directive('usersManagement', function ()
 
             this.helpers({
                 users: ()=> {
-                    console.log(Products.find({}, {fields: {_id: 1}}));
-                    console.log(Meteor.users.find({} , {fields: {_id: 1}}));
-                    return Meteor.users.find({},{_id: 1, "profile.name": 1, roles: 1});
+                    return Meteor.users.find().map(function(users){
+                        return {_id: users._id, profile: {name: users.profile.name}, roles: users.roles};
+                    });
                 }
             });
 

@@ -15,21 +15,19 @@ angular.module('led').directive('ordersManagement', function ()
             this.helpers({
                     orders: () => {
 
-                        return Orders.find({}).map(function(order){
-                            console.log(order);
+                        return Orders.find({orderDate: {$ne: ""}}).map(function(order){
                             return {
                                 _id: order._id,
                                 user: Meteor.users.findOne({_id: order.userId}).profile.name,
+                                orderNum: order.orderNum,
                                 orderDate: order.orderDate,
+                                status: order.status,
                                 processDate: order.processDate,
                                 processAdmin: order.processBy == ""? "" : Meteor.users.findOne({_id: order.processBy}).profile.name
                             }
                         });
                     }
             });
-            this.pageChanged = function(newPage) {
-                $scope.page = newPage;
-            };
         }
     }
 });

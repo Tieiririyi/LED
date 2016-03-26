@@ -33,6 +33,7 @@ angular.module('led').directive('createAccount', function ()
                                 Orders.insert({
                                     userId: Meteor.userId(),
                                     order: store.get('cart'),
+                                    orderNum: 0,
                                     status: "not ordered",
                                     orderDate: "",
                                     processDate: "",

@@ -61,9 +61,13 @@ angular.module('led').directive('inventoryProductDetails', function ()
                 this.product.certification = certs;
                 this.product.picture = imageID;
 
-                Products.update({_id: this.product._id}, this.product);
+                //Products.update({_id: this.product._id}, this.product);
+                //updateInventory: function(userId, productId, product)
+                Meteor.call('updateInventory', Meteor.userId(), this.product._id, this.product, function(){
+                    window.location.href = Meteor.absoluteUrl('admin/inventory');
 
-                $location.path("/admin/inventory");
+                });
+                //$location.path("/admin/inventory");
             }
         }
     }

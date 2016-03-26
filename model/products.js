@@ -4,16 +4,21 @@
 
 Products = new Mongo.Collection("products");
 
+Products.allow({
+    insert: function(userId, doc){
+        return Roles.userIsInRole(userId, ['admin', 'super-admin'], 'led');
+    },
+    update: function(userId, doc, fields, modifier){
+        if (fields == 'quantityOnHold' && userId || Roles.userIsInRole(userId, ['admin', 'super-admin'], 'led')){
+            return true;
+        }
+    }
+});
+
 Meteor.methods({
-    setCart: function(){
-        var cart = store.get('cart');
-        return cart.map(function(item){
-            var product = Products.findOne({_id: item.productId});
-            return {
-                info: product,
-                categoryName: Categories.findOne({_id: product.categoryId}).categoryName,
-                orderQuantity: parseInt(item.quantity)
-            };
-        });
+    updateInventory: function(userId, productId, product){
+        if (Meteor.isServer){
+            Products.update({_id: productId}, product);
+        }
     }
 });

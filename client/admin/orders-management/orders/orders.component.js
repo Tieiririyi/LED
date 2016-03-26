@@ -66,6 +66,24 @@ angular.module('led').directive('orders', function ()
                 $location.path('/admin/orders');
             }
 
+            this.cancelOrder = () => {
+                Orders.update({_id: this.orderId}, {
+                    $set: {
+                        status: "cancelled",
+                        processDate: new Date(),
+                        processBy: Meteor.userId()
+                    }
+                });
+                this.order.forEach(function(items){
+                    var temp_product = Products.findOne({_id: items.info._id});
+                    Products.update({_id: items.info._id}, {$set: {
+                        quantityOnHold: parseInt(temp_product.quantityOnHold) - parseInt(items.itemInfo.quantity)
+                    }})
+                });
+                $location.path('/admin/orders');
+
+            }
+
         }
     }
 });

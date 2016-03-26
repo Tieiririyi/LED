@@ -29,14 +29,14 @@ Meteor.startup(function(){
 
 Meteor.publish("users", function () {
     if (Roles.userIsInRole(this.userId, ['admin', 'super-admin'], 'led')){
-        return Meteor.users.find({}, {fields: {emails: 1, profile: 1, roles: 1}});
+        return Meteor.users.find({}, {fields: {_id: 1, emails: 1, profile: 1, roles: 1}});
     }
     else if (Roles.userIsInRole(this.userId, ['customer'], 'led')){
-        return Meteor.users.findOne({_id: Meteor.userId()}, {fields: {emails: 1, profile: 1, roles: 1}});
+        return Meteor.users.find({_id: this.userId}, {fields: {emails: 1, profile: 1, roles: 1}});
     }
     else{
         this.stop();
-        return;
+        return ;
     }
 });
 

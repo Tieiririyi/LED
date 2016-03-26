@@ -33,6 +33,7 @@ angular.module('led').directive('users', function ()
                                 Orders.insert({
                                     userId: Meteor.userId(),
                                     order: store.get('cart'),
+                                    orderNum: 0,
                                     status: "not ordered",
                                     orderDate: "",
                                     processDate: "",
