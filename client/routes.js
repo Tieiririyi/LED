@@ -75,6 +75,12 @@ angular.module('led')
             });
 
         $stateProvider
+            .state('userOrders', {
+                url: "/users/order_history/:orderId",
+                template: "<user-orders></user-orders>"
+            });
+
+        $stateProvider
             .state('shoppingCart', {
                 url: '/shoppingCart',
                 template: '<shopping-cart></shopping-cart>'

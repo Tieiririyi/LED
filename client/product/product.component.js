@@ -53,22 +53,23 @@ angular.module('led').directive('product', function ()
                 if (Meteor.user() != null){
                     var user = Orders.findOne({userId: Meteor.userId(), status: "not ordered"});
                     if (user != null){
-                        Orders.update({_id: user._id}, {
-                            $set: {
-                                order: this.cart,
-                                orderDate: ""
+                        Meteor.call('updateOrders', Meteor.userId(), user._id, store.get('cart'), "not ordered", function(error, result){
+                            if (!error){
+                                console.log(result);
+                            }
+                            else{
+                                console.log(error);
                             }
                         });
                     }
                     else{
-                        Orders.insert({
-                            userId: Meteor.userId(),
-                            order: this.cart,
-                            orderNum: 0,
-                            status: "not ordered",
-                            orderDate: "",
-                            processDate: "",
-                            processBy: ""
+                        Meteor.call('insertOrders', Meteor.userId(), store.get('cart'), "not ordered", function(error, result){
+                            if (!error){
+                                console.log(result);
+                            }
+                            else{
+                                console.log(error);
+                            }
                         });
                     }
                 }

@@ -40,6 +40,7 @@ angular.module('led').directive('led', function () {
             this.setCart = function(){
 
                 var cart = store.get('cart');
+
                 return cart.map(function(item){
                     var product = Products.findOne({_id: item.productId});
                     return {

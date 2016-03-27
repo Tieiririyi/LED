@@ -14,8 +14,9 @@ Meteor.startup(function(){
     };
     
     Accounts.urls.verifyEmail = function(token){
-        return "https://led-amazinggracec.c9users.io/users/verify-email/?token=" + token;
-    }
+        return Meteor.absoluteUrl('users/verify-email/?token=' + token);
+        //return "https://led-amazinggracec.c9users.io/users/verify-email/?token=" + token;
+    };
     
     Accounts.emailTemplates.resetPassword.text = function(user, url){
         return "To reset your password, simply click the link below.\n" 

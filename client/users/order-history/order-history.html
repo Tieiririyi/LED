@@ -1,4 +1,18 @@
-<h2>Order History</h2>
-<div ng-repeat = "order in orderHistoryCtrl.orders">
-    {{order._id}}
+<div class="container">
+    <h2>Order History</h2>
+
+    <table class="table table-condensed">
+        <tr>
+            <th>Order Number</th>
+            <th>Order Date</th>
+            <th>Order Status</th>
+        </tr>
+        <tr dir-paginate="order in orderHistoryCtrl.orders | orderBy: '-orderDate' | itemsPerPage: 10 ">
+            <td>
+                <a href="/users/order_history/{{order._id}}" ng-bind="order.orderNum"></a>
+            </td>
+            <td ng-bind="order.orderDate | date:'medium'"></td>
+            <td ng-bind="order.status"></td>
+        </tr>
+    </table>
 </div>

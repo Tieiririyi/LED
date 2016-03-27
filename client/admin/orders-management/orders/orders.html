@@ -1,30 +1,48 @@
-<h2>Order {{ordersCtrl.orderId}}</h2>
-<label>Order date: </label><span ng-bind = "ordersCtrl.order_info.orderDate | date:'medium'"></span><br />
-<label>Process date: </label><span ng-bind = "ordersCtrl.order_info.processDate | date:'medium'"></span><br/>
-<label>Processed by: </label><span ng-bind = "ordersCtrl.order_info.processBy"></span>
+<div class="container">
+    <h2>Order <span ng-bind="ordersCtrl.order_info.orderNum"></span></h2>
+    <label>Order date: </label><span ng-bind="ordersCtrl.order_info.orderDate | date:'medium'"></span><br/>
+    <label>Order status:</label><span ng-bind="ordersCtrl.order_info.status"></span><br/>
+    <label>Process date: </label><span ng-bind="ordersCtrl.order_info.processDate | date:'medium'"></span><br/>
+    <label>Processed by: </label><span ng-bind="ordersCtrl.order_info.processBy"></span><br/>
+    <label>Confirmation ID: </label><span ng-bind="ordersCtrl.order_info._id"></span>
 
-<table>
-    <tr>
-        <th>Products</th>
-        <th>Price</th>
-        <th>Quantity</th>
+    <table class="table table-condensed">
+        <tr>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Edit</th>
+        </tr>
 
-    </tr>
+        <tr ng-repeat="item in ordersCtrl.order | orderBy: 'info.itemNum'">
+            <td>
+                <img ng-src="{{ item.info.picture.image.url() }}" width="100"/>
+                <span ng-bind="item.info.itemNum"></span>
+            </td>
 
-    <tr ng-repeat = "item in ordersCtrl.order | orderBy: 'info.itemNum'">
-        <td>
-            <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
-            <span>{{item.info.itemNum}}</span>
-        </td>
-
-        <td ng-bind = "item.itemInfo.price | currency"></td>
-        <td style = "text-align: right;" ng-bind = "item.itemInfo.quantity"></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td style = "text-align: right;" ng-bind = "ordersCtrl.total | currency"></td>
-    </tr>
-</table>
-<button ng-show = "ordersCtrl.order_info.processBy == ''" ng-click = "ordersCtrl.processOrder()">Order filled</button>
-<button ng-show = "ordersCtrl.order_info.processBy == ''" ng-click = "ordersCtrl.cancelOrder()">Cancel Order</button>
+            <td>
+                <span ng-bind="item.itemInfo.price | currency" ng-hide="editItem == true"></span>
+                <input type="text" ng-show="editItem == true" ng-model="item.itemInfo.price"/>
+            </td>
+            <td>
+                <span ng-bind="item.itemInfo.quantity" ng-hide="editItem == true"></span>
+                <input type="text" ng-show="editItem == true" ng-model="item.itemInfo.quantity"/>
+            </td>
+            <td>
+                <button ng-hide="editItem == true || ordersCtrl.order_info.processBy != ''" ng-click="ordersCtrl.edit(this)"><i
+                        class="fa fa-pencil-square-o"></i></button>
+                <button ng-show="editItem == true" ng-click="ordersCtrl.confirm(this)"><i class="fa fa-check"></i>
+                </button>
+                <button ng-show="editItem == true" ng-click="ordersCtrl.undo(this)"><i class="fa fa-times"></i></button>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style = "text-align: right;">Total:</td>
+            <td ng-bind="ordersCtrl.total | currency"></td>
+            <td></td>
+        </tr>
+    </table>
+    <button ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.processOrder()">Order filled</button>
+    <button ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.cancelOrder()">Cancel Order</button>
+</div>

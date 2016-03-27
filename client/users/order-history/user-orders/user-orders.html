@@ -1,0 +1,30 @@
+<div class = "container">
+<h2>Order <span ng-bind = "userOrdersCtrl.order_info.orderNum"></span></h2>
+<label>Order date: </label><span ng-bind = "userOrdersCtrl.order_info.orderDate | date:'medium'"></span><br />
+<label>Order status:</label><span ng-bind = "userOrdersCtrl.order_info.status"></span><br/>
+<label>Process date: </label><span ng-bind = "userOrdersCtrl.order_info.processDate | date:'medium'"></span><br/>
+<label>Confirmation ID: </label><span ng-bind = "userOrdersCtrl.order_info._id"></span>
+    <table class="table table-condensed">
+    <tr>
+        <th>Products</th>
+        <th>Quantity</th>
+        <th>Price</th>
+
+    </tr>
+
+    <tr ng-repeat = "item in userOrdersCtrl.order | orderBy: 'info.itemNum'">
+        <td>
+            <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
+            <span ng-bind = "item.info.itemNum"></span>
+        </td>
+
+        <td ng-bind = "item.itemInfo.quantity"></td>
+        <td ng-bind = "item.itemInfo.price | currency"></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td style = "text-align: right;">Total: </td>
+        <td ng-bind = "userOrdersCtrl.total | currency"></td>
+    </tr>
+</table>
+</div>

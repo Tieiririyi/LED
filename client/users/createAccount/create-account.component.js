@@ -29,7 +29,15 @@ angular.module('led').directive('createAccount', function ()
                         Meteor.call('verifyUserEmail');
                         Meteor.call('updateRoles', Meteor.userId(), ['customer'], 'led', (error) => {
                             if (!error){
-
+                            Meteor.call('insertOrders', Meteor.userId(), store.get('cart'), "not ordered", function(error, result){
+                                if (!error){
+                                    console.log(result);
+                                }
+                                else{
+                                    console.log(error);
+                                }
+                            });
+/*
                                 Orders.insert({
                                     userId: Meteor.userId(),
                                     order: store.get('cart'),
@@ -39,7 +47,7 @@ angular.module('led').directive('createAccount', function ()
                                     processDate: "",
                                     processBy: ""
                                 });
-
+*/
                                 var redirect = $location.search().redirect;
                                 if (redirect != undefined){
                                     $location.search('redirect');

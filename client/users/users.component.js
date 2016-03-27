@@ -22,22 +22,24 @@ angular.module('led').directive('users', function ()
 
                         if (store.get('cart').length > 0){
                             if (user != null){
-                                Orders.update({_id: user._id}, {
-                                    $set:
-                                    {
-                                        order: store.get('cart')
+                                user.order = store.get('cart');
+                                Meteor.call('updateOrders', Meteor.userId(), user._id, store.get('cart'), "not ordered", function(error, result){
+                                    if (!error){
+                                        console.log(result);
+                                    }
+                                    else{
+                                        console.log(error);
                                     }
                                 });
                             }
                             else{
-                                Orders.insert({
-                                    userId: Meteor.userId(),
-                                    order: store.get('cart'),
-                                    orderNum: 0,
-                                    status: "not ordered",
-                                    orderDate: "",
-                                    processDate: "",
-                                    processBy: ""
+                                Meteor.call('insertOrders', Meteor.userId(), store.get('cart'), "not ordered", function(error, result){
+                                    if (!error){
+                                        console.log(result);
+                                    }
+                                    else{
+                                        console.log(error);
+                                    }
                                 });
                             }
                         }
@@ -62,7 +64,6 @@ angular.module('led').directive('users', function ()
             this.forgotPassword = () => {
                 
                 if (this.user.email != ""){
-                    console.log("here");
                     Accounts.forgotPassword({"email": this.user.email}, function(error){
                         if (error){
                             this.message = "There was an error, please try again";

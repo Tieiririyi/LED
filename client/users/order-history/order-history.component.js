@@ -13,7 +13,7 @@ angular.module('led').directive('orderHistory', function ()
                         return Meteor.user();
                     },
                 orders : () => {
-                    return Orders.find({userId: Meteor.userId(), status: "ordered"});
+                    return Orders.find({userId: Meteor.userId(), orderDate: {$ne: ""}});
 
                 }
             });

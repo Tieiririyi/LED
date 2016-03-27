@@ -29,21 +29,21 @@ angular.module('led').directive('orderReview', function ()
                     var product = Products.findOne({_id: item.productId});
                     return {
                         productId: item.productId,
-                        quantity: item.quantity,
+                        quantity: item.quantity.toString(),
                         price: product.price * ((100-product.discount_pct)/100)
                     }
                 });
 
                 if (user != null){
                    confirmation = user._id;
-                   Orders.update({_id: user._id},
-                       {$set: {
-                           order: order_details,
-                           orderNum: 1000000+Orders.find({orderDate: {$ne: ""}}).fetch().length,
-                           status: "ordered",
-                           orderDate: new Date()
+                    Meteor.call('updateOrders', Meteor.userId(), user._id, order_details, "ordered", function(error, result){
+                        if (!error){
+                            console.log(result);
                         }
-                   });
+                        else{
+                            console.log(error);
+                        }
+                    });
                 }
                 else{
                     confirmation = Orders.insert({
