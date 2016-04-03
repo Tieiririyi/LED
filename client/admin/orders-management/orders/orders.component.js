@@ -78,6 +78,14 @@ angular.module('led').directive('orders', function ()
             this.edit = (order_item) => {
                 order_item.editItem = true;
             }
+            this.undo = (order_item) =>{
+                order_item.editItem = false;
+                var original = Orders.findOne({_id: $stateParams.orderId}).order.filter(function(products){
+                    return products.productId == order_item.item.itemInfo.productId;
+                });
+                order_item.item.itemInfo.quantity = original[0].quantity;
+                order_item.item.itemInfo.price = original[0].price;
+            }
             this.confirm = (order_item) => {
                 //update Products database
                 var original = Orders.findOne({_id: $stateParams.orderId}).order.filter(function(products){

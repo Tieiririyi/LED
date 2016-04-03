@@ -4,23 +4,23 @@
     <table class="shoppingCartTable">
         <tr>
             <th>Products</th>
-            <th>Price</th>
-            <th>orderQuantity</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
         </tr>
         <tr ng-repeat = "item in shoppingCart.cart">
             <td>
                 <img ng-src="{{ shoppingCart.retrievePicture(item.info.picture).url() }}" height="150" /><br/>
                 <span>{{item.info.itemNum}}</span>
             </td>
-
+            <td>
+                <input type = "text" ng-model = "item.orderQuantity" ng-model-options="{ updateOn: 'blur', debounce: { 'default': 500, 'blur': 0 } }" size = "5"/>
+                <button class="btn-primary" ng-click = "shoppingCart.updateQuantity(this)">Update</button>
+                <button class="btn-primary" ng-click = "shoppingCart.removeProduct(this)">Remove</button>
+            </td>
             <td style="color: green;">
                 {{item.info.price * ((100 - item.info.discount_pct)/100) | currency}}
             </td>
-            <td>
-                <input type = "text" ng-model = "item.orderQuantity" ng-model-options="{ updateOn: 'blur', debounce: { 'default': 500, 'blur': 0 } }" size = "5"/>
-                <button ng-click = "shoppingCart.updateQuantity(this)">update</button>
-                <button ng-click = "shoppingCart.removeProduct(this)">remove</button>
-            </td>
+         
         </tr>
         <tr>
             <td></td>
@@ -29,6 +29,6 @@
             <td style = "text-align: left;" ng-bind = "shoppingCart.total | currency"></td>
         </tr>
     </table>
-    <button ng-click = "shoppingCart.review()">Review Order</button>
+    <button class="btn-primary" ng-click = "shoppingCart.review()">Review Order</button>
 </div>
 

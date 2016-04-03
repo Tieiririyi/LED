@@ -8,7 +8,7 @@ angular.module('led').directive('userOrders', function ()
             $reactive(this).attach($scope);
             this.subscribe('orders');
             this.subscribe('users');
-
+            this.subscribe('images');
             this.helpers({
                 order: ()=> {
                     var current_order = Orders.findOne({_id: $stateParams.orderId});
@@ -32,6 +32,10 @@ angular.module('led').directive('userOrders', function ()
                     return total;
                 }
             });
+            this.retrievePicture = (picID)=>{
+
+                return Images.findOne({"_id": picID});
+            };
         }
     }
 });

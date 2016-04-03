@@ -19,15 +19,15 @@
                 <img ng-src="{{ item.info.picture.image.url() }}" width="100"/>
                 <span ng-bind="item.info.itemNum"></span>
             </td>
-
-            <td>
-                <span ng-bind="item.itemInfo.price | currency" ng-hide="editItem == true"></span>
-                <input type="text" ng-show="editItem == true" ng-model="item.itemInfo.price"/>
-            </td>
             <td>
                 <span ng-bind="item.itemInfo.quantity" ng-hide="editItem == true"></span>
                 <input type="text" ng-show="editItem == true" ng-model="item.itemInfo.quantity"/>
             </td>
+            <td>
+                <span ng-bind="item.itemInfo.price | currency" ng-hide="editItem == true"></span>
+                <input type="text" ng-show="editItem == true" ng-model="item.itemInfo.price"/>
+            </td>
+
             <td>
                 <button ng-hide="editItem == true || ordersCtrl.order_info.processBy != ''" ng-click="ordersCtrl.edit(this)"><i
                         class="fa fa-pencil-square-o"></i></button>
@@ -43,6 +43,6 @@
             <td></td>
         </tr>
     </table>
-    <button ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.processOrder()">Order filled</button>
-    <button ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.cancelOrder()">Cancel Order</button>
+    <button class="btn-primary" ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.processOrder()">Order filled</button>
+    <button class="btn-primary" ng-show="ordersCtrl.order_info.processBy == ''" ng-click="ordersCtrl.cancelOrder()">Cancel Order</button>
 </div>

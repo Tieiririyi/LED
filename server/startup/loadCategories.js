@@ -12,16 +12,19 @@
 
             var categories = [
                 {
-                    'categoryName': 'Dubstep-Free Zone',
-                    'categoryDescription': 'Fast just got faster with Nexus S.'
+                    'categoryName': 'LED bulbs',
+                    'categoryDescription': 'Amazing LED light bulbs.',
+                    'picture':''
                 },
                 {
-                    'categoryName': 'All dubstep all the time',
-                    'categoryDescription': 'Get it on!'
+                    'categoryName': 'Fixtures',
+                    'categoryDescription': 'Premium Design.',
+                    'picture':''
                 },
                 {
-                    'categoryName': 'Savage lounging',
-                    'categoryDescription': 'Leisure suit required. And only fiercest manners.'
+                    'categoryName': 'Signs',
+                    'categoryDescription': 'Customized LED Signs.',
+                    'picture':''
                 }
             ];
 
@@ -30,14 +33,14 @@
             }
         }
 
-        Images.find().forEach(function(images){
-         Images.remove({_id: images._id});
-         });
+        // Images.find().forEach(function(images){
+        //  Images.remove({_id: images._id});
+        //  });
 
         //Orders.remove({});
         //Products.remove({});
         if (Products.find().count() === 0) {
-            var id = Categories.findOne({"categoryName": "Dubstep-Free Zone"})._id;
+            var id = Categories.findOne({"categoryName": "LED bulbs"})._id;
             for (var i = 1; i<=50;i++){
                 var itemNum = "DPAR38-16WT(S" + i + ")"
                 Products.insert(
@@ -65,7 +68,7 @@
                         "quantityOnHold": 10,
                         "discount_pct": 10,
                         "status": true
-                    },
+                    }
                 );
             }
             // Products.insert(

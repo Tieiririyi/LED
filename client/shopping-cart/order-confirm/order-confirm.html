@@ -1,23 +1,25 @@
-<h2>Order Confirmation</h2>
-<span>Confirmation Number: {{orderConfirm.confirmation}}</span>
-<table>
-    <tr>
-        <th>Products</th>
-        <th>Unit Price</th>
-        <th>Quantity</th>
-    </tr>
-    <tr ng-repeat = "item in orderConfirm.cart">
-        <td>
-            <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
-            <span>{{item.info.itemNum}}</span>
-        </td>
+<div class="container">
+    <h2>Order Confirmation</h2>
+    <span>Confirmation Number: {{orderConfirm.confirmation}}</span>
+    <table class="shoppingCartTable">
+        <tr>
+            <th>Products</th>
+            <th>Quantity</th>
+            <th>Unit Price</th>
+        </tr>
+        <tr ng-repeat = "item in orderConfirm.cart">
+            <td>
+                <img ng-src="{{ orderConfirm.retrievePicture(item.info.picture).url() }}" width = "100" /><br/>
+                <span>{{item.info.itemNum}}</span>
+            </td>
+            <td ng-bind = "item.orderQuantity"></td>
+            <td ng-bind = "item.unitPrice | currency"></td>
 
-        <td ng-bind = "item.unitPrice | currency"></td>
-        <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
-        <td style = "text-align: right;" ng-bind = "orderConfirm.total | currency"></td>
-    </tr>
-</table>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="text-align: right"><strong>SubTotal:</strong></td>
+            <td style = "text-align: left;" ng-bind = "orderConfirm.total | currency"></td>
+        </tr>
+    </table>
+</div>

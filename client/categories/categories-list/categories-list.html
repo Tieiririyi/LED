@@ -18,12 +18,10 @@
             <div>
 
                 <a  style="display: block; padding: 4px;" href="/categories/{{category._id}}">
-                    <img style="margin-left: auto;margin-right: auto;" src="image019.png" alt="...">
-
+                    <img ng-src="{{ categoriesList.findImage(category.picture) == undefined ? 'no-images-found.gif': categoriesList.findImage(category.picture).url()}}" width="150" style="margin-left: 10px;margin-right: 10px;"  ><br/>
+                    <span  style="align-content: center;margin: 10px" class="h3">{{category.categoryName}}</span>
                 </a>
-                <div class="caption">
-                    <a class="h3">{{category.categoryName}}</a>
-                </div>
+
 
             </div>
         </div>

@@ -10,7 +10,7 @@ angular.module('led').directive('orderReview', function ()
             this.subscribe('products');
             this.subscribe('users');
             this.subscribe('orders');
-
+            this.subscribe('images');
             this.helpers({
                 cart: () => {
                     return $rootScope.led.setCart();
@@ -19,7 +19,10 @@ angular.module('led').directive('orderReview', function ()
                     return updateCart.setCartTotal(this.cart);
                 }
             });
-            
+            this.retrievePicture = (picID)=>{
+
+                return Images.findOne({"_id": picID});
+            };
             this.buy = () => {
                 var confirmation = "";
                 //if user has an order that has unfinished status, then replace order

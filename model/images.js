@@ -16,5 +16,8 @@ Images.allow({
   },
   update: function(userId, doc, fields, modifier){
     return Roles.userIsInRole(userId, ['admin', 'super-admin'], 'led');
+  },
+  download:function(){
+    return true;
   }
 });

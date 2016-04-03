@@ -1,9 +1,21 @@
 <div class = "container">
-    <dir-pagination-controls boundary-links = true></dir-pagination-controls>
+    <div class="panel-body">
+        <label>Search: </label>
+        <input ng-model = "filterProduct.info.$"/>
+        <label>Order by: </label>
+        <select ng-init="orderVar = 'info.itemNum'" ng-model = "orderVar">
+            <option value = "info.itemNum" ng-selected="true">Product Name</option>
+
+            <option value = "'info.price * ((100-product.info.discount_pct)/100'">Price</option>
+        </select>
+    </div>
+    <!--<dir-pagination-controls boundary-links = true></dir-pagination-controls>-->
     <div>
-        <div dir-paginate="product in productsList.products | orderBy: 'info.itemNum' | itemsPerPage: 10 " class = "col-sm-6 col-md-4">
+
+
+        <div ng-repeat="product in productsList.products | filter:filterProduct | orderBy: orderVar" class = "col-sm-6 col-md-4">
             <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
-                <img ng-src="{{product.image.url()}}" height="150" /><br/>
+                <img style="vertical-align: middle;min-height:10em" ng-src="{{product.image == '' ? 'no-images-found.gif' : product.image.url()}}" width="50%"  /><br/>
                 <span class = "h3">{{product.info.itemNum}}</span><br />
             </a>
             <span style="color:green;">{{product.info.price * ((100-product.info.discount_pct)/100) | currency}}</span>

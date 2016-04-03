@@ -8,7 +8,7 @@ angular.module('led').directive('shoppingCart', function ()
             $reactive(this).attach($scope);
             this.subscribe('categories');
             this.subscribe('products');
-
+            this.subscribe('images');
             this.helpers({
                 cart: ()=> {
                     var cart = store.get('cart');

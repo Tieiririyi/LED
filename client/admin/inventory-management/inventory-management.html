@@ -10,6 +10,7 @@
                 <tr>
                     <th>Category Name</th>
                     <th>Category Description</th>
+                    <th>Picture</th>
                     <th>Edit</th>
                 </tr>
                 <tr ng-repeat = "category in inventoryCtrl.categories">
@@ -21,6 +22,13 @@
                     <td>
                         <span ng-hide = "showCat">{{category.categoryDescription}}</span>
                         <input type = "text" ng-show = "showCat" ng-model = "category.categoryDescription" size = "50" />
+                    </td>
+                    <td>
+                        <span ng-hide = "showCat"> <img ng-src="{{ inventoryCtrl.findImage(category.picture).url() }}" width = "50" /></span>
+                        <input ng-show = "showCat" name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select
+                               ng-model = "inventoryCtrl.new_picture"
+
+                               ngf-multiple="false" ngf-allow-dir="false" ngf-accept="'image/*'" />
                     </td>
                     <td>
                         <button ng-hide = "showCat" ng-click = "inventoryCtrl.editCat(this)"><i class="fa fa-pencil-square-o"></i></button>

@@ -4,7 +4,7 @@
 <label>Order status:</label><span ng-bind = "userOrdersCtrl.order_info.status"></span><br/>
 <label>Process date: </label><span ng-bind = "userOrdersCtrl.order_info.processDate | date:'medium'"></span><br/>
 <label>Confirmation ID: </label><span ng-bind = "userOrdersCtrl.order_info._id"></span>
-    <table class="table table-condensed">
+    <table class="shoppingCartTable">
     <tr>
         <th>Products</th>
         <th>Quantity</th>
@@ -14,7 +14,7 @@
 
     <tr ng-repeat = "item in userOrdersCtrl.order | orderBy: 'info.itemNum'">
         <td>
-            <img ng-src="{{ item.info.picture.image.url() }}" width = "100" /><br/>
+            <img ng-src="{{ userOrdersCtrl.retrievePicture(item.info.picture).url()}}" width = "100" /><br/>
             <span ng-bind = "item.info.itemNum"></span>
         </td>
 

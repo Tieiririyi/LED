@@ -1,25 +1,25 @@
 <div class="container">
     <h2>Review Order</h2>
-    <table>
+    <table class="shoppingCartTable">
         <tr>
             <th>Products</th>
-            <th>Price</th>
             <th>Quantity</th>
+            <th>Unit Price</th>
         </tr>
         <tr ng-repeat = "item in orderReview.cart">
             <td>
-                <img ng-src="{{item.info.picture.image.url() }}" width = "100" /><br/>
+                <img ng-src="{{orderReview.retrievePicture(item.info.picture).url() }}" width = "100" /><br/>
                 <span>{{item.info.itemNum}}</span>
             </td>
-
+            <td ng-bind = "item.orderQuantity"></td>
             <td ng-bind = "item.info.price * ((100 - item.info.discount_pct)/100) | currency"></td>
-            <td style = "text-align: right;" ng-bind = "item.orderQuantity"></td>
+
         </tr>
         <tr>
             <td></td>
-            <td></td>
-            <td style = "text-align: right;" >{{orderReview.total | currency}}</td>
+            <td style="text-align: right"><strong>SubTotal:</strong></td>
+            <td style="text-align: left" >{{orderReview.total | currency}}</td>
         </tr>
     </table>
-    <button ng-click = "orderReview.buy()">Place Order</button>
+    <button class="btn-primary" ng-click = "orderReview.buy()">Place Order</button>
 </div>

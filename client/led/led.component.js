@@ -30,12 +30,20 @@ angular.module('led').directive('led', function () {
                 current_user: ()=> {
                     return Meteor.userId();
                 },
-                cart_items: () =>{
+                cart_items: () => {
                     return updateCart.cart_items();
                 },
                 categories: ()=> {
                     return Categories.find({});
+                },
+                isAdmin: ()=> {
+                    if (Meteor.userId() != null && Roles.userIsInRole(Meteor.userId(), ['admin', 'super-admin'], 'led')){
+                        return true;
+                    }else{
+                        return false;
+                    }
                 }
+
             });
             this.setCart = function(){
 

@@ -11,12 +11,17 @@ angular.module('led').directive('categoriesList', function ()
             $reactive(this).attach($scope);
 
             this.subscribe('categories');
-
+            this.subscribe('images');
             this.helpers({
                 categories: ()=> {
                     return Categories.find({});
                     }
                 })
+
+            this.findImage = (imageID) =>{
+
+                return Images.findOne({"_id":imageID});
+            }
 
         }
     }

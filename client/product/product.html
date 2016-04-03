@@ -1,30 +1,37 @@
 <div class = "container">
     <h2 ng-bind = "productCtrl.product.itemNum"></h2>
-    <img ng-src="{{ productCtrl.image.url() }}" width = "100" /><br/>
+    <img ng-src="{{ productCtrl.image == undefined ?'no-images-found.gif':productCtrl.image.url() }}" height="150"  /><br/>
     <span style="color:green;" ng-bind = "productCtrl.product.price * ((100 - productCtrl.product.discount_pct)/100)| currency"></span>
     <span style = "color:red;text-decoration: line-through;" ng-bind = "productCtrl.product.price" ng-show = "productCtrl.product.discount_pct > 0"></span>
     <br />
-    <form ng-submit = "productCtrl.addToCart()">
+    <Label class="productlabel">Stock:</Label>
+    <span ng-style="productCtrl.product.quantityInStock - productCtrl.product.quantityOnHold > 0 && {'color':'green'} || {'color':'red'}"
+          >{{productCtrl.product.quantityInStock - productCtrl.product.quantityOnHold > 0? productCtrl.product.quantityInStock - productCtrl.product.quantityOnHold:0 }}</span>
+
+    <form ng-show = "productCtrl.product.quantityInStock - productCtrl.product.quantityOnHold > 0" ng-submit = "productCtrl.addToCart()">
         <input type = "text" ng-model = "productCtrl.quantity" required />
-        <input type = "submit" value = "Add to Cart" />
+        <input ng-disabled="productCtrl.product.quantityInStock - productCtrl.product.quantityOnHold <= 0" class="btn-primary"   type = "submit" value = "Add to Cart" />
+
     </form>
-    <label class="productlabel">Socket: </label><span ng-bind = "productCtrl.product.socket"></span><br />
-    <label class="productlabel">Power: </label><span ng-bind = "productCtrl.product.power"></span><br />
-    <label class="productlabel">Size: </label><span ng-bind = "productCtrl.product.size"></span><br />
-    <label class="productlabel">Brightness: </label><span ng-bind = "productCtrl.product.brightness"></span><br />
-    <label class="productlabel">Temperature: </label><span ng-bind = "productCtrl.product.temperature"></span><br />
-    <label class="productlabel">Ra: </label><span ng-bind = "productCtrl.product.Ra"></span><br />
-    <label class="productlabel">Voltage: </label><span ng-bind = "productCtrl.product.voltage"></span><br />
-    <label class="productlabel">Beam angle: </label><span ng-bind = "productCtrl.product.beam_angle"></span><br />
-    <label class="productlabel">Life time: </label><span ng-bind = "productCtrl.product.life_time"></span><br />
-    <label class="productlabel">Housing material: </label><span ng-bind = "productCtrl.product.housing"></span><br />
-    <label class="productlabel">Colour: </label><span ng-bind = "productCtrl.product.colour"></span><br />
-    <label class="productlabel">Housing cover: </label><span ng-bind = "productCtrl.product.cover"></span><br />
-    <label class="productlabel">Certification: </label>
+    <div>
+        <label class="productlabel">Socket: </label><span ng-bind = "productCtrl.product.socket"></span><br />
+        <label class="productlabel">Power: </label><span ng-bind = "productCtrl.product.power"></span><br />
+        <label class="productlabel">Size: </label><span ng-bind = "productCtrl.product.size"></span><br />
+        <label class="productlabel">Brightness: </label><span ng-bind = "productCtrl.product.brightness"></span><br />
+        <label class="productlabel">Temperature: </label><span ng-bind = "productCtrl.product.temperature"></span><br />
+        <label class="productlabel">Ra: </label><span ng-bind = "productCtrl.product.Ra"></span><br />
+        <label class="productlabel">Voltage: </label><span ng-bind = "productCtrl.product.voltage"></span><br />
+        <label class="productlabel">Beam angle: </label><span ng-bind = "productCtrl.product.beam_angle"></span><br />
+        <label class="productlabel">Life time: </label><span ng-bind = "productCtrl.product.life_time"></span><br />
+        <label class="productlabel">Housing material: </label><span ng-bind = "productCtrl.product.housing"></span><br />
+        <label class="productlabel">Colour: </label><span ng-bind = "productCtrl.product.colour"></span><br />
+        <label class="productlabel">Housing cover: </label><span ng-bind = "productCtrl.product.cover"></span><br />
+        <label class="productlabel">Certification: </label>
     <span ng-repeat = "certs in productCtrl.product.certification">
         <img ng-show = "certs == 'ETL'" src = "ETL.JPG" width = "30"/>
         <img ng-show = "certs == 'CE'" src = "CE.png" width = "30" />
         <img ng-show = "certs == 'energy_star'" src = "Energy_Star_logo.png" width = "30"/>
     </span><br />
+    </div>
 
 </div>

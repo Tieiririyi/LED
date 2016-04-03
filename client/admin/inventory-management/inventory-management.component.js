@@ -15,7 +15,7 @@ angular.module('led').directive('inventoryManagement', function ()
 
             this.subscribe("products");
             this.subscribe("categories");
-
+            this.subscribe("images");
             this.helpers({
                     products: ()=> {
                         return Products.find({}).map(function(product){
@@ -29,17 +29,39 @@ angular.module('led').directive('inventoryManagement', function ()
                 categories: () => {
                     return Categories.find();
                 }
+
+
             })
 
+            this.findImage = (imageID) =>{
+
+               return Images.findOne({"_id":imageID});
+            }
             this.editCat = (num) => {
                 num.showCat = true;
             }
 
             this.updateCat = (num) => {
                 num.showCat = false;
+                var imageID = (num.category.picture == ""? "": num.category.picture);
+                console.log(this.new_picture);
+                //add image
+                if (this.new_picture != null){
+
+                    if (imageID != ""){
+                        Images.remove({_id: imageID});
+                    }
+                    imageID = Images.insert(this.new_picture[0])._id;
+
+                }
+                console.log(imageID);
+                num.category.picture = imageID;
                 Categories.update({_id: num.category._id}, {
+                    $set:{
                     "categoryName": num.category.categoryName,
-                    "categoryDescription": num.category.categoryDescription
+                    "categoryDescription": num.category.categoryDescription,
+                    "picture":num.category.picture
+                    }
                 });
             }
             this.undoCat = (num) => {
