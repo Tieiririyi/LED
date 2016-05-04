@@ -12,7 +12,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
             this.subscribe('products');
             this.subscribe('categories');
             this.subscribe('images');
-
+            this.subscribe('ledtypes');
             this.helpers({
                 categories: ()=> {
                     return Categories.find({});
@@ -31,6 +31,9 @@ angular.module('led').directive('inventoryProductDetails', function ()
                     if (Products.findOne({_id: $stateParams.prodId}).picture != undefined){
                         return Images.findOne({"_id": Products.findOne({_id: $stateParams.prodId}).picture});
                     }
+                },
+                ledtypes: ()=>{
+                    return Ledtypes.find({});
                 }
             });
 
@@ -64,10 +67,10 @@ angular.module('led').directive('inventoryProductDetails', function ()
                 //Products.update({_id: this.product._id}, this.product);
                 //updateInventory: function(userId, productId, product)
                 Meteor.call('updateInventory', Meteor.userId(), this.product._id, this.product, function(){
-                    window.location.href = Meteor.absoluteUrl('admin/inventory');
+                    //window.location.href = Meteor.absoluteUrl('admin/inventory');
 
                 });
-                //$location.path("/admin/inventory");
+                $location.path("/admin/inventory");
             }
         }
     }

@@ -1,23 +1,22 @@
-
 <header style="background-color: #232f3e" class="navbar-static-top">
     <!--<div class="container">-->
 
-        <!--<div class="input-group">-->
+    <!--<div class="input-group">-->
     <!--<div class="input-group-btn">-->
-        <!--<button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>-->
-        <!--<ul  class="dropdown-menu">-->
-            <!--<li><a href="#" >Action</a></li>-->
-            <!--<li><a href="#">Another action</a></li>-->
-            <!--<li><a href="#">Something else here</a></li>-->
-            <!--<li role="separator" class="divider"></li>-->
-            <!--<li><a href="#">Separated link</a></li>-->
-        <!--</ul>-->
+    <!--<button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>-->
+    <!--<ul  class="dropdown-menu">-->
+    <!--<li><a href="#" >Action</a></li>-->
+    <!--<li><a href="#">Another action</a></li>-->
+    <!--<li><a href="#">Something else here</a></li>-->
+    <!--<li role="separator" class="divider"></li>-->
+    <!--<li><a href="#">Separated link</a></li>-->
+    <!--</ul>-->
     <!--</div>&lt;!&ndash; /btn-group &ndash;&gt;-->
     <!--<input type="text" class="form-control" aria-label="...">-->
-                <!--<span class="input-group-btn">-->
-                        <!--<button style="background-color: lightgoldenrodyellow" class="btn btn-default" type="button">Go!</button>-->
-                  <!--</span>-->
-<!--</div>-->
+    <!--<span class="input-group-btn">-->
+    <!--<button style="background-color: lightgoldenrodyellow" class="btn btn-default" type="button">Go!</button>-->
+    <!--</span>-->
+    <!--</div>-->
 
 
     <!--</div>-->
@@ -25,21 +24,23 @@
         <nav>
             <ul class="nav navbar-nav">
                 <li>
-                    <a style="color: white;">HOME</a>
+                    <a style="color: white;" href="/home">HOME</a>
                 </li>
                 <li class="dropdown">
                     <a style="color: white" href="/categories">PRODUCTS</a>
-                    <ul  class="dropdown-menu">
-                        <li ng-repeat='category in led.categories'><a href="/categories/{{category._id}}">{{category.categoryName}}</a></li>
+                    <ul class="dropdown-menu">
+                        <li ng-repeat='category in led.categories'><a
+                                href="/categories/{{category._id}}">{{category.categoryName}}</a></li>
                     </ul>
                 </li>
                 <li>
-                    <a style="color: white" href = "/led_guide">LED GUIDE</a>
+                    <a style="color: white" href="/led_guide">LED GUIDE</a>
                 </li>
-                <li ng-show = "led.isAdmin" class="dropdown">
-                    <a style="color: white;" class="nav" href = "#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ADMIN</a>
-                    <ul  class="dropdown-menu" >
-                        <li><a href="/admin/inventory" >Inventory</a></li>
+                <li ng-show="led.isAdmin" class="dropdown">
+                    <a style="color: white;" class="nav" href="#" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false">ADMIN</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/admin/inventory">Inventory</a></li>
                         <li><a href="/admin/users">Users</a></li>
                         <li><a href="/admin/orders">Orders</a></li>
                     </ul>
@@ -48,22 +49,26 @@
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li>
-                    <a style="color: white;" class="nav" href = "/shoppingCart"><span  class="glyphicon glyphicon-shopping-cart"></span> ({{led.cart_items}})</a>
+                    <a style="color: white;" class="nav" href="/shoppingCart"><span
+                            class="glyphicon glyphicon-shopping-cart"></span> ({{led.cart_items}})</a>
                 </li>
 
-                <li ng-show = "led.current_user == null">
-                    <a style="color: white;" class="nav" href = "/users"><span><span  class="glyphicon glyphicon-user"></span>   Sign In </span></a>
+                <li ng-show="led.current_user == null">
+                    <a style="color: white;" class="nav" href="/users"><span><span
+                            class="glyphicon glyphicon-user"></span>   Sign In </span></a>
                 </li>
-                <li ng-show = "led.current_user != null">
-                    <a style="color: white;" class="nav" href = "#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span><span  class="glyphicon glyphicon-user"></span><i class="fa fa-caret-down"></i></span></a>
+                <li ng-show="led.current_user != null">
+                    <a style="color: white;" class="nav" href="#" data-toggle="dropdown" aria-haspopup="true"
+                       aria-expanded="false"><span><span class="glyphicon glyphicon-user"></span><i
+                            class="fa fa-caret-down"></i></span></a>
 
 
                     <!--<button style="background-color: lightgray;" type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action <span class="caret"></span></button>-->
-                    <ul  class="dropdown-menu" >
-                        <li><a href="/users/profiles" >My Profile</a></li>
+                    <ul class="dropdown-menu">
+                        <li><a href="/users/profiles">My Profile</a></li>
                         <li><a href="/users/order_history">Order History</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="#" ng-click = "led.logout()">Logout</a></li>
+                        <li><a href="#" ng-click="led.logout()">Logout</a></li>
                     </ul>
                 </li>
 
@@ -73,4 +78,25 @@
 </header>
 
 
-<div ui-view="" ></div>
+<div ui-view=""></div>
+
+<footer style="background-color: #232f3e; margin-top: 100px;padding-top: 50px;padding-bottom: 50px;">
+    <div class="container">
+
+        <iframe width="240" height="135"
+                style="border: 2px solid #00FF00;float: left; margin-right: 100px;"
+                src="https://www.google.com/maps?q=31 Progress Ave., Unit13,&#10;Toronto, Ontario M1P 4S6&amp;z=14&amp;t=m&amp;output=embed">
+
+        </iframe>
+
+        <p style="float: left;color: white;">
+            31 Progress Ave., Unit13
+            <br/>
+            Toronto, Ontario M1P 4S6
+            <br/>
+            647-298-3539<br/>
+            647-963-8016
+        </p>
+
+    </div>
+</footer>

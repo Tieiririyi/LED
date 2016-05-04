@@ -1,25 +1,40 @@
-<div class = "container">
+<div class="container" style="min-height: 700px;">
     <div class="panel-body">
         <label>Search: </label>
-        <input ng-model = "filterProduct.info.$"/>
+        <input ng-model="filterProduct.info.$"/>
         <label>Order by: </label>
-        <select ng-init="orderVar = 'info.itemNum'" ng-model = "orderVar">
-            <option value = "info.itemNum" ng-selected="true">Product Name</option>
+        <select ng-init="orderVar = 'info.itemNum'" ng-model="orderVar">
+            <option value="info.itemNum" ng-selected="true">Product Name</option>
 
-            <option value = "'info.price * ((100-product.info.discount_pct)/100'">Price</option>
+            <option value="'info.price * ((100-product.info.discount_pct)/100'">Price</option>
+            <option value="info.ledtype">Led Type</option>
         </select>
     </div>
+
     <!--<dir-pagination-controls boundary-links = true></dir-pagination-controls>-->
     <div>
 
 
-        <div ng-repeat="product in productsList.products | filter:filterProduct | orderBy: orderVar" class = "col-sm-6 col-md-4">
-            <a  style="display: block; padding: 4px;" href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
-                <img style="vertical-align: middle;min-height:10em" ng-src="{{product.image == '' ? 'no-images-found.gif' : product.image.url()}}" width="50%"  /><br/>
-                <span class = "h3">{{product.info.itemNum}}</span><br />
+        <div style="min-height: 300px;" ng-repeat="product in productsList.products | filter:filterProduct | orderBy: orderVar"
+             class="col-sm-6 col-md-4">
+
+            <a style="display: block; padding: 4px; margin-top: 20px;margin-bottom: 20px;"
+               href="/categories/{{product.info.categoryId}}/{{product.info._id}}">
+                <p style="text-align: center">
+                    <img style="vertical-align: middle;min-height: 170px;"
+                         ng-src="{{product.image == '' ? 'no-images-found.gif' : product.image.url()}}"
+                         /><br/>
+                </p>
+                <div align="center" class="caption">
+                    <span class="h3">{{product.info.itemNum}}</span><br/>
+                </div>
             </a>
-            <span style="color:green;">{{product.info.price * ((100-product.info.discount_pct)/100) | currency}}</span>
-            <span ng-show = "product.info.discount_pct != 0" style = "text-decoration: line-through;color:red;">{{product.info.price | currency}}</span>
+            <!--<div align="center">-->
+                <!--<span style="color:green; margin: 5px;">{{product.info.price * ((100-product.info.discount_pct)/100) | currency}}</span>-->
+                <!--<span ng-show="product.info.discount_pct != 0"-->
+                      <!--style="text-decoration: line-through;color:red; margin: 5px;">{{product.info.price | currency}}</span>-->
+            <!--</div>-->
         </div>
+
     </div>
 </div>

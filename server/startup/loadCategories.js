@@ -6,7 +6,34 @@
 
     Meteor.startup(function () {
 
-
+        if (Ledtypes.find().count() ===0){
+            var ledtypes = [
+                {
+                    'type':'PAR38'
+                },
+                {
+                    'type':'PAR30'
+                }
+                ,
+                {
+                    'type':'PAR20'
+                }
+                ,
+                {
+                    'type':'GU10'
+                }
+                ,
+                {
+                    'type':'DE26'
+                },
+                {
+                    'type':'MR16'
+                }
+            ];
+            for (var i = 0; i < ledtypes.length; i++) {
+                Ledtypes.insert(ledtypes[i]);
+            }
+        }
         //Categories.remove({});
         if (Categories.find().count() === 0) {
 
@@ -14,17 +41,20 @@
                 {
                     'categoryName': 'LED bulbs',
                     'categoryDescription': 'Amazing LED light bulbs.',
-                    'picture':''
+                    'picture':'',
+                    'pictureURL':''
                 },
                 {
                     'categoryName': 'Fixtures',
                     'categoryDescription': 'Premium Design.',
-                    'picture':''
+                    'picture':'',
+                    'pictureURL':''
                 },
                 {
-                    'categoryName': 'Signs',
+                    'categoryName': 'LED Signs',
                     'categoryDescription': 'Customized LED Signs.',
-                    'picture':''
+                    'picture':'',
+                    'pictureURL':''
                 }
             ];
 
@@ -41,89 +71,91 @@
         //Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "LED bulbs"})._id;
-            for (var i = 1; i<=50;i++){
-                var itemNum = "DPAR38-16WT(S" + i + ")"
-                Products.insert(
-                    {
-                        "itemNum": itemNum,
-                        "size": "122*135mm",
-                        "socket": "E26",
-                        "power": 16,
-                        "brightness": 1250,
-                        "temperature": 3000,
-                        "Ra": ">=80",
-                        "voltage": "100-130",
-                        "beam_angle": 120,
-                        "life_time": 50000,
-                        "power_factor": ">=0.9",
-                        "dimmable": "yes",
-                        "housing": "aluminum",
-                        "colour": "silver",
-                        "cover": "glass lens",
-                        "certification": ["CE", "ETL"],
-                        "categoryId": id,
-                        "picture": "",
-                        "price": 10.99,
-                        "quantityInStock": 100,
-                        "quantityOnHold": 10,
-                        "discount_pct": 10,
-                        "status": true
-                    }
-                );
-            }
-            // Products.insert(
-            //     {
-            //         "itemNum": "DPAR38-16WT(S2)",
-            //         "size": "122*135mm",
-            //         "socket": "E26",
-            //         "power": 16,
-            //         "brightness": 1250,
-            //         "temperature": 3000,
-            //         "Ra": ">=80",
-            //         "voltage": "100-130",
-            //         "beam_angle": 120,
-            //         "life_time": 50000,
-            //         "power_factor": ">=0.9",
-            //         "dimmable": "yes",
-            //         "housing": "aluminum",
-            //         "colour": "silver",
-            //         "cover": "glass lens",
-            //         "certification": ["CE", "ETL"],
-            //         "categoryId": id,
-            //         "picture": "",
-            //         "price": 10.99,
-            //         "quantityInStock": 100,
-            //         "quantityOnHold": 10,
-            //         "discount_pct": 0.1
-            //     },
-            // );
-            // Products.insert(
-            //     {
-            //         "itemNum": "DPAR38-16WT(S2)",
-            //         "size": "122*135mm",
-            //         "socket": "E27",
-            //         "power": 16,
-            //         "brightness": 1250,
-            //         "temperature": 3000,
-            //         "Ra": ">=80",
-            //         "voltage": "100-130",
-            //         "beam_angle": 120,
-            //         "life_time": 50000,
-            //         "power_factor": ">=0.9",
-            //         "dimmable": "yes",
-            //         "housing": "aluminum",
-            //         "colour": "silver",
-            //         "cover": "glass lens",
-            //         "certification": ["CE", "ETL"],
-            //         "categoryId": id,
-            //         "picture": "",
-            //         "price": 10.99,
-            //         "quantityInStock": 100,
-            //         "quantityOnHold": 10,
-            //         "discount_pct": 0
-            //     }
-            // );
+                for (var i = 1; i<=16;i++){
+                    var itemNum = "DPAR38-16WT(S" + i + ")"
+                    Products.insert(
+                        {
+                            "itemNum": itemNum,
+                            "size": "122*135mm",
+                            "socket": "E26",
+                            "power": 16,
+                            "brightness": 1250,
+                            "temperature": 3000,
+                            "Ra": ">=80",
+                            "voltage": "100-130",
+                            "beam_angle": 120,
+                            "life_time": 50000,
+                            "power_factor": ">=0.9",
+                            "dimmable": "yes",
+                            "housing": "aluminum",
+                            "colour": "silver",
+                            "cover": "glass lens",
+                            "certification": ["CE", "ETL"],
+                            "categoryId": id,
+                            "picture": "",
+                            "price": 10.99,
+                            "quantityInStock": 100,
+                            "quantityOnHold": 10,
+                            "discount_pct": 10,
+                            "status": true,
+                            "ledtype":""
+                        }
+                    );
+             }
         }
+        //     // Products.insert(
+        //     //     {
+        //     //         "itemNum": "DPAR38-16WT(S2)",
+        //     //         "size": "122*135mm",
+        //     //         "socket": "E26",
+        //     //         "power": 16,
+        //     //         "brightness": 1250,
+        //     //         "temperature": 3000,
+        //     //         "Ra": ">=80",
+        //     //         "voltage": "100-130",
+        //     //         "beam_angle": 120,
+        //     //         "life_time": 50000,
+        //     //         "power_factor": ">=0.9",
+        //     //         "dimmable": "yes",
+        //     //         "housing": "aluminum",
+        //     //         "colour": "silver",
+        //     //         "cover": "glass lens",
+        //     //         "certification": ["CE", "ETL"],
+        //     //         "categoryId": id,
+        //     //         "picture": "",
+        //     //         "price": 10.99,
+        //     //         "quantityInStock": 100,
+        //     //         "quantityOnHold": 10,
+        //     //         "discount_pct": 0.1
+        //     //     },
+        //     // );
+        //     // Products.insert(
+        //     //     {
+        //     //         "itemNum": "DPAR38-16WT(S2)",
+        //     //         "size": "122*135mm",
+        //     //         "socket": "E27",
+        //     //         "power": 16,
+        //     //         "brightness": 1250,
+        //     //         "temperature": 3000,
+        //     //         "Ra": ">=80",
+        //     //         "voltage": "100-130",
+        //     //         "beam_angle": 120,
+        //     //         "life_time": 50000,
+        //     //         "power_factor": ">=0.9",
+        //     //         "dimmable": "yes",
+        //     //         "housing": "aluminum",
+        //     //         "colour": "silver",
+        //     //         "cover": "glass lens",
+        //     //         "certification": ["CE", "ETL"],
+        //     //         "categoryId": id,
+        //     //         "picture": "",
+        //     //         "price": 10.99,
+        //     //         "quantityInStock": 100,
+        //     //         "quantityOnHold": 10,
+        //     //         "discount_pct": 0
+        //     //     }
+        //     // );
+        // }
 
         if (Meteor.roles.findOne({name: "super-admin"}) == undefined){
             Accounts.createUser({

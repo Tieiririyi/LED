@@ -44,6 +44,7 @@ angular.module('led').directive('addProduct', function ()
                 product.status = true;
                 product.certification = certs;
                 Products.insert(product);
+                
                 $location.path("/admin/inventory");
             };
             

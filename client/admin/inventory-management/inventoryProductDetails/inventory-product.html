@@ -10,6 +10,11 @@
             <option ng-repeat = "category in inventoryProductDetails.categories" value = "{{category._id}}" ng-checked = "category._id == inventoryProductDetails.product.categoryId">{{category.categoryName}}</option>
         </select> <br />
 
+        <label>LED Type: </label>
+        <select ng-model = "inventoryProductDetails.product.ledtype">
+            <option ng-repeat = "ledtype in inventoryProductDetails.ledtypes" value = "{{ledtype.type}}" ng-checked = "ledtype.type == inventoryProductDetails.product.ledtype">{{ledtype.type}}</option>
+        </select> <br />
+
         <label>Power: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.power" /><span>Watts</span><br />
 

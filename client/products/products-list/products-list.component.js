@@ -12,6 +12,7 @@ angular.module('led').directive('productsList', function ()
             this.subscribe('categories');
             this.subscribe('products');
             this.subscribe('images');
+            this.subscribe('ledtypes');
 
             //this.categories = $meteor.collection(Categories);
             this.helpers({
@@ -23,8 +24,12 @@ angular.module('led').directive('productsList', function ()
                             image: (product.picture == "" ? "" : Images.findOne({_id: product.picture}))
                         };
                     });
+                },
+                ledtypes: ()=>{
+                    return Ledtypes.find({});
                 }
-            });
+            }
+            );
         }
     }
 });

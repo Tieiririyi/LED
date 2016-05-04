@@ -6,6 +6,14 @@ angular.module('led')
         $locationProvider.html5Mode(true);
 
         $stateProvider
+            .state('home',
+                {
+                    url:'/home',
+                    template:'<home></home>'
+                }
+
+            );
+        $stateProvider
             .state('categories',
                 {
                     url: '/categories',
@@ -215,6 +223,6 @@ angular.module('led')
                 url: '/users/reset-password/:token',
                 template: '<reset-password></reset-password>'
             });
-        //$urlRouterProvider.otherwise("/categories");
+        $urlRouterProvider.otherwise("/home");
     });
 

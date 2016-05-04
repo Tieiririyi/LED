@@ -1,29 +1,40 @@
-<div class="container">
+<div class="container" style="min-height: 700px;">
     <!--<form>-->
-        <!--<label>Category Name: </label>-->
-        <!--<input type="text" ng-model="categoriesList.newCategory.name" />-->
-        <!--<label>Description: </label>-->
-        <!--<input type="text" ng-model="categoriesList.newCategory.description" />-->
-        <!--<button>Add Party!</button>-->
+    <!--<label>Category Name: </label>-->
+    <!--<input type="text" ng-model="categoriesList.newCategory.name" />-->
+    <!--<label>Description: </label>-->
+    <!--<input type="text" ng-model="categoriesList.newCategory.description" />-->
+    <!--<button>Add Party!</button>-->
     <!--</form>-->
     <!--<ul>-->
-        <!--<li ng-repeat='category in categoriesList.categories'>-->
-            <!--{{ category.name }}-->
-        <!--</li>-->
+    <!--<li ng-repeat='category in categoriesList.categories'>-->
+    <!--{{ category.name }}-->
+    <!--</li>-->
     <!--</ul>-->
 
     <div class="row">
         <h2>Product Categories:</h2>
-        <div ng-repeat='category in categoriesList.categories' class="row">
-            <div>
-
-                <a  style="display: block; padding: 4px;" href="/categories/{{category._id}}">
-                    <img ng-src="{{ categoriesList.findImage(category.picture) == undefined ? 'no-images-found.gif': categoriesList.findImage(category.picture).url()}}" width="150" style="margin-left: 10px;margin-right: 10px;"  ><br/>
-                    <span  style="align-content: center;margin: 10px" class="h3">{{category.categoryName}}</span>
-                </a>
 
 
+        <div ng-repeat='category in categoriesList.categories'>
+            <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+
+                    <a style=" padding: 4px;" href="/categories/{{category._id}}">
+                        <p style="text-align: center">
+                        <img ng-src="{{ categoriesList.findImage(category.picture) == undefined ? 'no-images-found.gif': categoriesList.findImage(category.picture).url()}}"
+                             width="200" style="margin-left: 10px;margin-right: 10px;"><br/>
+                        </p>
+                        <div align="center" class="caption">
+                            <span style="align-content: center;margin: 10px" class="h3">{{category.categoryName}}</span>
+                        </div>
+                    </a>
+
+
+                </div>
             </div>
+
+
         </div>
     </div>
 </div>

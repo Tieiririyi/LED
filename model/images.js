@@ -1,7 +1,7 @@
 Images = new FS.Collection("images", {
   stores: [
     //new FS.Store.GridFS("original")
-      new FS.Store.FileSystem("images", {path: "../../../../../public/product-images"})
+      new FS.Store.FileSystem("images", {path: "product-images"})
   ],
   filter: {
     allow: {
@@ -19,5 +19,8 @@ Images.allow({
   },
   download:function(){
     return true;
+  },
+  remove: function(userId,doc){
+    return Roles.userIsInRole(userId, ['admin', 'super-admin'], 'led');
   }
 });
