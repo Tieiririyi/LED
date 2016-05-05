@@ -68,7 +68,7 @@
         //  });
 
         //Orders.remove({});
-        Products.remove({});
+        //Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "LED bulbs"})._id;
                 for (var i = 1; i<=16;i++){
