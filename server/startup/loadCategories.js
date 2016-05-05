@@ -68,7 +68,7 @@
         //  });
 
         //Orders.remove({});
-        //Products.remove({});
+        Products.remove({});
         if (Products.find().count() === 0) {
             var id = Categories.findOne({"categoryName": "LED bulbs"})._id;
                 for (var i = 1; i<=16;i++){
@@ -76,7 +76,8 @@
                     Products.insert(
                         {
                             "itemNum": itemNum,
-                            "size": "122*135mm",
+                            "size1": 122,
+                            "size2": 135,
                             "socket": "E26",
                             "power": 16,
                             "brightness": 1250,

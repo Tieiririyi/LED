@@ -15,18 +15,52 @@
             <option ng-repeat = "ledtype in inventoryProductDetails.ledtypes" value = "{{ledtype.type}}" ng-checked = "ledtype.type == inventoryProductDetails.product.ledtype">{{ledtype.type}}</option>
         </select> <br />
 
+        <label>Size: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.size1" /><span>*</span>
+        <input type = "tezt" ng-model = "inventoryProductDetails.product.size2" /><span>mm</span>
+        <br />
+
+        <label>Socket: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.socket" /><br />
+
         <label>Power: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.power" /><span>Watts</span><br />
 
         <label>Brightness: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.brightness" /><br />
 
-        <label>Colour: </label>
-        <input type = "text" ng-model = "inventoryProductDetails.product.colour" /><br />
+        <label>Temperature: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.temperature" /><span>K</span><br />
+
+        <label>Ra: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.Ra" /><br />
+
+        <label>Voltage: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.voltage" /><br />
+
+        <label>Beam Angle: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.beam_angle" /><br />
+
+        <label>Life Time: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.life_time" /><br />
+
+        <label>Power Factor: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.power_factor" /><br />
+
 
         <label>Dimmable: </label>
         <input type = "text" ng-model = "inventoryProductDetails.product.dimmable" />
         <br />
+
+        <label>Housing: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.housing" /><br />
+
+        <label>Colour: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.colour" /><br />
+
+
+        <label>Cover: </label>
+        <input type = "text" ng-model = "inventoryProductDetails.product.cover" /><br />
 
         <label>Certifications: </label>
         <label>
@@ -53,7 +87,7 @@
         <input type = "text" ng-model = "inventoryProductDetails.product.quantityOnHold" /><br />
 
         <label>Price: </label>
-        <input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
+        <span>$</span><input type = "text" ng-model = "inventoryProductDetails.product.price" /><br />
 
         <label>Discount :</label>
         <input type = "text" ng-model = "inventoryProductDetails.product.discount_pct" />%<br />

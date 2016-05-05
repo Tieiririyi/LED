@@ -9,6 +9,8 @@ angular.module('led').directive('addProduct', function ()
         controllerAs:'addProduct',
         controller: function ($scope,$meteor, $stateParams, $reactive, $location){
             $reactive(this).attach($scope);
+            this.subscribe('ledtypes');
+            this.subscribe('categories');
 
             this.helpers({
                 categories: ()=> {
@@ -17,6 +19,9 @@ angular.module('led').directive('addProduct', function ()
                 },
                 images: () => {
                     return Images.find();
+                },
+                ledtypes: () => {
+                    return Ledtypes.find({});
                 }
             });
 
@@ -26,7 +31,6 @@ angular.module('led').directive('addProduct', function ()
                 if (product.picture != undefined){
                     imageID = Images.insert(product.picture[0])._id;
                 }
-
 
                 //update certification
                 var certs = [];
@@ -43,6 +47,7 @@ angular.module('led').directive('addProduct', function ()
                 product.quantityOnHold = 0;
                 product.status = true;
                 product.certification = certs;
+                product.picture = imageID;
                 Products.insert(product);
                 
                 $location.path("/admin/inventory");

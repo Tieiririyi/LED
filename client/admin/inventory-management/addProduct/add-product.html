@@ -11,18 +11,54 @@
                <option ng-repeat = "category in addProduct.categories" value = "{{category._id}}" ng-checked = "category._id == product.categoryId">{{category.categoryName}}</option>
             </select> <br />
 
+            <label>LED Type: </label>
+            <select ng-model = "product.ledtype">
+                <option ng-repeat = "ledtype in addProduct.ledtypes" value = "{{ledtype.type}}" ng-checked = "ledtype.type == product.ledtype">{{ledtype.type}}</option>
+            </select> <br />
+
+            <label>Size: </label>
+            <input type = "text" ng-model = "product.size1" /><span>*</span>
+            <input type = "text" ng-model = "product.size2" /><span>mm</span><br />
+
+            <label>Socket: </label>
+            <input type = "text" ng-model = "product.socket" /><br />
+
             <label>Power: </label>
             <input type = "text" ng-model = "product.power" required /><span>Watts</span><br />
 
             <label>Brightness: </label>
             <input type = "text" ng-model = "product.brightness" required /><br />
 
-            <label>Colours: </label>
-            <input type = "text" ng-model = "product.colours" required /><br />
+            <label>Temperature: </label>
+            <input type = "text" ng-model = "product.temperature" /><span>K</span><br />
+
+            <label>Ra: </label>
+            <input type = "text" ng-model = "product.Ra" /><br />
+
+            <label>Voltage: </label>
+            <input type = "text" ng-model = "product.voltage" /><br />
+
+            <label>Beam Angle: </label>
+            <input type = "text" ng-model = "product.beam_angle" /><br />
+
+            <label>Life Time: </label>
+            <input type = "text" ng-model = "product.life_time" /><br />
+
+            <label>Power Factor: </label>
+            <input type = "text" ng-model = "product.power_factor" /><br />
 
             <label>Dimmable: </label>
             <input type = "text" ng-model = "product.dimmable" />
             <br />
+
+            <label>Housing: </label>
+            <input type = "text" ng-model = "product.housing" /><br />
+
+            <label>Colour: </label>
+            <input type = "text" ng-model = "product.colour" required /><br />
+
+            <label>Cover: </label>
+            <input type = "text" ng-model = "product.cover" /><br />
 
             <label>Certifications: </label>
             <label><input type = "checkbox" id = "CE" ng-model = "addProduct.cert.CE" />CE</label>
@@ -34,10 +70,10 @@
             <input type = "text" ng-model = "product.quantityInStock" required /><br />
 
             <label>Price: </label>
-            <input type = "text" ng-model = "product.price" required /><br />
+            <span>$</span><input type = "text" ng-model = "product.price" required /><br />
 
             <label>Discount:</label>
-            <input type = "text" ng-model = "product.discount_pct" />*<br />
+            <input type = "text" ng-model = "product.discount_pct" />%<br />
 
             <label>Upload picture</label>
             <input name = "test" id = "fileupload" type = "file"  ngf-drop ngf-select
