@@ -75,6 +75,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_single.js" />
         <item url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.4/web.browser/autoupdate_client.js" />
         <item url="file://$USER_HOME$/.meteor/packages/http/1.1.1/web.browser/httpcall_client.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/generalledger_sleepforms/0.0.1/web.browser/sleepforms.js" />
         <item url="file://$USER_HOME$/.meteor/packages/babel-runtime/0.1.4/web.browser/babel-runtime.js" />
         <item url="file://$USER_HOME$/.meteor/packages/dotansimha_accounts-ui-angular/0.0.2/web.browser/accounts-ui-angular.js" />
         <item url="file://$USER_HOME$/.meteor/packages/id-map/1.0.4/web.browser/id-map.js" />
@@ -245,6 +246,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/accounts-ui-unstyled/1.1.8/web.browser/login_buttons_single.js" />
       <root url="file://$USER_HOME$/.meteor/packages/autoupdate/1.2.4/web.browser/autoupdate_client.js" />
       <root url="file://$USER_HOME$/.meteor/packages/http/1.1.1/web.browser/httpcall_client.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/generalledger_sleepforms/0.0.1/web.browser/sleepforms.js" />
       <root url="file://$USER_HOME$/.meteor/packages/babel-runtime/0.1.4/web.browser/babel-runtime.js" />
       <root url="file://$USER_HOME$/.meteor/packages/dotansimha_accounts-ui-angular/0.0.2/web.browser/accounts-ui-angular.js" />
       <root url="file://$USER_HOME$/.meteor/packages/id-map/1.0.4/web.browser/id-map.js" />
