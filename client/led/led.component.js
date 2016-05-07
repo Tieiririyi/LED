@@ -11,7 +11,7 @@ angular.module('led').directive('led', function () {
             $reactive(this).attach($scope);
             this.subscribe('categories');
             this.subscribe('products');
-
+            this.subscribe('images');
             if (store.get('cart') == null){
                 store.set('cart', []);
             }

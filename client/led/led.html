@@ -21,8 +21,12 @@
 
     <!--</div>-->
     <div class="container">
+        <div>
+            <h2 style="color: white;text-shadow:1px 1px darkgrey">C & T TRADING CORP.</h2>
+        </div>
         <nav>
-            <ul class="nav navbar-nav">
+
+            <ul class="topnav navbar-nav">
                 <li>
                     <a style="color: white;" href="/home">HOME</a>
                 </li>
@@ -37,7 +41,7 @@
                     <a style="color: white" href="/led_guide">LED GUIDE</a>
                 </li>
                 <li ng-show="led.isAdmin" class="dropdown">
-                    <a style="color: white;" class="nav" href="#" data-toggle="dropdown" aria-haspopup="true"
+                    <a style="color: white;" class="topnav" href="#" data-toggle="dropdown" aria-haspopup="true"
                        aria-expanded="false">ADMIN</a>
                     <ul class="dropdown-menu">
                         <li><a href="/admin/inventory">Inventory</a></li>
@@ -47,7 +51,7 @@
                 </li>
 
             </ul>
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="topnav navbar-nav navbar-right">
                 <li>
                     <a style="color: white;" class="nav" href="/shoppingCart"><span
                             class="glyphicon glyphicon-shopping-cart"></span> ({{led.cart_items}})</a>
@@ -78,11 +82,21 @@
 </header>
 
 
-<div ui-view=""></div>
+<div  style="min-height: 700px;" ui-view=""></div>
 
 <footer style="background-color: #232f3e; margin-top: 100px;padding-top: 50px;padding-bottom: 50px;">
     <div class="container">
-
+        <ul style="float: left;color: white;margin-left: 20%; margin-right: 100px; list-style: none">
+           <li style="margin-bottom: 10px;" >
+               <a style="color: white;" href="/categories">Products</a>
+           </li>
+            <li style="margin-bottom: 10px;">
+                <a style="color: white;" href="/led_guide">LED Guide</a>
+            </li>
+            <li style="margin-bottom: 10px;">
+                <a style="color: white;" href="">Contact us</a>
+            </li>
+        </ul>
         <iframe width="240" height="135"
                 style="border: 2px solid #00FF00;float: left; margin-right: 100px;"
                 src="https://www.google.com/maps?q=31 Progress Ave., Unit13,&#10;Toronto, Ontario M1P 4S6&amp;z=14&amp;t=m&amp;output=embed">

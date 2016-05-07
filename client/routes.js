@@ -4,7 +4,8 @@
 angular.module('led')
     .config(function ($urlRouterProvider, $stateProvider, $locationProvider) {
         $locationProvider.html5Mode(true);
-
+        $urlRouterProvider.when('/','/home');
+       
         $stateProvider
             .state('home',
                 {
@@ -218,6 +219,6 @@ angular.module('led')
                 url: '/users/reset-password/:token',
                 template: '<reset-password></reset-password>'
             });
-        $urlRouterProvider.otherwise("/home");
+        //$urlRouterProvider.otherwise("/home");
     });
 

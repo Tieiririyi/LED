@@ -42,19 +42,19 @@
                     'categoryName': 'LED bulbs',
                     'categoryDescription': 'Amazing LED light bulbs.',
                     'picture':'',
-                    'pictureURL':''
+
                 },
                 {
-                    'categoryName': 'Fixtures',
+                    'categoryName': 'LED Fixtures',
                     'categoryDescription': 'Premium Design.',
                     'picture':'',
-                    'pictureURL':''
+
                 },
                 {
                     'categoryName': 'LED Signs',
                     'categoryDescription': 'Customized LED Signs.',
                     'picture':'',
-                    'pictureURL':''
+
                 }
             ];
 

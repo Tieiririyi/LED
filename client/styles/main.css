@@ -20,3 +20,52 @@
     vertical-align: middle;
     /*border-top: 1px solid #ddd;*/
 }
+
+.topnav {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+.topnav > li {
+    position: relative;
+    display: block;
+}
+.topnav > li > a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+.topnav > li > a:hover
+{
+    text-decoration: none;
+    background-color: darkgray;
+
+}
+.topnav > li > a:focus{
+    text-decoration: none;
+}
+.topnav > li.disabled > a {
+    color: #777;
+}
+.topnav > li.disabled > a:hover,
+.topnav > li.disabled > a:focus {
+    color: #777;
+    text-decoration: none;
+    cursor: not-allowed;
+    background-color: transparent;
+}
+.topnav .open > a,
+.topnav .open > a:hover,
+.topnav .open > a:focus {
+    background-color: #eee;
+    border-color: #337ab7;
+}
+.topnav .nav-divider {
+    height: 1px;
+    margin: 9px 0;
+    overflow: hidden;
+    background-color: #e5e5e5;
+}
+.topnav > li > a > img {
+    max-width: none;
+}

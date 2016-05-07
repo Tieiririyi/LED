@@ -9,19 +9,33 @@ angular.module('led').directive('home', function () {
         controllerAs: 'home',
         controller: function ($scope, $reactive, store, updateCart) {
             $reactive(this).attach($scope);
-
-            this.subscribe('categories');
             this.subscribe('images');
+            this.subscribe('categories');
             this.helpers({
                     categories: ()=> {
                     return Categories.find({});
+                },
+                catimages: ()=> {
+                    return Images.find({});
                 }
+
+
+
+
             })
 
             this.findImage = (imageID) =>
             {
+                // var thisimage = Images.findOne({"_id":imageID});
+                //
+                //
+                // var   imageurl = thisimage.url("images");
+                //
+                //
+                // return imageurl;
+                return Images.findOne({"_id":imageID});
 
-                return Images.findOne({"_id": imageID});
+
             }
         }
     }

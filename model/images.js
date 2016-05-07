@@ -1,7 +1,7 @@
 Images = new FS.Collection("images", {
   stores: [
-    //new FS.Store.GridFS("original")
-      new FS.Store.FileSystem("images", {path: "product-images"})
+      new FS.Store.GridFS("images")
+      //new FS.Store.FileSystem("images", {path: "~/product-images"})
   ],
   filter: {
     allow: {

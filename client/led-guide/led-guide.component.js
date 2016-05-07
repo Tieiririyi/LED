@@ -7,7 +7,10 @@ angular.module('led').directive('ledGuide', function () {
         templateUrl:'client/led-guide/led-guide.html',
 
         controllerAs: 'ledGuide',
-        controller: function () {
+        controller: function ($scope, $reactive, $location, store) {
+            $reactive(this).attach($scope);
+
+            this.subscribe('images');
         }
     };
 });
