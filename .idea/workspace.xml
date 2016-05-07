@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="e88a069c-c1be-4114-adf9-e1ff170ea9c9" name="Default" comment="Update structure">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/products/products-list/products-list.component.js" afterPath="$PROJECT_DIR$/client/products/products-list/products-list.component.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/products/products-list/products-list.html" afterPath="$PROJECT_DIR$/client/products/products-list/products-list.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/model/images.js" afterPath="$PROJECT_DIR$/model/images.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" afterPath="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
     </list>
     <ignored path="LED.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +35,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="products-list.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="products-list.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="165">
@@ -48,6 +47,36 @@
                 <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inventory-management.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="inventory-product.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="add-product.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="410">
+              <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -87,26 +116,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
               <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="orders.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/orders.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="categories.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/categories.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -164,7 +173,6 @@
         <option value="$PROJECT_DIR$/client/users/order-history/user-orders/user-orders.component.js" />
         <option value="$PROJECT_DIR$/client/users/order-history/user-orders/user-orders.html" />
         <option value="$PROJECT_DIR$/client/shopping-cart/order-review/order-review.html" />
-        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" />
         <option value="$PROJECT_DIR$/client/categories/categories-list/categories-list.component.js" />
         <option value="$PROJECT_DIR$/client/admin/orders-management/orders/orders.component.js" />
         <option value="$PROJECT_DIR$/client/admin/orders-management/orders/orders.html" />
@@ -172,7 +180,6 @@
         <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.component.js" />
         <option value="$PROJECT_DIR$/model/ledtypes.js" />
         <option value="$PROJECT_DIR$/server/ledtypes.js" />
-        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
         <option value="$PROJECT_DIR$/client/product/product.html" />
         <option value="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.component.js" />
         <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.component.js" />
@@ -189,8 +196,10 @@
         <option value="$PROJECT_DIR$/client/led/led.html" />
         <option value="$PROJECT_DIR$/model/images.js" />
         <option value="$PROJECT_DIR$/client/products/products-list/products-list.component.js" />
-        <option value="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" />
         <option value="$PROJECT_DIR$/client/products/products-list/products-list.html" />
+        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html" />
+        <option value="$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html" />
+        <option value="$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html" />
       </list>
     </option>
   </component>
@@ -391,6 +400,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="inventory-management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LED" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="LED" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="client" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventory-management" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="inventoryProductDetails" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -681,7 +716,7 @@
       <workItem from="1459712447280" duration="27000" />
       <workItem from="1459712499410" duration="9747000" />
       <workItem from="1459784659271" duration="1610000" />
-      <workItem from="1460781149073" duration="65731000" />
+      <workItem from="1460781149073" duration="66115000" />
     </task>
     <task id="LOCAL-00001" summary="Updated sample front page">
       <created>1453523673536</created>
@@ -694,7 +729,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96502000" />
+    <option name="totallyTimeSpent" value="96886000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -707,9 +742,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="35" y="23" width="1680" height="1023" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21217601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21217601" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32697946" sideWeight="0.4978903" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32959184" sideWeight="0.49668476" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28654972" sideWeight="0.50516284" order="10" side_tool="true" content_ui="tabs" />
@@ -906,22 +941,6 @@
           <folding>
             <element signature="e#0#47#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="22" column="72" selection-start-line="22" selection-start-column="72" selection-end-line="22" selection-end-column="72" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="52" column="63" selection-start-line="52" selection-start-column="63" selection-end-line="52" selection-end-column="63" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1146,14 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="15" column="13" selection-start-line="15" selection-start-column="13" selection-end-line="15" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/products/products-list/products-list.component.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1173,6 +1184,30 @@
             <element signature="n#style#0;n#h1#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#div#0;n#a#0;n#div#1;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventoryProductDetails/inventory-product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="106" column="34" selection-start-line="106" selection-start-column="34" selection-end-line="106" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/addProduct/add-product.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="83" column="37" selection-start-line="83" selection-start-column="37" selection-end-line="83" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/admin/inventory-management/inventory-management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="52" column="38" selection-start-line="52" selection-start-column="38" selection-end-line="52" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
