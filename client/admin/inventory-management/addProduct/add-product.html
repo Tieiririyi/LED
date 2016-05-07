@@ -12,9 +12,8 @@
             </select> <br />
 
             <label>LED Type: </label>
-            <select ng-model = "product.ledtype">
-                <option ng-repeat = "ledtype in addProduct.ledtypes" value = "{{ledtype.type}}" ng-checked = "ledtype.type == product.ledtype">{{ledtype.type}}</option>
-            </select> <br />
+            <input type = "text" ng-model = "product.ledtype" />
+             <br/>
 
             <label>Size: </label>
             <input type = "text" ng-model = "product.size1" /><span>*</span>
