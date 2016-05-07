@@ -8,16 +8,16 @@
             </div>
             <div class="form-group">
                 <label>Password:</label>
-                <input class="form-control" placeholder="Password" type="password" name="password" ng-model = "user.password" equired />
+                <input class="form-control" placeholder="Password" type="password" name="password" ng-model = "user.password" required />
             </div>
             <div class="form-group">
                 <label>Name:</label>
-                <input placeholder="Name" class="form-control" type = "text" ng-model = "user.name" equired />
+                <input placeholder="Name" class="form-control" type = "text" ng-model = "user.name" required />
             </div>
             <div class="form-group">
                 <input class="form-control btn-success" type="submit" value="Create your account">
             </div>
-
+            <div>{{newUsersCtrl.message}}</div>
         </form>
     </div>
 </div>

@@ -7,7 +7,7 @@ angular.module('led').directive('inventoryManagement', function ()
         restrict:'E',
         templateUrl:'client/admin/inventory-management/inventory-management.html',
         controllerAs:'inventoryCtrl',
-        controller: function ($scope, $meteor, $reactive, $location){
+        controller: function ($scope, $meteor, $reactive, $state){
             $reactive(this).attach($scope);
 
             this.newProduct = {};
@@ -111,7 +111,7 @@ angular.module('led').directive('inventoryManagement', function ()
             }
 
             this.addProduct = () => {
-                $location.path('/admin/inventory/addProduct');
+                $state.go('addProduct');
             }
         }
     }

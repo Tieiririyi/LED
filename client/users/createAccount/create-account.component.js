@@ -7,11 +7,9 @@ angular.module('led').directive('createAccount', function ()
         restrict:'E',
         templateUrl:'client/users/createAccount/create-account.html',
         controllerAs:'newUsersCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store){
+        controller: function ($scope, $stateParams, $meteor, $reactive, $state, store){
             $reactive(this).attach($scope);
             //this.subscribe('users');
-
-
 
             this.register = (user) =>{
                 Accounts.createUser({
@@ -21,40 +19,24 @@ angular.module('led').directive('createAccount', function ()
                         name: user.name,
                         status: "active",
                     }
-                }, function(error){
+                }, (error) => {
                     if (error){
-                        console.log(error.reason);
+                        this.message = error.reason;
                     }
                     else{
                         Meteor.call('verifyUserEmail');
                         Meteor.call('updateRoles', Meteor.userId(), ['customer'], 'led', (error) => {
                             if (!error){
-                            Meteor.call('insertOrders', Meteor.userId(), store.get('cart'), "not ordered", function(error, result){
-                                if (!error){
-                                    console.log(result);
-                                }
-                                else{
-                                    console.log(error);
-                                }
-                            });
-/*
-                                Orders.insert({
-                                    userId: Meteor.userId(),
-                                    order: store.get('cart'),
-                                    orderNum: 0,
-                                    status: "not ordered",
-                                    orderDate: "",
-                                    processDate: "",
-                                    processBy: ""
+                                Meteor.call('insertOrders', Meteor.userId(), store.get('cart'), "not ordered", function(error, result){
+                                    if (error){
+                                        console.log(error);
+                                    }
                                 });
-*/
-                                var redirect = $location.search().redirect;
-                                if (redirect != undefined){
-                                    $location.search('redirect');
-                                    $location.path(redirect);
+                                if ($state.params.redirect != undefined){
+                                    $state.go($state.params.redirect);
                                 }
                                 else{
-                                    $location.path('/categories');
+                                    $state.go('categories');
                                 }
                             }
                         });

@@ -7,7 +7,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
         restrict:'E',
         templateUrl:'client/admin/inventory-management/inventoryProductDetails/inventory-product.html',
         controllerAs:'inventoryProductDetails',
-        controller: function ($scope,$meteor, $stateParams, $reactive, $location){
+        controller: function ($scope,$meteor, $stateParams, $reactive, $state){
             $reactive(this).attach($scope);
             this.subscribe('products');
             this.subscribe('categories');
@@ -70,7 +70,7 @@ angular.module('led').directive('inventoryProductDetails', function ()
                     //window.location.href = Meteor.absoluteUrl('admin/inventory');
 
                 });
-                $location.path("/admin/inventory");
+                $state.go('inventory-management');
             }
         }
     }

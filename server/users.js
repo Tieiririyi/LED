@@ -43,6 +43,14 @@ Meteor.publish("users", function () {
 
 
 Meteor.methods({
+    adminCreateUser: function(user){
+        return Accounts.createUser({
+            email: user.email
+        });
+    },
+    findUserByEmail: function(user){
+        return Accounts.findUserByEmail(user.email);
+    },
     findUser: function(email){
         return Accounts.findUserByEmail(email).emails[0].verified;
     },
@@ -80,7 +88,6 @@ Meteor.methods({
     },
     
     seeRoles: function(){
-        console.log("here");
         return Meteor.users.find();
     }
 });

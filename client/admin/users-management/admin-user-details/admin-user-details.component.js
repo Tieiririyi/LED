@@ -7,7 +7,7 @@ angular.module('led').directive('adminUserDetails', function ()
         restrict: 'E',
         templateUrl: 'client/admin/users-management/admin-user-details/admin-user-details.html',
         controllerAs: 'adminUserDetails',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location, store) {
+        controller: function ($scope, $stateParams, $meteor, $reactive, store) {
             
             $reactive(this).attach($scope);
             this.subscribe('users');

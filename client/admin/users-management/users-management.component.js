@@ -7,7 +7,7 @@ angular.module('led').directive('usersManagement', function ()
         restrict:'E',
         templateUrl:'client/admin/users-management/users-management.html',
         controllerAs:'usersMgntCtrl',
-        controller: function ($scope,$stateParams, $meteor, $reactive, $location){
+        controller: function ($scope,$stateParams, $meteor, $reactive, $state){
             $reactive(this).attach($scope);
             this.subscribe('users');
 
@@ -20,7 +20,7 @@ angular.module('led').directive('usersManagement', function ()
             });
 
             this.addUser = () => {
-              $location.path('/admin/users/add');
+                $state.go('admin-add-users');
             };
         }
     }

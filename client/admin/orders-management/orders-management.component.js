@@ -7,7 +7,7 @@ angular.module('led').directive('ordersManagement', function ()
         restrict:'E',
         templateUrl:'client/admin/orders-management/orders-management.html',
         controllerAs:'ordersMngtCtrl',
-        controller: function ($scope, $meteor, $reactive, $location){
+        controller: function ($scope, $meteor, $reactive){
             $reactive(this).attach($scope);
             this.subscribe('orders');
             this.subscribe('users');

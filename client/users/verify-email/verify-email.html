@@ -1,5 +1,4 @@
 <div ng-init = "verifyEmailCtrl.init()">
     <h2>Email Verification</h2>
 </div>
-<div ng-show = "verifyEmailCtrl.verified == true">Your email has been verified</div>
-<div ng-show = "verifyEmailCtrl.verified == false">Your email could not verified</div>
+<div data-ng-show = "verifyEmailCtrl.message">{{verifyEmailCtrl.message}}</div>

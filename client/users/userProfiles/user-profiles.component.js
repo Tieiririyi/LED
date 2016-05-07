@@ -7,7 +7,7 @@ angular.module('led').directive('userProfiles', function ()
         restrict:'E',
         templateUrl:'client/users/userProfiles/user-profiles.html',
         controllerAs:'userProfilesCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location){
+        controller: function ($scope, $stateParams, $meteor, $reactive){
             $reactive(this).attach($scope);
 
             this.changePwd = false;

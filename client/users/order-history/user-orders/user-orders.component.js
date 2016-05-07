@@ -4,7 +4,7 @@ angular.module('led').directive('userOrders', function ()
         restrict:'E',
         templateUrl:'client/users/order-history/user-orders/user-orders.html',
         controllerAs:'userOrdersCtrl',
-        controller: function ($scope,$stateParams, $meteor, $reactive, $location){
+        controller: function ($scope,$stateParams, $meteor, $reactive){
             $reactive(this).attach($scope);
             this.subscribe('orders');
             this.subscribe('users');

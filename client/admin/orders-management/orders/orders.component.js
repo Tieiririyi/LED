@@ -4,7 +4,7 @@ angular.module('led').directive('orders', function ()
         restrict:'E',
         templateUrl:'client/admin/orders-management/orders/orders.html',
         controllerAs:'ordersCtrl',
-        controller: function ($scope,$stateParams, $meteor, $reactive, $location){
+        controller: function ($scope,$stateParams, $meteor, $reactive, $state){
             $reactive(this).attach($scope);
             this.subscribe('orders');
             this.subscribe('users');
@@ -54,7 +54,7 @@ angular.module('led').directive('orders', function ()
                     });
 
                 });
-                $location.path('/admin/orders');
+                $state.go('ordersMngt');
             }
 
             this.cancelOrder = () => {
@@ -71,7 +71,7 @@ angular.module('led').directive('orders', function ()
                         quantityOnHold: parseInt(temp_product.quantityOnHold) - parseInt(items.itemInfo.quantity)
                     }})
                 });
-                $location.path('/admin/orders');
+                $state.go('ordersMngt');
 
             }
 

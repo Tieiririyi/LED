@@ -4,7 +4,7 @@ angular.module('led').directive('orderReview', function ()
         restrict:'E',
         templateUrl:'client/shopping-cart/order-review/order-review.html',
         controllerAs:'orderReview',
-        controller: function ($scope,$stateParams, $meteor, $reactive, store, updateCart, $rootScope, $location){
+        controller: function ($scope,$stateParams, $meteor, $reactive, store, updateCart, $rootScope, $state){
             $reactive(this).attach($scope);
             this.subscribe('categories');
             this.subscribe('products');
@@ -40,10 +40,7 @@ angular.module('led').directive('orderReview', function ()
                 if (user != null){
                    confirmation = user._id;
                     Meteor.call('updateOrders', Meteor.userId(), user._id, order_details, "ordered", function(error, result){
-                        if (!error){
-                            console.log(result);
-                        }
-                        else{
+                        if (error){
                             console.log(error);
                         }
                     });
@@ -80,7 +77,8 @@ angular.module('led').directive('orderReview', function ()
                         */
                     });
 
-                    $location.path('/shoppingCart/' + confirmation);
+                    //$location.path('/shoppingCart/' + confirmation);
+                    $state.go('confirmation', {confirmation: confirmation}, true);
                 }
             }
 

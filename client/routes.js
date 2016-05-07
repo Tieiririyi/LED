@@ -59,14 +59,14 @@ angular.module('led')
         $stateProvider
             .state('createAccount',
                 {
-                    url: '/users/createAccount',
+                    url: '/users/createAccount?redirect',
                     template: '<create-account></create-account>'
                 });
                 
         $stateProvider
             .state('users',
                 {
-                    url: '/users',
+                    url: '/users?redirect',
                     template: '<users></users>'
                 });
                 
@@ -206,15 +206,10 @@ angular.module('led')
                     }
                 }
             });
-        $stateProvider
-            .state('forgot-password', {
-               url: '/users/forgot-password/',
-               template: '<forgot-password></forgot-password>'
-            });
             
         $stateProvider
             .state('verify-user', {
-                url: '/users/verify-email/',
+                url: '/users/verify-email/?token&email',
                 template: '<verify-email></verify-email>'
             });
             

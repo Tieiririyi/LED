@@ -7,7 +7,7 @@ angular.module('led').directive('addProduct', function ()
         restrict:'E',
         templateUrl:'client/admin/inventory-management/addProduct/add-product.html',
         controllerAs:'addProduct',
-        controller: function ($scope,$meteor, $stateParams, $reactive, $location){
+        controller: function ($scope,$meteor, $stateParams, $reactive, $state){
             $reactive(this).attach($scope);
             this.subscribe('ledtypes');
             this.subscribe('categories');
@@ -49,8 +49,8 @@ angular.module('led').directive('addProduct', function ()
                 product.certification = certs;
                 product.picture = imageID;
                 Products.insert(product);
-                
-                $location.path("/admin/inventory");
+
+                $state.go('inventory-management');
             };
             
         }

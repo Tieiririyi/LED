@@ -4,7 +4,7 @@ angular.module('led').directive('resetPassword', function ()
         restrict:'E',
         templateUrl:'client/users/reset-password/reset-password.html',
         controllerAs:'resetPasswordCtrl',
-        controller: function ($scope, $stateParams, $meteor, $reactive, $location){
+        controller: function ($scope, $stateParams, $meteor, $reactive){
 
             $reactive(this).attach($scope);
             
@@ -18,25 +18,18 @@ angular.module('led').directive('resetPassword', function ()
                 if (user.password1 == user.password2){
                     var token = $stateParams.token;
 
-                    Accounts.resetPassword(token, user.password1, function(error){
+                    Accounts.resetPassword(token, user.password1, (error)=>{
                        if (error){
-                           console.log(error);
-                       } 
+                           this.success = false;
+                           this.message = error.reason;
+                       }
+                        else{
+                            this.success = true;
+                            this.message = "Your password has been reset";
+                        }
                     });
-                    this.show = true;
                 }
             };
-            
-            this.helpers({
-                success: () => {
-                    if (Meteor.user() == null){
-                        return false;
-                    }
-                    else{
-                        return true;
-                    }
-                }
-            });
         }
     };
 });

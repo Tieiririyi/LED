@@ -7,7 +7,7 @@ angular.module('led').directive('home', function () {
         templateUrl: 'client/led/home.html',
 
         controllerAs: 'home',
-        controller: function ($scope, $reactive, $location, store, updateCart) {
+        controller: function ($scope, $reactive, store, updateCart) {
             $reactive(this).attach($scope);
 
             this.subscribe('categories');

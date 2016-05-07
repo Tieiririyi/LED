@@ -4,7 +4,7 @@ angular.module('led').directive('shoppingCart', function ()
         restrict:'E',
         templateUrl:'client/shopping-cart/shopping-cart.html',
         controllerAs:'shoppingCart',
-        controller: function ($scope,$stateParams, $meteor, $reactive, store, $location, $rootScope, updateCart){
+        controller: function ($scope,$state, $meteor, $reactive, store, $rootScope, updateCart){
             $reactive(this).attach($scope);
             this.subscribe('categories');
             this.subscribe('products');
@@ -54,12 +54,10 @@ angular.module('led').directive('shoppingCart', function ()
             this.review = () => {
 
                 if (Meteor.userId() == null && this.total != 0){
-                    $location.search('redirect', '/orders/review');
-                    $location.path("/users");
+                    $state.go('users', {redirect: 'orderReview'}, true);
                 }
                 else if(Meteor.userId() != null && this.total != 0){
-                    $location.path('/orders/review');
-
+                    $state.go('orderReview');
                 }
             };
 
