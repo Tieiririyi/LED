@@ -1,22 +1,24 @@
-<h2>Create Account</h2>
-<form class="register" ng-submit = "adminAddUser.register(user)">
-    <div class="form-group">
-        <label>Email: </label>
-        <input type="email" name="email" ng-model = "user.email" ng-required>
-        <br />
-        <label>Name: <input type = "text" ng-model = "user.name" ng-required/></label><br />
-        <label>Role:
-            <label>
-                <input type = "radio" ng-model = "user.role" value = "customer" ng-required/>Customer
-            </label>
-            <label>
-                <input type = "radio" ng-model = "user.role" value = "admin" />Admin
+<div class="container">
+    <h2>Create Account</h2>
+    <form class="register" ng-submit="adminAddUser.register(user)">
+        <div class="form-group">
+            <label>Email: </label>
+            <input type="email" name="email" ng-model="user.email" ng-required>
+            <br/>
+            <label>Name: <input type="text" ng-model="user.name" ng-required/></label><br/>
+            <label>Role:
+                <label>
+                    <input type="radio" ng-model="user.role" value="customer" ng-required/>Customer
+                </label>
+                <label>
+                    <input type="radio" ng-model="user.role" value="admin"/>Admin
 
+                </label>
             </label>
-        </label>
-        <br />
-        <input type="submit" value="Register">
-    </div>
+            <br/>
+            <input type="submit" value="Register">
+        </div>
 
-    <div data-ng-show = "adminAddUser.message" ng-bind = "adminAddUser.message"></div>
-</form>
+        <div data-ng-show="adminAddUser.message" ng-bind="adminAddUser.message"></div>
+    </form>
+</div>

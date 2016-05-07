@@ -1,24 +1,29 @@
-<h2>Profiles</h2>
-<form class="register" ng-submit = "userProfilesCtrl.update(user)" name = "userDetails">
-    <!-- update email -->
-    <label>Email: </label><input type = "email" ng-model = "userProfilesCtrl.current_user.emails[0].address" /><br />
-    <label>Name: </label><input type = "text" ng-model = "userProfilesCtrl.current_user.profile.name"/><br />
-    <label>Phone (e.g. 4161234567): </label><input type = "text" name = "phone" ng-model = "userProfilesCtrl.current_user.profile.phone" ng-minlength = "9" ng-maxlength = "9" ng-pattern = "/[0-9]/" required/>
+<div class="container">
+    <h2>Profiles</h2>
+    <form class="register" ng-submit="userProfilesCtrl.update(user)" name="userDetails">
+        <!-- update email -->
+        <label>Email: </label><input type="email" ng-model="userProfilesCtrl.current_user.emails[0].address"/><br/>
+        <label>Name: </label><input type="text" ng-model="userProfilesCtrl.current_user.profile.name"/><br/>
+        <label>Phone (e.g. 4161234567): </label><input type="text" name="phone"
+                                                       ng-model="userProfilesCtrl.current_user.profile.phone"
+                                                       ng-minlength="9" ng-maxlength="9" ng-pattern="/[0-9]/" required/>
 
-    <div role="alert">
+        <div role="alert">
         <span class="error" ng-show="userDetails.phone.$error.minlength">
         Too short!</span>
         <span class="error" ng-show="userDetails.phone.$error.maxlength">
         Too long!</span>
-    </div><br/>
-    
-    <button ng-click = "userProfilesCtrl.changePassword()" type = "button">Change Password</button>
-    
-    <div ng-show = "userProfilesCtrl.changePwd == true">
-        <label>Old password:</label><input type = "password" ng-model = "user.oldPassword" /><br/>
-        <label>New password:</label><input type = "password" ng-model = "user.password1" /><br />
-        <label>Retype new password:</label><input type = "password" ng-model = "user.password2" /><br />
-    </div>
-    <!-- before submitting changes, need to use password -->
-    <p><input type="submit" value="Submit Changes" ng-disabled="userDetails.$valid == false"></p>
-</form>
+        </div>
+        <br/>
+
+        <button ng-click="userProfilesCtrl.changePassword()" type="button">Change Password</button>
+
+        <div ng-show="userProfilesCtrl.changePwd == true">
+            <label>Old password:</label><input type="password" ng-model="user.oldPassword"/><br/>
+            <label>New password:</label><input type="password" ng-model="user.password1"/><br/>
+            <label>Retype new password:</label><input type="password" ng-model="user.password2"/><br/>
+        </div>
+        <!-- before submitting changes, need to use password -->
+        <p><input type="submit" value="Submit Changes" ng-disabled="userDetails.$valid == false"></p>
+    </form>
+</div>
