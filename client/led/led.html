@@ -82,35 +82,41 @@
 </header>
 
 
-<div  style="min-height: 700px;" ui-view=""></div>
+<div style="min-height: 700px;" ui-view=""></div>
 
 <footer style="background-color: #232f3e; margin-top: 100px;padding-top: 50px;padding-bottom: 50px;">
     <div class="container">
-        <ul style="float: left;color: white;margin-left: 20%; margin-right: 100px; list-style: none">
-           <li style="margin-bottom: 10px;" >
-               <a style="color: white;" href="/categories">Products</a>
-           </li>
-            <li style="margin-bottom: 10px;">
-                <a style="color: white;" href="/led_guide">LED Guide</a>
-            </li>
-            <li style="margin-bottom: 10px;">
-                <a style="color: white;" href="">Contact us</a>
-            </li>
-        </ul>
-        <iframe width="240" height="135"
-                style="border: 2px solid #00FF00;float: left; margin-right: 100px;"
-                src="https://www.google.com/maps?q=31 Progress Ave., Unit13,&#10;Toronto, Ontario M1P 4S6&amp;z=14&amp;t=m&amp;output=embed">
+        <div class="row">
+            <div class="col-md-4">
+                <ul style="color: white;margin-left: 20%; margin-right: 100px; list-style: none">
+                    <li style="margin-bottom: 10px;">
+                        <a style="color: white;" href="/categories">Products</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a style="color: white;" href="/led_guide">LED Guide</a>
+                    </li>
+                    <li style="margin-bottom: 10px;">
+                        <a style="color: white;" href="">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class=" col-md-4">
+                <iframe width="240" height="135"
+                        style="border: 2px solid #00FF00; margin-right: 100px;"
+                        src="https://www.google.com/maps?q=31 Progress Ave., Unit13,&#10;Toronto, Ontario M1P 4S6&amp;z=14&amp;t=m&amp;output=embed">
 
-        </iframe>
-
-        <p style="float: left;color: white;">
-            31 Progress Ave., Unit13
-            <br/>
-            Toronto, Ontario M1P 4S6
-            <br/>
-            647-298-3539<br/>
-            647-963-8016
-        </p>
-
+                </iframe>
+            </div>
+            <div class="col-sm-4 col-md-4">
+                <p style="color: white;">
+                    31 Progress Ave., Unit13
+                    <br/>
+                    Toronto, Ontario M1P 4S6
+                    <br/>
+                    647-298-3539<br/>
+                    647-963-8016
+                </p>
+            </div>
+        </div>
     </div>
 </footer>

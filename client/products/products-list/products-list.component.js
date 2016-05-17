@@ -26,7 +26,7 @@ angular.module('led').directive('productsList', function ()
                     });
                 },
                 currentCat: ()=> {
-                    console.log($stateParams.id)
+                  
                     return Categories.findOne({_id: $stateParams.id});
                 }
                 }

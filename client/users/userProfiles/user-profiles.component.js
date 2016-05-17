@@ -23,7 +23,7 @@ angular.module('led').directive('userProfiles', function ()
             };
 
             this.update = (user) =>{
-                console.log(this.current_user);
+               // console.log(this.current_user);
 
                 if (Meteor.user().emails[0].address != this.current_user.emails[0].address){
 
@@ -46,7 +46,7 @@ angular.module('led').directive('userProfiles', function ()
 
                 Meteor.call('updateUser',Meteor.userId(), this.current_user.profile, (error) =>{
                     if (!error){
-                        console.log(Meteor.user());
+                       // console.log(Meteor.user());
                     }
                 });
             };

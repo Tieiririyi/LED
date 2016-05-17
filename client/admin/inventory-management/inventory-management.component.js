@@ -44,7 +44,7 @@ angular.module('led').directive('inventoryManagement', function ()
             this.updateCat = (num) => {
                 num.showCat = false;
                 var imageID = (num.category.picture == ""? "": num.category.picture);
-                console.log(this.new_picture);
+                //console.log(this.new_picture);
                 //add image
                 if (this.new_picture != null){
 
@@ -54,7 +54,7 @@ angular.module('led').directive('inventoryManagement', function ()
                     imageID = Images.insert(this.new_picture[0])._id;
 
                 }
-                console.log(imageID);
+                //console.log(imageID);
                 num.category.picture = imageID;
                 Categories.update({_id: num.category._id}, {
                     $set:{

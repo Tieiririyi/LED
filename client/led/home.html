@@ -35,17 +35,18 @@
 <br/>
 <div class="container">
     <div class="row">
-        <div ng-repeat='category in home.categories' class="col-sm-6 col-md-4">
+        <div ng-repeat='category in home.categories' class="col-sm-4 col-md-4">
             <h2 align="center">
                 <span style="text-align: center;margin-left: 10px;margin-right: 10px"
                       class="label label-default">{{category.categoryName}}</span>
             </h2>
             <a style=" padding: 4px;" href="/categories/{{category._id}}">
 
-                <p style="text-align:center;">
-                    <img
+                <p style=" text-align:center; height: 300px;">
+                    <span style="display: inline-block; height: 50%;" ></span>
+                    <img style=" display: inline-block; margin-left: 10px;margin-right: 10px;"
                             ng-src="{{home.findImage(category.picture).url()}}"
-                            width="70%" style="margin-left: 10px;margin-right: 10px;">
+                            width="70%" >
 
                 </p>
 
